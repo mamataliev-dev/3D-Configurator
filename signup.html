@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./style/signup.css">
+
+    <!-- Style Base -->
+    <link rel="stylesheet" href="./style/base.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <title>3D Configurator</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <!-- Navbar -->
+        <nav class="mynav navbar navbar-expand-lg navbar-light bg-none">
+            <div class="container-xxl">
+                <h3 class="h3">
+                    <a class="mynav__brand navbar-brand" href="./index.html">Site</a>
+                </h3>
+
+                <button class="menu-burger-btn navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="mynav__list navbar-nav d-flex align-items-center mb-2 mb-lg-0 ms-auto">
+                        <li class="nav-item">
+                            <a class="mynav__link nav-link" aria-current="page" href="#">About us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="mynav__link nav-link" aria-current="page" href="#">Contact Us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="mynav__btn mynav__btn-login">Log in</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Second Navbar -->
+        <div class="second-nav">
+            <div class="container-xxl second-nav-container">
+                <div class="d-flex align-items-center">
+                    <img class="second-nav__icon" src="./img/icons/go-back.svg" alt="">
+
+                    <a class="second-nav__logo ms-3" href="#!">Logo</a>
+                </div>
+
+                <ul class="second-nav__list">
+                    <li class="second-nav__item">
+                        <a class="second-nav__link" href="#!">About us</a>
+                    </li>
+
+                    <li class="second-nav__item">
+                        <a class="second-nav__link" href="#!">Contact Us</a>
+                    </li>
+
+                    <li class="second-nav__item">
+                        <a class="second-nav__link" href="#!">User info</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <!-- Sign Up -->
+        <div class="signup">
+            <form class="signup d-flex flex-column mb-4">
+                <input class="signup__input mb-3" type="text" required placeholder="Email or phone number">
+                <button class="signup__btn">Next</button>
+            </form>
+
+            <span class="signup__txt">
+                Already have an account?
+                <a href="./index.html" class="signup__txt-link">Sign in</a>
+            </span>
+        </div>
+
+        <!-- Confirmation -->
+        <div class="confirmation">
+            <h1 class="confirmation__title h1 mb-3">We sent an confirmation code to your email</h1>
+            <h3 class="confirmation__subtitle h3">Please, confirm your registration</h3>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-xxl">
+            <div class="row d-flex flex-wrap">
+                <!-- Contact -->
+                <div class="col-md-3">
+                    <div class="footer__item d-flex flex-column">
+                        <span class="footer__title mb-3">Contact</span>
+
+                        <div class="footer__item_phone d-flex mb-2">
+                            <span>Phone:</span>
+                            <a href="tel:+1 989 102 02 01" class="footer__link">+1 989 102 02 01</a>
+                        </div>
+
+                        <div class="footer__item_email d-flex">
+                            <span>E-mail:</span>
+                            <a href="mailto:fantom@gmail.com" class="footer__link">fantom@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Addresses -->
+                <div class="col-md-2">
+                    <div class="footer__item d-flex flex-column">
+                        <span class="footer__title mb-3">Addresses</span>
+
+                        <a href="#!" class="footer__link">Tashkent, Bogʻishamol 6</a>
+                    </div>
+                </div>
+
+                <!-- Follow us on -->
+                <div class="col">
+                    <div class="footer__item d-flex flex-column">
+                        <span class="footer__title mb-3">Follow us on</span>
+                        <a href="#!" class="footer__link mb-2">Facebook</a>
+                        <a href="#!" class="footer__link mb-2">Instagram</a>
+                        <a href="#!" class="footer__link">Twitter</a>
+                    </div>
+                </div>
+
+                <!-- Privacy Policy -->
+                <div class="col">
+                    <div class="footer__item d-flex flex-column">
+                        <a href="#!" class="footer__title footer__link">Privacy Policy</a>
+                    </div>
+                </div>
+
+                <!-- Terms of Use -->
+                <div class="col">
+                    <div class="footer__item d-flex flex-column">
+                        <a href="#!" class="footer__title footer__link">Terms of Use</a>
+                    </div>
+                </div>
+
+                <!-- Language -->
+                <div class="col">
+                    <div class="footer__item d-flex align-items-center">
+                        <span class="footer__title">English</span>
+                        <img src="./img/icons/move-down.svg" class="ms-2" width="10px" height="10px" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- JS -->
+    <script src="./js/signup.js"></script>
+</body>
+
+</html>
