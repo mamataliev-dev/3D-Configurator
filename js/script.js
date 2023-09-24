@@ -1,4 +1,4 @@
-// * Swiper Carousel
+//  Swiper Carousel
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: "auto",
     spaceBetween: 30,
@@ -43,6 +43,25 @@ document.addEventListener('click', (e) => {
 
 signInSubmit.addEventListener('click', () => {
     window.location.href = '../user.html';
+})
+
+// Drop Dwon List 
+var secondNavBtn = document.querySelector('.second-nav-btn')
+var secondDropDown = document.querySelector('.second-nav-drop-down')
+var secondBlackout = document.querySelector('.second-blackout')
+
+secondNavBtn.addEventListener('click', () => {
+    secondDropDown.classList.add('open')
+    secondBlackout.classList.add('active')
+})
+
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('second-blackout')) {
+        secondDropDown.classList.remove('open')
+        secondBlackout.classList.remove('active')
+    } else {
+        console.log();
+    }
 })
 
 // Open Sign Up Modal

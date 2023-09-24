@@ -51,22 +51,24 @@
         <div class="second-nav">
             <div class="container-xxl second-nav-container">
                 <div class="d-flex align-items-center">
-                    <img class="second-nav__icon" src="./img/icons/go-back.svg" alt="">
+                    <a href="./user.html">
+                        <img class="second-nav__icon" src="./img/icons/go-back.svg" alt="">
+                    </a>
 
-                    <a class="second-nav__logo ms-3" href="#!">Logo</a>
+                    <a class="second-nav__logo ms-3" href="./user.html">Logo</a>
                 </div>
 
                 <ul class="second-nav__list">
                     <li class="second-nav__item">
-                        <a class="second-nav__link" href="#!">About us</a>
+                        <a class="second-nav__link" href="./about.html">About us</a>
                     </li>
 
                     <li class="second-nav__item">
-                        <a class="second-nav__link" href="#!">Contact Us</a>
+                        <a class="second-nav__link" href="./contact.html">Contact Us</a>
                     </li>
 
                     <li class="second-nav__item">
-                        <a class="second-nav__link" href="#!">User info</a>
+                        <button class="second-nav__link second-nav-btn">User info</button>
                     </li>
                 </ul>
             </div>
@@ -101,25 +103,70 @@
             </div>
         </div>
 
+        <!-- Second Nav Drop Down List -->
+        <div class="second-blackout second-nav-drop-down-blackout">
+            <div class="second-nav-drop-down">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="drop-down__link nav-link mb-1" href="./gallery.html">My gallery</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="drop-down__link nav-link mb-1" href="./profile.html">Profile</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="drop-down__link nav-link mb-1" href="./faq.html">FAQ</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="drop-down__link nav-link mb-1" href="./logout.html">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
         <!-- Carousel -->
         <div class="carousel swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img class="carousel__img" src="./img/main-black.jpg" alt="kitchen-black">
-                    <h1 class="carousel__title h1">Kitchen Black</h1>
+                    <picture>
+                        <source srcset="./img/main-black-mobile.jpg" media="(max-width: 480px)">
+                        <a href="./scene.html">
+                            <img class="carousel__img" src="./img/main-black.jpg" alt="kitchen-black">
+                        </a>
+                    </picture>
+
+                    <h1 class="carousel__title h1">Kitchen</h1>
+                    <button class="carousel__btn carousel__btn-start">Get started</button>
                 </div>
 
                 <div class="swiper-slide">
-                    <img class="carousel__img" src="./img/main-red.jpg" alt="kitchen-red">
-                    <h1 class="carousel__title h1">Kitchen Red</h1>
+                    <picture>
+                        <source srcset="./img/main-red-mobile.jpg" media="(max-width: 480px)">
+                        <a href="./scene.html">
+                            <img class="carousel__img" src="./img/main-red.jpg" alt="kitchen-red">
+                        </a>
+                    </picture>
+
+                    <h1 class="carousel__title h1">Kitchen</h1>
+                    <button class="carousel__btn carousel__btn-start">Get started</button>
                 </div>
 
                 <div class="swiper-slide">
-                    <img class="carousel__img" src="./img/main-gray.png" alt="kitchen-gray">
-                    <h1 class="carousel__title h1">Kitchen Gray</h1>
+                    <picture>
+                        <source srcset="./img/main-gray-mobile.jpg" media="(max-width: 480px)">
+                        <a href="./scene.html">
+                            <img class="carousel__img" src="./img/main-gray.png" alt="kitchen-gray">
+                        </a>
+                    </picture>
+
+                    <h1 class="carousel__title h1">Kitchen</h1>
+                    <button class="carousel__btn carousel__btn-start">Get started</button>
                 </div>
             </div>
 
+            <div class="swiper-pagination"></div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
@@ -160,7 +207,7 @@
         <div class="container-xxl">
             <div class="row d-flex flex-wrap">
                 <!-- Contact -->
-                <div class="col-md-3">
+                <div class="col-sm-auto col-12 me-5 mb-4">
                     <div class="footer__item d-flex flex-column">
                         <span class="footer__title mb-3">Contact</span>
 
@@ -177,7 +224,7 @@
                 </div>
 
                 <!-- Addresses -->
-                <div class="col-md-2">
+                <div class="col-sm-auto col-12 me-5 mb-4">
                     <div class="footer__item d-flex flex-column">
                         <span class="footer__title mb-3">Addresses</span>
 
@@ -186,7 +233,7 @@
                 </div>
 
                 <!-- Follow us on -->
-                <div class="col d-flex justify-content-center">
+                <div class="col-sm-auto col-12 me-5 mb-4 d-flex justify-content-lg-start justify-content-sm-center">
                     <div class="footer__item d-flex flex-column">
                         <span class="footer__title mb-3">Follow us on</span>
                         <a href="#!" class="footer__link mb-2">Facebook</a>
@@ -196,21 +243,22 @@
                 </div>
 
                 <!-- Privacy Policy -->
-                <div class="col d-flex justify-content-center">
+                <div class="col-sm-auto col-12 me-5 mb-4 d-flex justify-content-lg-start justify-content-sm-center">
                     <div class="footer__item d-flex flex-column">
                         <a href="#!" class="footer__title footer__link">Privacy Policy</a>
                     </div>
                 </div>
 
                 <!-- Terms of Use -->
-                <div class="col d-flex justify-content-center">
+                <div class="col-sm-auto col-12 me-5 mb-4 d-flex justify-content-lg-start justify-content-sm-center">
                     <div class="footer__item d-flex flex-column">
                         <a href="#!" class="footer__title footer__link">Terms of Use</a>
                     </div>
                 </div>
 
                 <!-- Language -->
-                <div class="col d-flex justify-content-center align-items-start">
+                <div
+                    class="col-sm-auto col-12 me-5 mb-4 d-flex  justify-content-lg-start justify-content-sm-center align-items-start">
                     <div class="footer__item d-flex align-items-center">
                         <select class="footer__select">
                             <option value="En">En</option>

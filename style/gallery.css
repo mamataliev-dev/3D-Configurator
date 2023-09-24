@@ -1,9 +1,7 @@
 /* Gallery */
 .gallery {
     margin-top: 20px;
-    margin-bottom: 20px;
-
-    overflow-x: hidden;
+    margin-bottom: 80px;
 }
 
 .gallery__grid {
@@ -67,6 +65,34 @@
     padding: 10px 20px;
     background: var(--signin-blue);
     color: var(--main-white);
+}
+
+.gallery__grid-mobile {
+    display: none;
+}
+
+@media(max-width: 480px) {
+    .gallery {
+        margin-bottom: 80px;
+    }
+
+    .gallery__grid-mobile {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 30px;
+    }
+
+    .gallery__grid {
+        display: none;
+    }
+
+    .gallery__grid-bottom {
+        display: none;
+    }
+
+    .gallery__btn {
+        font-size: 12px;
+    }
 }
 
 /* Gallery */

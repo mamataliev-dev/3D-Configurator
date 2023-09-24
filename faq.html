@@ -28,30 +28,22 @@
         <nav class="mynav navbar navbar-expand-lg navbar-light bg-none">
             <div class="container-xxl">
                 <h3 class="h3">
-                    <a class="mynav__brand navbar-brand" href="./index.html">Site</a>
+                    <a class="mynav__brand navbar-brand" href="./user.html">Site</a>
                 </h3>
 
-                <button class="menu-burger-btn navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <ul class="mynav__list navbar-nav d-flex flex-row align-items-center ms-auto">
+                    <li class="nav-item">
+                        <a class="mynav__link nav-link" href="./about.html">About us</a>
+                    </li>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="mynav__list navbar-nav d-flex align-items-center mb-2 mb-lg-0 ms-auto">
-                        <li class="nav-item">
-                            <a class="mynav__link nav-link" href="./about.html">About us</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="mynav__link nav-link" href="./contact.html">Contact Us</a>
+                    </li>
 
-                        <li class="nav-item">
-                            <a class="mynav__link nav-link" href="./contact.html">Contact Us</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <button class="mynav__link user-btn">User name</button>
-                        </li>
-                    </ul>
-                </div>
+                    <li class="nav-item">
+                        <button class="mynav__link user-btn">User name</button>
+                    </li>
+                </ul>
             </div>
         </nav>
 
@@ -59,22 +51,24 @@
         <div class="second-nav">
             <div class="container-xxl second-nav-container">
                 <div class="d-flex align-items-center">
-                    <img class="second-nav__icon" src="./img/icons/go-back.svg" alt="">
+                    <a href="./user.html">
+                        <img class="second-nav__icon" src="./img/icons/go-back.svg" alt="">
+                    </a>
 
-                    <a class="second-nav__logo ms-3" href="#!">Logo</a>
+                    <a class="second-nav__logo ms-3" href="./user.html">Logo</a>
                 </div>
 
                 <ul class="second-nav__list">
                     <li class="second-nav__item">
-                        <a class="second-nav__link" href="#!">About us</a>
+                        <a class="second-nav__link" href="./about.html">About us</a>
                     </li>
 
                     <li class="second-nav__item">
-                        <a class="second-nav__link" href="#!">Contact Us</a>
+                        <a class="second-nav__link" href="./contact.html">Contact Us</a>
                     </li>
 
                     <li class="second-nav__item">
-                        <a class="second-nav__link" href="#!">User info</a>
+                        <button class="second-nav__link second-nav-btn">User info</button>
                     </li>
                 </ul>
             </div>
@@ -108,49 +102,80 @@
             </div>
         </div>
 
+        <!-- Second Nav Drop Down List -->
+        <div class="second-blackout second-nav-drop-down-blackout">
+            <div class="second-nav-drop-down">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="drop-down__link nav-link mb-1" href="./gallery.html">My gallery</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="drop-down__link nav-link mb-1" href="./profile.html">Profile</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="drop-down__link nav-link mb-1" href="./faq.html">FAQ</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="drop-down__link nav-link mb-1" href="./logout.html">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
         <!-- FAQ -->
         <div class="faq">
-            <h2 class="faq__title h2 mb-5">FAQ</h2>
+            <div class="container-xxl">
+                <h2 class="faq__title h2 mb-5">FAQ</h2>
 
-            <div class="faq__section mb-4 d-flex flex-column">
-                <h4 class="faq__section_title h4">Lorem ipsum dolor sit amet consectetur?</h4>
-                <p class="faq__section_desc">
-                    Lorem ipsum dolor sit amet consectetur. Risus enim etiam viverra leo pretium.
-                    Rhoncus nunc integer consequat ac molestie id nibh ullamcorper diam. Sit eu in sagittis turpis ac
-                    proin
-                    dolor mauris amet.
-                </p>
-            </div>
+                <div class="faq__section mb-4 d-flex flex-column">
+                    <h4 class="faq__section_title h4">Lorem ipsum dolor sit amet consectetur?</h4>
+                    <p class="faq__section_desc">
+                        Lorem ipsum dolor sit amet consectetur. Risus enim etiam viverra leo pretium.
+                        Rhoncus nunc integer consequat ac molestie id nibh ullamcorper diam. Sit eu in sagittis turpis
+                        ac
+                        proin
+                        dolor mauris amet.
+                    </p>
+                </div>
 
-            <div class="faq__section mb-4 d-flex flex-column">
-                <h4 class="faq__section_title h4">Lorem ipsum dolor sit amet consectetur?</h4>
-                <p class="faq__section_desc">
-                    Lorem ipsum dolor sit amet consectetur. Odio sed velit lorem et. Risus in diam sed pellentesque non
-                    ut
-                    placerat massa. Nunc donec diam phasellus in pulvinar facilisis cras. Hac commodo quisque dignissim
-                    nascetur rhoncus ac habitant diam. Augue scelerisque consequat fusce cum.
-                </p>
-            </div>
+                <div class="faq__section mb-4 d-flex flex-column">
+                    <h4 class="faq__section_title h4">Lorem ipsum dolor sit amet consectetur?</h4>
+                    <p class="faq__section_desc">
+                        Lorem ipsum dolor sit amet consectetur. Odio sed velit lorem et. Risus in diam sed pellentesque
+                        non
+                        ut
+                        placerat massa. Nunc donec diam phasellus in pulvinar facilisis cras. Hac commodo quisque
+                        dignissim
+                        nascetur rhoncus ac habitant diam. Augue scelerisque consequat fusce cum.
+                    </p>
+                </div>
 
-            <div class="faq__section mb-4 d-flex flex-column">
-                <h4 class="faq__section_title h4">Lorem ipsum dolor sit amet consectetur?</h4>
-                <p class="faq__section_desc">
-                    Lorem ipsum dolor sit amet consectetur. Ut et urna a amet at mattis odio. Nec non ultricies velit
-                    donec
-                    libero viverra urna.
-                </p>
-            </div>
+                <div class="faq__section mb-4 d-flex flex-column">
+                    <h4 class="faq__section_title h4">Lorem ipsum dolor sit amet consectetur?</h4>
+                    <p class="faq__section_desc">
+                        Lorem ipsum dolor sit amet consectetur. Ut et urna a amet at mattis odio. Nec non ultricies
+                        velit
+                        donec
+                        libero viverra urna.
+                    </p>
+                </div>
 
-            <div class="faq__section mb-4 d-flex flex-column">
-                <h4 class="faq__section_title h4">Lorem ipsum dolor sit amet consectetur?</h4>
-                <p class="faq__section_desc">
-                    Lorem ipsum dolor sit amet consectetur. Sed etiam egestas phasellus in gravida. Varius fermentum non
-                    accumsan duis tellus. Volutpat nunc donec leo odio in tellus integer. Habitant mauris diam et lectus
-                    at.
-                    Facilisis lacus dui magna ornare enim in massa. Porta lorem enim eu turpis viverra ultrices
-                    malesuada
-                    diam. Elementum tincidunt aliquet blandit convallis.
-                </p>
+                <div class="faq__section mb-4 d-flex flex-column">
+                    <h4 class="faq__section_title h4">Lorem ipsum dolor sit amet consectetur?</h4>
+                    <p class="faq__section_desc">
+                        Lorem ipsum dolor sit amet consectetur. Sed etiam egestas phasellus in gravida. Varius fermentum
+                        non
+                        accumsan duis tellus. Volutpat nunc donec leo odio in tellus integer. Habitant mauris diam et
+                        lectus
+                        at.
+                        Facilisis lacus dui magna ornare enim in massa. Porta lorem enim eu turpis viverra ultrices
+                        malesuada
+                        diam. Elementum tincidunt aliquet blandit convallis.
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -190,7 +215,7 @@
         <div class="container-xxl">
             <div class="row d-flex flex-wrap">
                 <!-- Contact -->
-                <div class="col-md-3">
+                <div class="col-sm-auto col-12 me-5 mb-4">
                     <div class="footer__item d-flex flex-column">
                         <span class="footer__title mb-3">Contact</span>
 
@@ -207,7 +232,7 @@
                 </div>
 
                 <!-- Addresses -->
-                <div class="col-md-2">
+                <div class="col-sm-auto col-12 me-5 mb-4">
                     <div class="footer__item d-flex flex-column">
                         <span class="footer__title mb-3">Addresses</span>
 
@@ -216,7 +241,7 @@
                 </div>
 
                 <!-- Follow us on -->
-                <div class="col d-flex justify-content-center">
+                <div class="col-sm-auto col-12 me-5 mb-4 d-flex justify-content-lg-start justify-content-sm-center">
                     <div class="footer__item d-flex flex-column">
                         <span class="footer__title mb-3">Follow us on</span>
                         <a href="#!" class="footer__link mb-2">Facebook</a>
@@ -226,21 +251,22 @@
                 </div>
 
                 <!-- Privacy Policy -->
-                <div class="col d-flex justify-content-center">
+                <div class="col-sm-auto col-12 me-5 mb-4 d-flex justify-content-lg-start justify-content-sm-center">
                     <div class="footer__item d-flex flex-column">
                         <a href="#!" class="footer__title footer__link">Privacy Policy</a>
                     </div>
                 </div>
 
                 <!-- Terms of Use -->
-                <div class="col d-flex justify-content-center">
+                <div class="col-sm-auto col-12 me-5 mb-4 d-flex justify-content-lg-start justify-content-sm-center">
                     <div class="footer__item d-flex flex-column">
                         <a href="#!" class="footer__title footer__link">Terms of Use</a>
                     </div>
                 </div>
 
                 <!-- Language -->
-                <div class="col d-flex justify-content-center align-items-start">
+                <div
+                    class="col-sm-auto col-12 me-5 mb-4 d-flex  justify-content-lg-start justify-content-sm-center align-items-start">
                     <div class="footer__item d-flex align-items-center">
                         <select class="footer__select">
                             <option value="En">En</option>

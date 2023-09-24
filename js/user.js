@@ -1,4 +1,4 @@
-// * Swiper Carousel
+// Swiper Carousel
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: "auto",
     spaceBetween: 30,
@@ -18,23 +18,33 @@ var swiper = new Swiper(".mySwiper", {
 var mynavDropDown = document.querySelector('.mynav-drop-down')
 var userBtn = document.querySelector('.user-btn')
 var blackout = document.querySelector('.blackout')
+var secondBlackout = document.querySelector('.second-blackout')
+var secondNavBtn = document.querySelector('.second-nav-btn')
+var secondDropDown = document.querySelector('.second-nav-drop-down')
+
+secondNavBtn.addEventListener('click', () => {
+    secondDropDown.classList.add('open')
+    secondBlackout.classList.add('active')
+})
 
 userBtn.addEventListener('click', () => {
     mynavDropDown.classList.add('open')
     blackout.classList.add('active')
 })
 
-document.querySelector('click', (event) => {
-    if (event.target.classList.contains('body')) {
-        mynavDropDown.classList.remove('open')
-        blackout.classList.remove('active')
-    }
-})
-
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('blackout')) {
         blackout.classList.remove('active')
         mynavDropDown.classList.remove('open')
+    } else {
+        console.log();
+    }
+})
+
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('second-blackout')) {
+        secondDropDown.classList.remove('open')
+        secondBlackout.classList.remove('active')
     } else {
         console.log();
     }

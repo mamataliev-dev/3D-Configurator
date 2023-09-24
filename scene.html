@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="./style/profile.css">
+    <link rel="stylesheet" href="./style/scene.css">
 
     <!-- Style Base -->
     <link rel="stylesheet" href="./style/base.css">
@@ -28,10 +28,10 @@
         <nav class="mynav navbar navbar-expand-lg navbar-light bg-none">
             <div class="container-xxl">
                 <h3 class="h3">
-                    <a class="mynav__brand navbar-brand" href="./user.html">Site</a>
+                    <a class="mynav__brand navbar-brand" href="./index.html">Site</a>
                 </h3>
 
-                <ul class="mynav__list navbar-nav d-flex flex-row align-items-center mb-2 mb-lg-0 ms-auto">
+                <ul class="mynav__list navbar-nav d-flex flex-row align-items-center ms-auto">
                     <li class="nav-item">
                         <a class="mynav__link nav-link" href="./about.html">About us</a>
                     </li>
@@ -41,7 +41,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <button class="mynav__link user-btn">User name</button>
+                        <a href="#!" class="mynav__link nav-link user-btn">User name</a>
                     </li>
                 </ul>
             </div>
@@ -126,62 +126,105 @@
             </div>
         </div>
 
-        <!-- Profile settings -->
-        <div class="profile">
-            <div class="container-xxl">
-                <h2 class="profile__title h2 mb-5">Profile settings</h2>
+        <!-- Scene -->
+        <div class="scene">
+            <!-- Order Menu -->
+            <div class="order">
+                <div class="order__menu">
+                    <button class="move-up">
+                        <img src="./img/icons/move-up.svg" alt="move-up">
+                    </button>
 
-                <form class="profile__form">
-                    <div class="profile__form_top d-flex flex-column mb-5">
-                        <label class="profile__form_label mb-2">Name</label>
-                        <input class="profile__form_input mb-4" type="text" placeholder="John">
+                    <span class="order__count ms-2">4 items</span>
 
-                        <label class="profile__form_label mb-2">Email</label>
-                        <input class="profile__form_input" type="email" placeholder="fantom@gmail.com">
+                    <button class="order__btn ms-3">Order</button>
+                </div>
+
+                <div class="order__list">
+                    <div class="order__item d-flex flex-column">
+                        <span class="order__item_title">Vanity</span>
+                        <span class="order__item_price">$100.00</span>
                     </div>
 
-                    <div class="profile__form_center d-flex flex-column mb-5">
-                        <label class="profile__form_label mb-2">Change password</label>
-                        <input class="profile__form_input mb-4" type="text" placeholder="New password">
-                        <input class="profile__form_input" type="text" placeholder="Confirm password">
+                    <div class="order__item d-flex flex-column">
+                        <span class="order__item_title">Faucet</span>
+                        <span class="order__item_price">$129.00</span>
                     </div>
 
-                    <div class="profile__form_bottom d-flex">
-                        <button class="profile__form_btn me-3 profile__form-cansel">Cansel</button>
-                        <button class="profile__form_btn profile__form-save">Save changes</button>
+                    <div class="order__item d-flex flex-column">
+                        <span class="order__item_title">Sink</span>
+                        <span class="order__item_price">$1436.00</span>
                     </div>
-                </form>
+
+                    <div class="order__item d-flex flex-column">
+                        <span class="order__item_title">Shower base</span>
+                        <span class="order__item_price">$3099.00</span>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <!-- Chat Modal-->
-        <img class="open-chat-btn" src="./img/icons/Support chat.png" alt="Open Chat">
+            <!-- Custom Menu -->
+            <div class="custom d-flex align-items-start">
+                <button class="custom-btn">
+                    <img src="./img/icons/Pencil.svg" alt="">
+                </button>
 
-        <div class="chat-popup">
-            <form class="chat-popup__container">
-                <div class="chat-popup__top d-flex justify-content-between align-items-center">
-                    <div>
-                        <img class="chat-popup__img me-3" src="./img/chat-img.png" alt="">
-                        <span>Alice</span>
+                <div class="custom__items d-flex flex-column">
+                    <div class="custom__item">
+                        <img src="./img/wall-patter.png" alt="">
+                        <span class="custom__item_title">Wall pattern</span>
+                        <button class="custom-item-btn-wall-patter">
+                            <img src="./img/icons/open-custom.svg" alt="">
+                        </button>
                     </div>
 
-                    <button class="chat-popup-btn-close">
-                        <img class="chat-popup-btn" src="./img/icons/chat-cancel.svg" alt="">
-                    </button>
-                </div>
+                    <div class="custom__item">
+                        <img src="./img/floor.png" alt="">
+                        <span class="custom__item_title">Floor</span>
+                        <button class="custom-item-btn-floor">
+                            <img src="./img/icons/open-custom.svg" alt="">
+                        </button>
+                    </div>
 
-                <div class="chat-popup__messages">
-                    <span class="chat-popup__message_txt mb-2">Hello. How can I help you?</span>
+                    <div class="custom__item">
+                        <img src="./img/objects.png" alt="">
+                        <span class="custom__item_title">Objects</span>
+                        <button class="custom-item-btn-objects">
+                            <img src="./img/icons/open-custom.svg" alt="">
+                        </button>
+                    </div>
                 </div>
+            </div>
 
-                <div class="chat-popup__text">
-                    <input class="chat-popup__text_input" type="text" placeholder="Message">
+            <!-- Options Menu -->
+            <div class="options d-flex flex-column">
+                <!-- Save -->
+                <button class="options-btn-save">
+                    <img src="./img/icons/Heart.svg" alt="Save">
+                </button>
 
-                    <button class="chat-popup-send-btn">
-                        <img class="chat-popup__text_icon" src="./img/icons/Send.svg" alt="Send">
-                    </button>
-                </div>
-            </form>
+                <!-- 3D View -->
+                <button class="options-btn-3d">
+                    <img src="./img/icons/Rotation.svg" alt="3D View">
+                </button>
+
+                <!-- Download -->
+                <button class="options-btn-download">
+                    <img src="./img/icons/Download.svg" alt="Download">
+                </button>
+
+                <!-- Print -->
+                <button class="options-btn-print">
+                    <img src="./img/icons/Printer.svg" alt="Print">
+                </button>
+
+                <!-- Share -->
+                <button class="options-btn-share">
+                    <img src="./img/icons/Share.svg" alt="Share">
+                </button>
+            </div>
+
+            <img src="./img/scene-bg.jpg" alt="">
         </div>
     </main>
 
@@ -264,7 +307,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <!-- JS -->
-    <script src="./js/user.js"></script>
+    <script src="./js/scene.js"></script>
 </body>
 
 </html>

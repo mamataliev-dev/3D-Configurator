@@ -1,0 +1,137 @@
+.options {
+    background: var(--main-white);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 20px;
+
+    position: absolute;
+    top: 25%;
+    left: 0%;
+    transform: translate(0%, -25%);
+    row-gap: 30px;
+}
+
+.order__menu {
+    position: absolute;
+    bottom: 20px;
+    left: 80px;
+
+    border-radius: 500px;
+    background: var(--main-white);
+    padding: 6px 10px 6px 22px;
+    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.05);
+}
+
+.order__count {
+    font-weight: 600;
+    color: var(--signin-blue);
+}
+
+.order__btn {
+    font-weight: 600;
+    border-radius: 53px;
+    background: var(--main-orange);
+    padding: 10px 24px;
+    color: var(--signin-blue);
+}
+
+.move-up.down {
+    transform: rotate(180deg);
+    transition: all .3s ease;
+}
+
+.order__list {
+    position: absolute;
+    bottom: 90px;
+    left: 80px;
+    transform: translateY(500px);
+    transition: all .3s ease;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    width: 234px;
+    border-radius: 12px;
+    padding: 12px 30px 12px 24px;
+    background: var(--main-white);
+    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.05);
+}
+
+.order__list.open {
+    transform: translateY(0px);
+}
+
+.order__item_title {
+    color: var(--main-black);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.order__item_price {
+    color: var(--main-black);
+}
+
+.move-down {
+    display: none;
+}
+
+.custom {
+    position: absolute;
+    top: 25%;
+    right: -34.4%;
+    transform: translate(0%, -25%);
+    transition: all .3s ease;
+}
+
+.custom.open {
+    right: 0;
+}
+
+.custom__items {
+    width: 354px;
+    padding: 22px;
+    border-bottom-left-radius: 12px;
+    background: rgba(245, 245, 245, 0.80);
+    row-gap: 16px;
+}
+
+.custom__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 310px;
+    border-radius: 12px;
+    padding-right: 30px;
+    background: var(--main-white);
+    box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.05);
+}
+
+.custom__item_title {
+    color: var(--main-black);
+}
+
+.custom-item-btn-wall-patter {
+    transition: all .3s ease;
+}
+
+.custom-item-btn-wall-patter.down {
+    transform: rotate(90deg);
+}
+
+.custom-item-btn-floor {
+    transition: all .3s ease;
+}
+
+.custom-item-btn-floor.down {
+    transform: rotate(90deg);
+}
+
+.custom-item-btn-objects {
+    transition: all .3s ease;
+}
+
+.custom-item-btn-objects.down {
+    transform: rotate(90deg);
+}
