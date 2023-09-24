@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="./style/user.css">
+    <link rel="stylesheet" href="./style/profile.css">
 
     <!-- Style Base -->
     <link rel="stylesheet" href="./style/base.css">
@@ -31,19 +31,27 @@
                     <a class="mynav__brand navbar-brand" href="./index.html">Site</a>
                 </h3>
 
-                <ul class="mynav__list navbar-nav d-flex flex-row align-items-center ms-auto">
-                    <li class="nav-item">
-                        <a class="mynav__link nav-link" href="./about.html">About us</a>
-                    </li>
+                <button class="menu-burger-btn navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                    <li class="nav-item">
-                        <a class="mynav__link nav-link" href="./contact.html">Contact Us</a>
-                    </li>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="mynav__list navbar-nav d-flex align-items-center mb-2 mb-lg-0 ms-auto">
+                        <li class="nav-item">
+                            <a class="mynav__link nav-link" href="./about.html">About us</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a href="#!" class="mynav__link nav-link user-btn">User name</a>
-                    </li>
-                </ul>
+                        <li class="nav-item">
+                            <a class="mynav__link nav-link" href="./contact.html">Contact Us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="mynav__link user-btn">User name</button>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -73,7 +81,7 @@
         </div>
     </header>
 
-    <!-- Main -->
+
     <main class="main">
         <!-- Blackout -->
         <div class="blackout-white"></div>
@@ -101,27 +109,30 @@
             </div>
         </div>
 
-        <!-- Carousel -->
-        <div class="carousel swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img class="carousel__img" src="./img/main-black.jpg" alt="kitchen-black">
-                    <h1 class="carousel__title h1">Kitchen Black</h1>
+        <!-- Profile settings -->
+        <div class="profile">
+            <h2 class="profile__title h2 mb-5">Profile settings</h2>
+
+            <form class="profile__form">
+                <div class="profile__form_top d-flex flex-column mb-5">
+                    <label class="profile__form_label mb-2">Name</label>
+                    <input class="profile__form_input mb-4" type="text" placeholder="John">
+
+                    <label class="profile__form_label mb-2">Email</label>
+                    <input class="profile__form_input" type="email" placeholder="fantom@gmail.com">
                 </div>
 
-                <div class="swiper-slide">
-                    <img class="carousel__img" src="./img/main-red.jpg" alt="kitchen-red">
-                    <h1 class="carousel__title h1">Kitchen Red</h1>
+                <div class="profile__form_center d-flex flex-column mb-5">
+                    <label class="profile__form_label mb-2">Change password</label>
+                    <input class="profile__form_input mb-4" type="text" placeholder="New password">
+                    <input class="profile__form_input" type="text" placeholder="Confirm password">
                 </div>
 
-                <div class="swiper-slide">
-                    <img class="carousel__img" src="./img/main-gray.png" alt="kitchen-gray">
-                    <h1 class="carousel__title h1">Kitchen Gray</h1>
+                <div class="profile__form_bottom d-flex">
+                    <button class="profile__form_btn me-3 profile__form-cansel">Cansel</button>
+                    <button class="profile__form_btn profile__form-save">Save changes</button>
                 </div>
-            </div>
-
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            </form>
         </div>
 
         <!-- Chat Modal-->

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/gallery.css">
 
     <!-- Style Base -->
     <link rel="stylesheet" href="./style/base.css">
@@ -39,11 +39,6 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="mynav__list navbar-nav d-flex align-items-center mb-2 mb-lg-0 ms-auto">
-                        <div class="position-relative">
-                            <input class="mynav__input ms-auto" type="text" placeholder="Search">
-                            <img class="mynav__search-icon" src="./img/icons/search.svg" alt="Search">
-                        </div>
-
                         <li class="nav-item">
                             <a class="mynav__link nav-link" href="./about.html">About us</a>
                         </li>
@@ -53,11 +48,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <button class="mynav__btn mynav__btn-login sign-in-btn">Log in</button>
-                        </li>
-
-                        <li class="nav-item">
-                            <button class="mynav__btn mynav__btn-signup sign-up-btn">Sign up</button>
+                            <button class="mynav__link user-btn">User name</button>
                         </li>
                     </ul>
                 </div>
@@ -95,55 +86,175 @@
         <!-- Blackout -->
         <div class="blackout-white"></div>
 
-        <!-- Carousel -->
-        <div class="carousel swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img class="carousel__img" src="./img/main-black.jpg" alt="kitchen-black">
-                    <h1 class="carousel__title h1">Kitchen Black</h1>
-                </div>
+        <!-- Drop Down List -->
+        <div class="blackout drop-down-blackout">
+            <div class="mynav-drop-down">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="drop-down__link nav-link mb-1" href="./gallery.html">My gallery</a>
+                    </li>
 
-                <div class="swiper-slide">
-                    <img class="carousel__img" src="./img/main-red.jpg" alt="kitchen-red">
-                    <h1 class="carousel__title h1">Kitchen Red</h1>
-                </div>
+                    <li class="nav-item">
+                        <a class="drop-down__link nav-link mb-1" href="./profile.html">Profile</a>
+                    </li>
 
-                <div class="swiper-slide">
-                    <img class="carousel__img" src="./img/main-gray.png" alt="kitchen-gray">
-                    <h1 class="carousel__title h1">Kitchen Gray</h1>
-                </div>
-            </div>
+                    <li class="nav-item">
+                        <a class="drop-down__link nav-link mb-1" href="./faq.html">FAQ</a>
+                    </li>
 
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
-
-        <!-- Sign In-->
-        <div class="blackout">
-            <div class="signin">
-                <button class="sign-in-close ms-auto mb-auto">
-                    <img src="./img/icons/Cancel.svg" alt="close">
-                </button>
-
-                <div class="signin__content d-flex flex-column align-items-center mb-auto">
-                    <h4 class="signin__title h4 mb-5">Sign In</h4>
-
-                    <form class="signin__form d-flex flex-column mb-4">
-                        <input class="signin__form_input sign-in-email mb-2" type="text" required
-                            placeholder="Email or phone number">
-                        <input class="signin__form_input sign-in-password mb-3" type="password" required
-                            placeholder="Password">
-                        <button class="signin__form_btn sign-in-submit">Log In</button>
-                    </form>
-
-                    <span class="signin__form_signup">
-                        New user?
-                        <a href="./signup.html" class="signin__form_signup-link">Sign up</a>
-                    </span>
-                </div>
+                    <li class="nav-item">
+                        <a class="drop-down__link nav-link mb-1" href="./logout.html">Log out</a>
+                    </li>
+                </ul>
             </div>
         </div>
 
+        <!-- Gallery -->
+        <div class="gallery">
+            <div class="container-xxl">
+                <h2 class="gallery__title h2 mb-4">My Gallary</h2>
+
+                <div class="gallery__grid">
+                    <div class="gallery__item">
+                        <img class="gallery__img mb-2" src="./img/galarry1.jpg" alt="Bath">
+
+                        <div class="gallery__cont">
+
+                            <h3 class="gallery__item_title mb-3">Bath</h3>
+
+                            <div class="gallery__desc d-flex flex-column">
+                                <span class="gallery__accessors">1x something</span>
+                                <span class="gallery__accessors">2x something</span>
+                                <span class="gallery__accessors">1x something + light</span>
+                            </div>
+
+                            <button class="gallery__btn">Check out</button>
+                        </div>
+                    </div>
+
+                    <div class="gallery__item">
+                        <img class="gallery__img mb-2" src="./img/galarry2.jpg" alt="Living room">
+
+                        <div class="gallery__cont">
+
+                            <h3 class="gallery__item_title mb-3">Living room</h3>
+
+                            <div class="gallery__desc d-flex flex-column">
+                                <span class="gallery__accessors">1x something</span>
+                                <span class="gallery__accessors">2x something</span>
+                                <span class="gallery__accessors">1x something + light</span>
+                            </div>
+
+                            <button class="gallery__btn">Check out</button>
+                        </div>
+                    </div>
+
+                    <div class="gallery__item">
+                        <img class="gallery__img mb-2" src="./img/galarry3.jpg" alt="Living room">
+
+                        <div class="gallery__cont">
+
+                            <h3 class="gallery__item_title mb-3">Living room</h3>
+
+                            <div class="gallery__desc d-flex flex-column">
+                                <span class="gallery__accessors">1x something</span>
+                                <span class="gallery__accessors">2x something</span>
+                                <span class="gallery__accessors">1x something + light</span>
+                            </div>
+
+                            <button class="gallery__btn">Check out</button>
+                        </div>
+                    </div>
+
+                    <div class="gallery__item">
+                        <img class="gallery__img mb-2" src="./img/galarry4.jpg" alt="Bed">
+
+                        <div class="gallery__cont">
+
+                            <h3 class="gallery__item_title mb-3">Bed</h3>
+
+                            <div class="gallery__desc d-flex flex-column">
+                                <span class="gallery__accessors">1x something</span>
+                                <span class="gallery__accessors">2x something</span>
+                                <span class="gallery__accessors">1x something + light</span>
+                            </div>
+
+                            <button class="gallery__btn">Check out</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery__grid-bottom">
+                    <div class="gallery__item">
+                        <img class="gallery__img mb-2" src="./img/galarry5.jpg" alt="Living Room">
+
+                        <div class="gallery__cont">
+
+                            <h3 class="gallery__item_title mb-3">Living Room</h3>
+
+                            <div class="gallery__desc d-flex flex-column">
+                                <span class="gallery__accessors">1x something</span>
+                                <span class="gallery__accessors">2x something</span>
+                                <span class="gallery__accessors">1x something + light</span>
+                            </div>
+
+                            <button class="gallery__btn">Check out</button>
+                        </div>
+                    </div>
+
+                    <div class="gallery__item">
+                        <img class="gallery__img mb-2" src="./img/galarry6.jpg" alt="Living room">
+
+                        <div class="gallery__cont">
+
+                            <h3 class="gallery__item_title mb-3">Living room</h3>
+
+                            <div class="gallery__desc d-flex flex-column">
+                                <span class="gallery__accessors">1x something</span>
+                                <span class="gallery__accessors">2x something</span>
+                                <span class="gallery__accessors">1x something + light</span>
+                            </div>
+
+                            <button class="gallery__btn">Check out</button>
+                        </div>
+                    </div>
+
+                    <div class="gallery__item">
+                        <img class="gallery__img mb-2" src="./img/galarry7.jpg" alt="Living room">
+
+                        <div class="gallery__cont">
+
+                            <h3 class="gallery__item_title mb-3">Living room</h3>
+
+                            <div class="gallery__desc d-flex flex-column">
+                                <span class="gallery__accessors">1x something</span>
+                                <span class="gallery__accessors">2x something</span>
+                                <span class="gallery__accessors">1x something + light</span>
+                            </div>
+
+                            <button class="gallery__btn">Check out</button>
+                        </div>
+                    </div>
+
+                    <div class="gallery__item">
+                        <img class="gallery__img mb-2" src="./img/galarry8.jpg" alt="Bed">
+
+                        <div class="gallery__cont">
+
+                            <h3 class="gallery__item_title mb-3">Bed</h3>
+
+                            <div class="gallery__desc d-flex flex-column">
+                                <span class="gallery__accessors">1x something</span>
+                                <span class="gallery__accessors">2x something</span>
+                                <span class="gallery__accessors">1x something + light</span>
+                            </div>
+
+                            <button class="gallery__btn">Check out</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Chat Modal-->
         <img class="open-chat-btn" src="./img/icons/Support chat.png" alt="Open Chat">
@@ -245,7 +356,6 @@
     </footer>
 
 
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
@@ -255,7 +365,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <!-- JS -->
-    <script src="./js/script.js"></script>
+    <script src="./js/user.js"></script>
 </body>
 
 </html>

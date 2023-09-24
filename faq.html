@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="./style/user.css">
+    <link rel="stylesheet" href="./style/faq.css">
 
     <!-- Style Base -->
     <link rel="stylesheet" href="./style/base.css">
@@ -31,19 +31,27 @@
                     <a class="mynav__brand navbar-brand" href="./index.html">Site</a>
                 </h3>
 
-                <ul class="mynav__list navbar-nav d-flex flex-row align-items-center ms-auto">
-                    <li class="nav-item">
-                        <a class="mynav__link nav-link" href="./about.html">About us</a>
-                    </li>
+                <button class="menu-burger-btn navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                    <li class="nav-item">
-                        <a class="mynav__link nav-link" href="./contact.html">Contact Us</a>
-                    </li>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="mynav__list navbar-nav d-flex align-items-center mb-2 mb-lg-0 ms-auto">
+                        <li class="nav-item">
+                            <a class="mynav__link nav-link" href="./about.html">About us</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a href="#!" class="mynav__link nav-link user-btn">User name</a>
-                    </li>
-                </ul>
+                        <li class="nav-item">
+                            <a class="mynav__link nav-link" href="./contact.html">Contact Us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="mynav__link user-btn">User name</button>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -73,7 +81,6 @@
         </div>
     </header>
 
-    <!-- Main -->
     <main class="main">
         <!-- Blackout -->
         <div class="blackout-white"></div>
@@ -101,27 +108,50 @@
             </div>
         </div>
 
-        <!-- Carousel -->
-        <div class="carousel swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img class="carousel__img" src="./img/main-black.jpg" alt="kitchen-black">
-                    <h1 class="carousel__title h1">Kitchen Black</h1>
-                </div>
+        <!-- FAQ -->
+        <div class="faq">
+            <h2 class="faq__title h2 mb-5">FAQ</h2>
 
-                <div class="swiper-slide">
-                    <img class="carousel__img" src="./img/main-red.jpg" alt="kitchen-red">
-                    <h1 class="carousel__title h1">Kitchen Red</h1>
-                </div>
-
-                <div class="swiper-slide">
-                    <img class="carousel__img" src="./img/main-gray.png" alt="kitchen-gray">
-                    <h1 class="carousel__title h1">Kitchen Gray</h1>
-                </div>
+            <div class="faq__section mb-4 d-flex flex-column">
+                <h4 class="faq__section_title h4">Lorem ipsum dolor sit amet consectetur?</h4>
+                <p class="faq__section_desc">
+                    Lorem ipsum dolor sit amet consectetur. Risus enim etiam viverra leo pretium.
+                    Rhoncus nunc integer consequat ac molestie id nibh ullamcorper diam. Sit eu in sagittis turpis ac
+                    proin
+                    dolor mauris amet.
+                </p>
             </div>
 
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="faq__section mb-4 d-flex flex-column">
+                <h4 class="faq__section_title h4">Lorem ipsum dolor sit amet consectetur?</h4>
+                <p class="faq__section_desc">
+                    Lorem ipsum dolor sit amet consectetur. Odio sed velit lorem et. Risus in diam sed pellentesque non
+                    ut
+                    placerat massa. Nunc donec diam phasellus in pulvinar facilisis cras. Hac commodo quisque dignissim
+                    nascetur rhoncus ac habitant diam. Augue scelerisque consequat fusce cum.
+                </p>
+            </div>
+
+            <div class="faq__section mb-4 d-flex flex-column">
+                <h4 class="faq__section_title h4">Lorem ipsum dolor sit amet consectetur?</h4>
+                <p class="faq__section_desc">
+                    Lorem ipsum dolor sit amet consectetur. Ut et urna a amet at mattis odio. Nec non ultricies velit
+                    donec
+                    libero viverra urna.
+                </p>
+            </div>
+
+            <div class="faq__section mb-4 d-flex flex-column">
+                <h4 class="faq__section_title h4">Lorem ipsum dolor sit amet consectetur?</h4>
+                <p class="faq__section_desc">
+                    Lorem ipsum dolor sit amet consectetur. Sed etiam egestas phasellus in gravida. Varius fermentum non
+                    accumsan duis tellus. Volutpat nunc donec leo odio in tellus integer. Habitant mauris diam et lectus
+                    at.
+                    Facilisis lacus dui magna ornare enim in massa. Porta lorem enim eu turpis viverra ultrices
+                    malesuada
+                    diam. Elementum tincidunt aliquet blandit convallis.
+                </p>
+            </div>
         </div>
 
         <!-- Chat Modal-->

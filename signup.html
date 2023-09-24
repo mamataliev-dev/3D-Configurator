@@ -40,15 +40,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="mynav__list navbar-nav d-flex align-items-center mb-2 mb-lg-0 ms-auto">
                         <li class="nav-item">
-                            <a class="mynav__link nav-link" aria-current="page" href="#">About us</a>
+                            <a class="mynav__link nav-link" href="./about.html">About us</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="mynav__link nav-link" aria-current="page" href="#">Contact Us</a>
+                            <a class="mynav__link nav-link" href="./contact.html">Contact Us</a>
                         </li>
 
                         <li class="nav-item">
-                            <button class="mynav__btn mynav__btn-login">Log in</button>
+                            <button class="mynav__btn mynav__btn-login sign-in-btn">Log in</button>
                         </li>
                     </ul>
                 </div>
@@ -81,7 +81,11 @@
         </div>
     </header>
 
-    <div class="wrapper">
+    <!-- Main -->
+    <main class="main wrapper">
+        <!-- Blackout -->
+        <div class="blackout-white"></div>
+
         <!-- Sign Up -->
         <div class="signup">
             <form class="signup d-flex flex-column mb-4">
@@ -100,7 +104,37 @@
             <h1 class="confirmation__title h1 mb-3">We sent an confirmation code to your email</h1>
             <h3 class="confirmation__subtitle h3">Please, confirm your registration</h3>
         </div>
-    </div>
+
+        <!-- Chat Modal-->
+        <img class="open-chat-btn" src="./img/icons/Support chat.png" alt="Open Chat">
+
+        <div class="chat-popup">
+            <form class="chat-popup__container">
+                <div class="chat-popup__top d-flex justify-content-between align-items-center">
+                    <div>
+                        <img class="chat-popup__img me-3" src="./img/chat-img.png" alt="">
+                        <span>Alice</span>
+                    </div>
+
+                    <button class="chat-popup-btn-close">
+                        <img class="chat-popup-btn" src="./img/icons/chat-cancel.svg" alt="">
+                    </button>
+                </div>
+
+                <div class="chat-popup__messages">
+                    <span class="chat-popup__message_txt mb-2">Hello. How can I help you?</span>
+                </div>
+
+                <div class="chat-popup__text">
+                    <input class="chat-popup__text_input" type="text" placeholder="Message">
+
+                    <button class="chat-popup-send-btn">
+                        <img class="chat-popup__text_icon" src="./img/icons/Send.svg" alt="Send">
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -113,12 +147,12 @@
 
                         <div class="footer__item_phone d-flex mb-2">
                             <span>Phone:</span>
-                            <a href="tel:+1 989 102 02 01" class="footer__link">+1 989 102 02 01</a>
+                            <a href="tel:+1 989 102 02 01" class="footer__link ms-2">+1 989 102 02 01</a>
                         </div>
 
                         <div class="footer__item_email d-flex">
                             <span>E-mail:</span>
-                            <a href="mailto:fantom@gmail.com" class="footer__link">fantom@gmail.com</a>
+                            <a href="mailto:fantom@gmail.com" class="footer__link ms-2">fantom@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -128,12 +162,12 @@
                     <div class="footer__item d-flex flex-column">
                         <span class="footer__title mb-3">Addresses</span>
 
-                        <a href="#!" class="footer__link">Tashkent, Bogʻishamol 6</a>
+                        <span>Tashkent, Bogʻishamol 6</span>
                     </div>
                 </div>
 
                 <!-- Follow us on -->
-                <div class="col">
+                <div class="col d-flex justify-content-center">
                     <div class="footer__item d-flex flex-column">
                         <span class="footer__title mb-3">Follow us on</span>
                         <a href="#!" class="footer__link mb-2">Facebook</a>
@@ -143,24 +177,27 @@
                 </div>
 
                 <!-- Privacy Policy -->
-                <div class="col">
+                <div class="col d-flex justify-content-center">
                     <div class="footer__item d-flex flex-column">
                         <a href="#!" class="footer__title footer__link">Privacy Policy</a>
                     </div>
                 </div>
 
                 <!-- Terms of Use -->
-                <div class="col">
+                <div class="col d-flex justify-content-center">
                     <div class="footer__item d-flex flex-column">
                         <a href="#!" class="footer__title footer__link">Terms of Use</a>
                     </div>
                 </div>
 
                 <!-- Language -->
-                <div class="col">
+                <div class="col d-flex justify-content-center align-items-start">
                     <div class="footer__item d-flex align-items-center">
-                        <span class="footer__title">English</span>
-                        <img src="./img/icons/move-down.svg" class="ms-2" width="10px" height="10px" alt="">
+                        <select class="footer__select">
+                            <option value="En">En</option>
+                            <option value="Ru">Ru</option>
+                        </select>
+
                     </div>
                 </div>
             </div>

@@ -1,7 +1,5 @@
-/* Fonts Inter */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Variables  */
 :root {
     --main-blue: #101F3C;
     --main-white: #F5F5F5;
@@ -12,18 +10,28 @@
     --orange: #F1AB86;
     --signin-blue: #2C4862;
     --signin-black: #202020;
+    --message-bg: #F7FFF6;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif !important;
     font-size: 14px;
     color: var(--main-white) !important;
     background: var(--main-light-blue) !important;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+}
+
+footer {
+    margin-top: auto;
 }
 
 
-/** Main Styles */
-/* Blackout */
+/** Blackout */
 .blackout {
     display: none;
 
@@ -40,7 +48,32 @@ body {
     display: block;
 }
 
-/* Navbar */
+/* Blackout */
+
+
+/** Blackout White */
+.blackout-white {
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 2;
+    background: rgba(245, 245, 245, 0.50);
+}
+
+.blackout-white.active {
+    display: block;
+}
+
+/* Blackout White */
+
+
+/** Navbar */
 .mynav {
     background: var(--main-blue);
     padding: 22px 0px 22px 0px !important;
@@ -54,8 +87,14 @@ body {
     border-radius: 12px;
     border: none;
     background: var(--search-bg);
+    color: var(--main-black);
+}
 
-    position: relative;
+.mynav__search-icon {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    transform: translate(-50%, 50%);
 }
 
 .mynav__input::before {
@@ -84,7 +123,7 @@ body {
 .mynav__link {
     color: var(--main-white) !important;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .mynav__btn {
@@ -105,7 +144,20 @@ body {
     color: var(--main-blue);
 }
 
-/* Second Nav */
+@media(max-width: 480px) {
+    .mynav {
+        padding: 10px 0px 10px 0px !important;
+    }
+
+    .mynav__link {
+        font-size: 10px !important;
+    }
+}
+
+/* NavBar */
+
+
+/** Second Nav */
 .second-nav {
     height: 50px;
     display: flex;
@@ -128,16 +180,48 @@ body {
 
 .second-nav__logo {
     color: var(--main-blue);
+    font-weight: 700;
+    font-size: 20px;
 }
 
 .second-nav__link {
-    color: var(--main-blue) !important;
+    color: var(--signin-blue) !important;
+    font-weight: 600;
+    font-size: 16px;
 }
 
-/* Footer */
+@media(max-width: 480px) {
+    .second-nav {
+        height: 38px;
+    }
+
+    .second-nav__link {
+        font-size: 10px;
+    }
+
+    .second-nav__logo {
+        font-size: 14px;
+    }
+
+    .second-nav__icon {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Second Nav */
+
+
+/** Footer */
 .footer {
     background: var(--main-blue);
     padding: 20px 0px;
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 50px;
 }
 
 .footer__link {
@@ -148,7 +232,147 @@ body {
     color: var(--main-light-blue);
 }
 
-/** Main Styles */
+.footer__select:hover,
+.footer__select:active,
+.footer__select:focus {
+    outline: none;
+    border: none;
+}
+
+/* Footer */
+
+
+/** Drop Down List */
+.drop-down-blackout {
+    background: transparent !important;
+    position: absolute !important;
+}
+
+.mynav-drop-down {
+    display: none;
+
+    position: absolute;
+    top: 70px;
+    right: 67px;
+    z-index: 10;
+
+    background: var(--main-white);
+    border-radius: 12px;
+    padding: 10px 20px;
+    width: 146px;
+}
+
+.mynav-drop-down.open {
+    display: block;
+}
+
+.drop-down__link {
+    color: var(--main-black) !important;
+}
+
+@media(max-width: 1280px) {
+    .mynav-drop-down {
+        top: 70px;
+        right: 7px;
+    }
+}
+
+/* Drop Down List */
+
+
+/** Chat Modal */
+.open-chat-btn {
+    width: 60px;
+    height: 49px;
+
+    position: absolute;
+    bottom: 183px;
+    right: 53px;
+    z-index: 5;
+}
+
+.chat-popup {
+    display: none;
+
+    position: absolute;
+    bottom: 179px;
+    right: 50px;
+    z-index: 10;
+
+    border-radius: 16px;
+    width: 308px;
+    height: 369px;
+    border: 16px;
+    background: var(--main-light-blue);
+}
+
+.chat-popup.open {
+    display: block;
+}
+
+.chat-popup__img {
+    width: 30px;
+    height: 30px;
+}
+
+.chat-popup-btn {
+    width: 14px;
+    height: 14px;
+}
+
+.chat-popup__top {
+    width: 308px;
+    height: 54px;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    padding: 12px 24px 12px 16px;
+    background: var(--signin-blue);
+}
+
+.chat-popup__messages {
+    margin-top: 30px;
+    padding: 0px 7px;
+}
+
+.chat-popup__message_txt {
+    color: var(--main-black);
+    background: var(--message-bg);
+    padding: 16px 10px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 16px;
+}
+
+.chat-popup__container {
+    position: relative;
+    min-height: 100%;
+}
+
+.chat-popup__text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 294px;
+    border-radius: 12px;
+    background: var(--main-white);
+    padding: 12px 16px;
+    margin: 8px 7px;
+}
+
+.chat-popup__text_input {
+    color: var(--main-black);
+
+    position: relative;
+}
+
+.chat-popup__text_icon {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(-50%, -50%);
+}
+
+/* Chat Modal */
 
 
 /* Reset and base styles  */
@@ -217,6 +441,11 @@ address {
 }
 
 /* Form */
+
+textarea:active,
+textarea:focus {
+    outline: none;
+}
 
 input,
 textarea,

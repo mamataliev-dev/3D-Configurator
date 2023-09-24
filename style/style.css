@@ -13,10 +13,14 @@
 }
 
 .swiper-button-next:after {
+    font-size: 20px !important;
+    color: var(--main-black);
     margin-right: 50px;
 }
 
 .swiper-button-prev:after {
+    font-size: 20px !important;
+    color: var(--main-black);
     margin-left: 50px;
 }
 

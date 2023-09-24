@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="./style/user.css">
+    <link rel="stylesheet" href="./style/about.css">
 
     <!-- Style Base -->
     <link rel="stylesheet" href="./style/base.css">
@@ -31,19 +31,27 @@
                     <a class="mynav__brand navbar-brand" href="./index.html">Site</a>
                 </h3>
 
-                <ul class="mynav__list navbar-nav d-flex flex-row align-items-center ms-auto">
-                    <li class="nav-item">
-                        <a class="mynav__link nav-link" href="./about.html">About us</a>
-                    </li>
+                <button class="menu-burger-btn navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                    <li class="nav-item">
-                        <a class="mynav__link nav-link" href="./contact.html">Contact Us</a>
-                    </li>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="mynav__list navbar-nav d-flex align-items-center mb-2 mb-lg-0 ms-auto">
+                        <li class="nav-item">
+                            <a class="mynav__link nav-link" href="./about.html">About us</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a href="#!" class="mynav__link nav-link user-btn">User name</a>
-                    </li>
-                </ul>
+                        <li class="nav-item">
+                            <a class="mynav__link nav-link" href="./contact.html">Contact Us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="mynav__link user-btn">User name</button>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
@@ -101,27 +109,69 @@
             </div>
         </div>
 
-        <!-- Carousel -->
-        <div class="carousel swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img class="carousel__img" src="./img/main-black.jpg" alt="kitchen-black">
-                    <h1 class="carousel__title h1">Kitchen Black</h1>
-                </div>
+        <!-- About -->
+        <div class="about">
+            <h2 class="about__title h2 mb-5">About us</h2>
 
-                <div class="swiper-slide">
-                    <img class="carousel__img" src="./img/main-red.jpg" alt="kitchen-red">
-                    <h1 class="carousel__title h1">Kitchen Red</h1>
-                </div>
-
-                <div class="swiper-slide">
-                    <img class="carousel__img" src="./img/main-gray.png" alt="kitchen-gray">
-                    <h1 class="carousel__title h1">Kitchen Gray</h1>
-                </div>
+            <div class="about__section mb-4 d-flex flex-column">
+                <h4 class="about__section_title h4">Lorem ipsum dolor sit amet consectetur?</h4>
+                <p class="about__section_desc">
+                    Lorem ipsum dolor sit amet consectetur. Eu placerat ullamcorper ac non et sem ut proin. Volutpat ut
+                    sit
+                    a ut. Etiam arcu accumsan lobortis facilisis et. Interdum pulvinar cursus aenean ac fusce neque.
+                    Dignissim eget egestas non tellus mollis pulvinar ultricies mus. Iaculis aliquet dignissim ut diam
+                    ut
+                    et. Nibh commodo mattis dui nulla est pharetra a dictumst faucibus. Integer id erat vitae lacinia
+                    orci
+                    cursus lorem vestibulum bibendum. At auctor neque morbi posuere. Et ac turpis placerat ultricies
+                    egestas
+                    consectetur. Sed pellentesque enim sit sagittis malesuada viverra pellentesque urna vulputate.
+                </p>
             </div>
 
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="about__section mb-4 d-flex flex-column">
+                <h4 class="about__section_title h4">Lorem ipsum dolor sit amet consectetur?</h4>
+                <p class="about__section_desc">
+                    Lorem ipsum dolor sit amet consectetur. Eu placerat ullamcorper ac non et sem ut proin. Volutpat ut
+                    sit
+                    a ut. Etiam arcu accumsan lobortis facilisis et. Interdum pulvinar cursus aenean ac fusce neque.
+                    Dignissim eget egestas non tellus mollis pulvinar ultricies mus. Iaculis aliquet dignissim ut diam
+                    ut
+                    et. Nibh commodo mattis dui nulla est pharetra a dictumst faucibus. Integer id erat vitae lacinia
+                    orci
+                    cursus lorem vestibulum bibendum. At auctor neque morbi posuere. Et ac turpis placerat ultricies
+                    egestas
+                    consectetur. Sed pellentesque enim sit sagittis malesuada viverra pellentesque urna vulputate.
+                </p>
+            </div>
+
+            <div class="about__section mb-4 d-flex flex-column">
+                <h4 class="about__section_title h4">Lorem ipsum dolor sit amet consectetur?</h4>
+                <p class="about__section_desc">
+                    Lorem ipsum dolor sit amet consectetur. Eu placerat ullamcorper ac non et sem ut proin. Volutpat ut
+                    sit
+                    a ut. Etiam arcu accumsan lobortis facilisis et. Interdum pulvinar cursus aenean ac fusce neque.
+                    Dignissim eget egestas non tellus mollis pulvinar ultricies mus. Iaculis aliquet dignissim ut diam
+                    ut
+                    et. Nibh commodo mattis dui nulla est pharetra a dictumst faucibus. Integer id erat vitae lacinia
+                    orci
+                    cursus lorem vestibulum bibendum. At auctor neque morbi posuere. Et ac turpis placerat ultricies
+                    egestas
+                    consectetur. Sed pellentesque enim sit sagittis malesuada viverra pellentesque urna vulputate.
+                </p>
+            </div>
+
+            <div class="about__section mb-4 d-flex flex-column">
+                <h4 class="about__section_title h4">Lorem ipsum dolor sit amet consectetur?</h4>
+                <p class="about__section_desc">
+                    Lorem ipsum dolor sit amet consectetur. Sed etiam egestas phasellus in gravida. Varius fermentum non
+                    accumsan duis tellus. Volutpat nunc donec leo odio in tellus integer. Habitant mauris diam et lectus
+                    at.
+                    Facilisis lacus dui magna ornare enim in massa. Porta lorem enim eu turpis viverra ultrices
+                    malesuada
+                    diam. Elementum tincidunt aliquet blandit convallis.
+                </p>
+            </div>
         </div>
 
         <!-- Chat Modal-->

@@ -50,34 +50,3 @@
 }
 
 /* Carousel */
-
-
-/* Drop Down List */
-.drop-down-blackout {
-    background: transparent !important;
-    position: absolute !important;
-}
-
-.mynav-drop-down {
-    display: none;
-
-    position: absolute;
-    top: 61px;
-    right: 50px;
-    z-index: 10;
-
-    background: var(--main-white);
-    padding: 10px 20px;
-    border-radius: 12px;
-    width: 146px;
-}
-
-.mynav-drop-down.open {
-    display: block;
-}
-
-.drop-down__link {
-    color: var(--main-black) !important;
-}
-
-/* Drop Down List */
