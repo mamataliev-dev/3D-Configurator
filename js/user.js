@@ -78,3 +78,13 @@ document.addEventListener('click', (e) => {
         console.log();
     }
 })
+
+
+// Open Scene 
+var carouselBtnStart = document.querySelectorAll('.carousel__btn-start')
+
+carouselBtnStart.forEach(element => {
+    element.addEventListener('click', () => {
+        window.location.href = '../scene.html';
+    })
+});

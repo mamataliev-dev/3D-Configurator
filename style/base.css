@@ -126,7 +126,7 @@ footer {
     display: none;
 
     color: var(--signin-blue);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     padding: 10px 24px;
     border-radius: 500px;
@@ -421,9 +421,10 @@ footer {
     width: 146px;
 }
 
-.mynav-drop-down.open {
+/** Display block if it's so important */
+/* .mynav-drop-down.open {
     display: block;
-}
+} */
 
 .drop-down__link {
     color: var(--main-black) !important;
