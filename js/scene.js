@@ -42,11 +42,52 @@ var optionsBtnPrint = document.querySelector('.options-btn-print')
 var optionsBtnShare = document.querySelector('.options-btn-share')
 var orderList = document.querySelector('.order__list')
 var moveUpBtn = document.querySelector('.move-up')
+
+// Custon Item Btns
 var customItemBtnWallPatter = document.querySelector('.custom-item-btn-wall-patter')
 var customItemBtnFloor = document.querySelector('.custom-item-btn-floor')
 var customItemBtnObjects = document.querySelector('.custom-item-btn-objects')
 var customBtn = document.querySelector('.custom-btn')
 var custom = document.querySelector('.custom')
+
+// Option Drop-Down Lists
+var customFloorList = document.querySelector('.custom-floor-list')
+var customObjectsList = document.querySelector('.custom-objects-list')
+var customWallPatternList = document.querySelector('.custom-wall-pattern-list')
+
+customItemBtnWallPatter.addEventListener('click', () => {
+    if (customFloorList.classList.contains('open') || customObjectsList.classList.contains('open')) {
+        customFloorList.classList.remove('open')
+        customObjectsList.classList.remove('open')
+
+        customWallPatternList.classList.toggle('open')
+    } else {
+        customWallPatternList.classList.toggle('open')
+    }
+})
+
+customItemBtnFloor.addEventListener('click', () => {
+    if (customWallPatternList.classList.contains('open') || customObjectsList.classList.contains('open')) {
+        customWallPatternList.classList.remove('open')
+        customObjectsList.classList.remove('open')
+
+        customFloorList.classList.toggle('open')
+    } else {
+        customFloorList.classList.toggle('open')
+    }
+})
+
+customItemBtnObjects.addEventListener('click', () => {
+    if (customWallPatternList.classList.contains('open') || customFloorList.classList.contains('open')) {
+        customWallPatternList.classList.remove('open')
+        customFloorList.classList.remove('open')
+
+        customObjectsList.classList.toggle('open')
+    } else {
+        customObjectsList.classList.toggle('open')
+    }
+})
+
 
 customBtn.addEventListener('click', () => {
     if (custom.classList.contains('open')) {
@@ -92,16 +133,7 @@ customItemBtnObjects.addEventListener('click', () => {
     }
 })
 
-
-optionsBtnSave.addEventListener('click', () => {
-    console.log('asd')
-})
-
 optionsBtn3d.addEventListener('click', () => {
-    console.log('asd')
-})
-
-optionsBtnDownload.addEventListener('click', () => {
     console.log('asd')
 })
 
@@ -109,6 +141,52 @@ optionsBtnPrint.addEventListener('click', () => {
     console.log('asd')
 })
 
+
+// Show Share Modal
+var closeShareModal = document.querySelectorAll('.close-share-modal')
+var blackout = document.querySelector('.share-blackout')
+var savedBlackout = document.querySelector('.saved-blackout')
+var closeSavedModal = document.querySelectorAll('.close-saved-modal')
+var checkOutSavedModal = document.querySelector('.check-out-saved-modal')
+var downloadModalBlackout = document.querySelector('.download-modal-blackout')
+var downloadModal = document.querySelector('.download-modal')
+
+optionsBtnDownload.addEventListener('click', () => {
+    downloadModalBlackout.classList.add('active')
+    downloadModal.classList.add('open')
+})
+
 optionsBtnShare.addEventListener('click', () => {
-    console.log('asd')
+    blackout.classList.add('active')
+})
+
+closeShareModal.forEach((e) => {
+    e.addEventListener('click', () => {
+        blackout.classList.remove('active')
+    })
+})
+
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('share-blackout') || e.target.classList.contains('saved-blackout') || e.target.classList.contains('download-modal-blackout')) {
+        blackout.classList.remove('active')
+        savedBlackout.classList.remove('active')
+        downloadModalBlackout.classList.remove('active')
+        downloadModal.classList.remove('open')
+    } else {
+        console.log();
+    }
+})
+
+optionsBtnSave.addEventListener('click', () => {
+    savedBlackout.classList.add('active')
+})
+
+closeSavedModal.forEach(element => {
+    element.addEventListener('click', () => {
+        savedBlackout.classList.remove('active')
+    })
+});
+
+checkOutSavedModal.addEventListener('click', () => {
+    window.location.href = '../gallery.html';
 })

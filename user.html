@@ -105,24 +105,26 @@
 
         <!-- Second Nav Drop Down List -->
         <div class="second-blackout second-nav-drop-down-blackout">
-            <div class="second-nav-drop-down">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="drop-down__link nav-link mb-1" href="./gallery.html">My gallery</a>
-                    </li>
+            <div class="container-xxl">
+                <div class="second-nav-drop-down">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="drop-down__link nav-link mb-1" href="./gallery.html">My gallery</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="drop-down__link nav-link mb-1" href="./profile.html">Profile</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="drop-down__link nav-link mb-1" href="./profile.html">Profile</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="drop-down__link nav-link mb-1" href="./faq.html">FAQ</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="drop-down__link nav-link mb-1" href="./faq.html">FAQ</a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="drop-down__link nav-link mb-1" href="./logout.html">Log out</a>
-                    </li>
-                </ul>
+                        <li class="nav-item">
+                            <a class="drop-down__link nav-link mb-1" href="./logout.html">Log out</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -130,33 +132,45 @@
         <div class="carousel swiper mySwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <picture>
-                        <source srcset="./img/main-black-mobile.jpg" media="(max-width: 480px)">
-                        <img class="carousel__img" src="./img/main-black.jpg" alt="kitchen-black">
-                    </picture>
+                    <a href="./scene-configurator.html">
+                        <picture>
+                            <source srcset="./img/main-black-mobile.jpg" media="(max-width: 480px)">
+                            <img class="carousel__img" src="./img/main-black.jpg" alt="kitchen-black">
+                        </picture>
+                    </a>
 
-                    <h1 class="carousel__title h1">Kitchen</h1>
-                    <button class="carousel__btn carousel__btn-start">Get started</button>
+                    <div class="container-xxl">
+                        <h1 class="carousel__title h1">Kitchen</h1>
+                        <button class="carousel__btn carousel__btn-start">Get started</button>
+                    </div>
                 </div>
 
                 <div class="swiper-slide">
-                    <picture>
-                        <source srcset="./img/main-red-mobile.jpg" media="(max-width: 480px)">
-                        <img class="carousel__img" src="./img/main-red.jpg" alt="kitchen-red">
-                    </picture>
+                    <a href="./scene-configurator.html">
+                        <picture>
+                            <source srcset="./img/main-red-mobile.jpg" media="(max-width: 480px)">
+                            <img class="carousel__img" src="./img/main-red.jpg" alt="kitchen-red">
+                        </picture>
+                    </a>
 
-                    <h1 class="carousel__title h1">Kitchen</h1>
-                    <button class="carousel__btn carousel__btn-start">Get started</button>
+                    <div class="container-xxl">
+                        <h1 class="carousel__title h1">Kitchen</h1>
+                        <button class="carousel__btn carousel__btn-start">Get started</button>
+                    </div>
                 </div>
 
                 <div class="swiper-slide">
-                    <picture>
-                        <source srcset="./img/main-gray-mobile.jpg" media="(max-width: 480px)">
-                        <img class="carousel__img" src="./img/main-gray.png" alt="kitchen-gray">
-                    </picture>
+                    <a href="./scene-configurator.html">
+                        <picture>
+                            <source srcset="./img/main-gray-mobile.jpg" media="(max-width: 480px)">
+                            <img class="carousel__img" src="./img/main-gray.png" alt="kitchen-gray">
+                        </picture>
+                    </a>
 
-                    <h1 class="carousel__title h1">Kitchen</h1>
-                    <button class="carousel__btn carousel__btn-start">Get started</button>
+                    <div class="container-xxl">
+                        <h1 class="carousel__title h1">Kitchen</h1>
+                        <button class="carousel__btn carousel__btn-start">Get started</button>
+                    </div>
                 </div>
             </div>
 
@@ -166,33 +180,35 @@
         </div>
 
         <!-- Chat Modal-->
-        <img class="open-chat-btn" src="./img/icons/Support chat.png" alt="Open Chat">
+        <div class="container-xxl">
+            <img class="open-chat-btn" src="./img/icons/Support chat.png" alt="Open Chat">
 
-        <div class="chat-popup">
-            <form class="chat-popup__container">
-                <div class="chat-popup__top d-flex justify-content-between align-items-center">
-                    <div>
-                        <img class="chat-popup__img me-3" src="./img/chat-img.png" alt="">
-                        <span>Alice</span>
+            <div class="chat-popup">
+                <form class="chat-popup__container">
+                    <div class="chat-popup__top d-flex justify-content-between align-items-center">
+                        <div>
+                            <img class="chat-popup__img me-3" src="./img/chat-img.png" alt="">
+                            <span>Alice</span>
+                        </div>
+
+                        <button class="chat-popup-btn-close">
+                            <img class="chat-popup-btn" src="./img/icons/chat-cancel.svg" alt="">
+                        </button>
                     </div>
 
-                    <button class="chat-popup-btn-close">
-                        <img class="chat-popup-btn" src="./img/icons/chat-cancel.svg" alt="">
-                    </button>
-                </div>
+                    <div class="chat-popup__messages">
+                        <span class="chat-popup__message_txt mb-2">Hello. How can I help you?</span>
+                    </div>
 
-                <div class="chat-popup__messages">
-                    <span class="chat-popup__message_txt mb-2">Hello. How can I help you?</span>
-                </div>
+                    <div class="chat-popup__text">
+                        <input class="chat-popup__text_input" type="text" placeholder="Message">
 
-                <div class="chat-popup__text">
-                    <input class="chat-popup__text_input" type="text" placeholder="Message">
-
-                    <button class="chat-popup-send-btn">
-                        <img class="chat-popup__text_icon" src="./img/icons/Send.svg" alt="Send">
-                    </button>
-                </div>
-            </form>
+                        <button class="chat-popup-send-btn">
+                            <img class="chat-popup__text_icon" src="./img/icons/Send.svg" alt="Send">
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
 

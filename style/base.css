@@ -24,13 +24,18 @@ body {
     flex-direction: column;
 }
 
-.main {
-    overflow-y: hidden;
-    position: relative;
+.container-xxl {
+    position: relative !important;
 }
 
 .mynav {
     z-index: 3;
+}
+
+main {
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items: center;
 }
 
 footer {
@@ -39,6 +44,16 @@ footer {
 }
 
 /** Swiper */
+.swiper-button-next {
+    bottom: 50% !important;
+    transform: translate(-50%, 0%) !important;
+}
+
+.swiper-button-prev {
+    bottom: 50% !important;
+    transform: translate(-50%, 0%) !important;
+}
+
 .swiper-button-next:after,
 .swiper-button-prev:after {
     display: flex;
@@ -53,12 +68,28 @@ footer {
     background: var(--main-white);
 }
 
+@media(max-width: 768px) {
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        width: 40px;
+        height: 40px;
+        font-size: 16px !important;
+    }
+}
+
 .swiper-button-next:after {
     margin-right: 50px;
 }
 
 .swiper-button-prev:after {
     margin-left: 50px;
+}
+
+@media(max-width: 768px) {
+    .swiper-button-next:after {
+        margin-right: 10px !important;
+    }
 }
 
 .swiper-btn {
@@ -103,19 +134,17 @@ footer {
 }
 
 .carousel__img {
-    width: 100%;
-    height: 662px;
-
-    position: relative;
+    width: 1920px;
+    height: 1080px;
 }
 
 .carousel__title {
     position: absolute;
     bottom: 30px;
     left: 60px;
-    font-weight: 500;
+    z-index: 2;
 
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .carousel__btn-start {
@@ -138,9 +167,22 @@ footer {
     transform: translate(-50%, 0%);
 }
 
+@media(max-width: 1280px) {
+    .carousel__img {
+        width: 100%;
+        height: 700px;
+    }
+}
+
+@media(max-width: 768px) {
+    .carousel__img {
+        height: 500px;
+    }
+}
+
 @media(max-width: 576px) {
-    .caroulse__img {
-        height: 754px;
+    .carousel__img {
+        height: 650px !important;
     }
 
     .carousel__title {
@@ -200,11 +242,11 @@ footer {
 .blackout-white {
     display: none;
 
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: rgba(245, 245, 245, 0.50);
 
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 2;
@@ -289,7 +331,7 @@ footer {
     color: var(--main-blue);
 }
 
-@media(max-width: 480px) {
+@media(max-width: 991px) {
     .mynav {
         padding: 10px 0px 10px 0px !important;
     }
@@ -313,6 +355,7 @@ footer {
         width: 330px;
     }
 }
+
 /* NavBar */
 
 
@@ -455,7 +498,7 @@ footer {
     display: none;
 
     position: absolute;
-    top: 0px;
+    top: 130px;
     right: 10px;
     z-index: 20;
 
@@ -575,10 +618,12 @@ footer {
     transform: translate(-50%, -50%);
 }
 
-@media(max-width: 480px) {
+@media(max-width: 768px) {
     .open-chat-btn {
         bottom: 16px;
         right: 25px;
+        width: 45px;
+        height: 39px;
     }
 
     .chat-popup {

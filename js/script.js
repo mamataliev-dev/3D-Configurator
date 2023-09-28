@@ -1,6 +1,6 @@
 //  Swiper Carousel
 var swiper = new Swiper(".mySwiper", {
-    slidesPerView: "auto",
+    slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
     navigation: {
@@ -105,6 +105,6 @@ var carouselBtnStart = document.querySelectorAll('.carousel__btn-start')
 
 carouselBtnStart.forEach(element => {
     element.addEventListener('click', () => {
-        window.location.href = '../scene.html';
+        window.location.href = '../scene-configurator.html';
     })
 });

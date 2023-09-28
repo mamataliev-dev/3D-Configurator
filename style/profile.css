@@ -44,7 +44,7 @@
 
 @media(max-width: 480px) {
     .profile {
-        margin: 30px 0px 80px 0px;
+        margin: 30px 0px 100px 0px;
     }
 
     .profile__form_input {
