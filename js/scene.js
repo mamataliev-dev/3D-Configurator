@@ -35,13 +35,15 @@ document.addEventListener('click', (e) => {
 })
 
 // Scene 
+var orderList = document.querySelector('.order__list')
+var moveUpBtn = document.querySelector('.move-up')
+
+// Options Btns
 var optionsBtnSave = document.querySelector('.options-btn-save')
 var optionsBtn3d = document.querySelector('.options-btn-3d')
 var optionsBtnDownload = document.querySelector('.options-btn-download')
 var optionsBtnPrint = document.querySelector('.options-btn-print')
 var optionsBtnShare = document.querySelector('.options-btn-share')
-var orderList = document.querySelector('.order__list')
-var moveUpBtn = document.querySelector('.move-up')
 
 // Custon Item Btns
 var customItemBtnWallPatter = document.querySelector('.custom-item-btn-wall-patter')
@@ -54,6 +56,13 @@ var custom = document.querySelector('.custom')
 var customFloorList = document.querySelector('.custom-floor-list')
 var customObjectsList = document.querySelector('.custom-objects-list')
 var customWallPatternList = document.querySelector('.custom-wall-pattern-list')
+
+// Show Tips
+var tipSave = document.querySelector('.tip-save')
+var tip3d = document.querySelector('.tip-3d')
+var tipDownload = document.querySelector('.tip-download')
+var tipPrint = document.querySelector('.tip-print')
+var tipShare = document.querySelector('.tip-share')
 
 customItemBtnWallPatter.addEventListener('click', () => {
     if (customFloorList.classList.contains('open') || customObjectsList.classList.contains('open')) {
@@ -133,14 +142,6 @@ customItemBtnObjects.addEventListener('click', () => {
     }
 })
 
-optionsBtn3d.addEventListener('click', () => {
-    console.log('asd')
-})
-
-optionsBtnPrint.addEventListener('click', () => {
-    console.log('asd')
-})
-
 
 // Show Share Modal
 var closeShareModal = document.querySelectorAll('.close-share-modal')
@@ -150,6 +151,10 @@ var closeSavedModal = document.querySelectorAll('.close-saved-modal')
 var checkOutSavedModal = document.querySelector('.check-out-saved-modal')
 var downloadModalBlackout = document.querySelector('.download-modal-blackout')
 var downloadModal = document.querySelector('.download-modal')
+
+optionsBtnSave.addEventListener('click', () => {
+    savedBlackout.classList.add('active')
+})
 
 optionsBtnDownload.addEventListener('click', () => {
     downloadModalBlackout.classList.add('active')
@@ -177,10 +182,6 @@ document.addEventListener('click', (e) => {
     }
 })
 
-optionsBtnSave.addEventListener('click', () => {
-    savedBlackout.classList.add('active')
-})
-
 closeSavedModal.forEach(element => {
     element.addEventListener('click', () => {
         savedBlackout.classList.remove('active')
@@ -189,4 +190,59 @@ closeSavedModal.forEach(element => {
 
 checkOutSavedModal.addEventListener('click', () => {
     window.location.href = '../gallery.html';
+})
+
+optionsBtnSave.addEventListener('click', () => {
+    tipSave.classList.add('active')
+})
+
+
+
+// Options Btn Save
+optionsBtnSave.addEventListener('mouseover', () => {
+    tipSave.classList.add('active')
+})
+
+optionsBtnSave.addEventListener('mouseout', () => {
+    tipSave.classList.remove('active')
+})
+
+
+// Options Btn Download
+optionsBtnDownload.addEventListener('mouseover', () => {
+    tipDownload.classList.add('active')
+})
+
+optionsBtnDownload.addEventListener('mouseout', () => {
+    tipDownload.classList.remove('active')
+})
+
+
+// Options Btn Share
+optionsBtnShare.addEventListener('mouseover', () => {
+    tipShare.classList.add('active')
+})
+
+optionsBtnShare.addEventListener('mouseout', () => {
+    tipShare.classList.remove('active')
+})
+
+
+// Options Btn 3D
+optionsBtn3d.addEventListener('mouseover', () => {
+    tip3d.classList.add('active')
+})
+
+optionsBtn3d.addEventListener('mouseout', () => {
+    tip3d.classList.remove('active')
+})
+
+
+// Options Btn Print
+optionsBtnPrint.addEventListener('mouseover', () => {
+    tipPrint.classList.add('active')
+})
+
+optionsBtnPrint.addEventListener('mouseout', () => {
+    tipPrint.classList.remove('active')
 })

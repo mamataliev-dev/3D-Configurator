@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="Webpage description goes here" />
+    <meta charset="utf-8">
+    <title>Page with iframe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    <!--<link rel="stylesheet" href="css/style.css">-->
+    <!--<script src="http://code.jquery.com/jquery-latest.min.js"></script>-->
+</head>
+
+<body>
+    <style>
+        .container {
+            height: 100vh;
+            width: 100vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Then style the iframe to fit in the container div with full height and width */
+        .responsive-iframe {
+            top: 5%;
+            left: 5%;
+            width: 90vw;
+            height: 90vh;
+            position: absolute;
+        }
+    </style>
+    <div class="container">
+        <iframe  class="responsive-iframe"  src="Configurator_main.html" title="Configurator_embedded"></iframe>
+    </div>
+
+</body>
+</html>
