@@ -38,19 +38,23 @@ document.addEventListener('click', (e) => {
 var orderList = document.querySelector('.order__list')
 var moveUpBtn = document.querySelector('.move-up')
 
+moveUpBtn.addEventListener('click', () => {
+    if (moveUpBtn.classList.contains('down')) {
+        orderList.classList.remove('open')
+        moveUpBtn.classList.remove('down')
+    } else {
+        orderList.classList.add('open')
+        moveUpBtn.classList.add('down')
+    }
+})
+
+
 // Options Btns
 var optionsBtnSave = document.querySelector('.options-btn-save')
 var optionsBtn3d = document.querySelector('.options-btn-3d')
 var optionsBtnDownload = document.querySelector('.options-btn-download')
 var optionsBtnPrint = document.querySelector('.options-btn-print')
 var optionsBtnShare = document.querySelector('.options-btn-share')
-
-// Custon Item Btns
-var customItemBtnWallPatter = document.querySelector('.custom-item-btn-wall-patter')
-var customItemBtnFloor = document.querySelector('.custom-item-btn-floor')
-var customItemBtnObjects = document.querySelector('.custom-item-btn-objects')
-var customBtn = document.querySelector('.custom-btn')
-var custom = document.querySelector('.custom')
 
 // Option Drop-Down Lists
 var customFloorList = document.querySelector('.custom-floor-list')
@@ -63,85 +67,6 @@ var tip3d = document.querySelector('.tip-3d')
 var tipDownload = document.querySelector('.tip-download')
 var tipPrint = document.querySelector('.tip-print')
 var tipShare = document.querySelector('.tip-share')
-
-customItemBtnWallPatter.addEventListener('click', () => {
-    if (customFloorList.classList.contains('open') || customObjectsList.classList.contains('open')) {
-        customFloorList.classList.remove('open')
-        customObjectsList.classList.remove('open')
-
-        customWallPatternList.classList.toggle('open')
-    } else {
-        customWallPatternList.classList.toggle('open')
-    }
-})
-
-customItemBtnFloor.addEventListener('click', () => {
-    if (customWallPatternList.classList.contains('open') || customObjectsList.classList.contains('open')) {
-        customWallPatternList.classList.remove('open')
-        customObjectsList.classList.remove('open')
-
-        customFloorList.classList.toggle('open')
-    } else {
-        customFloorList.classList.toggle('open')
-    }
-})
-
-customItemBtnObjects.addEventListener('click', () => {
-    if (customWallPatternList.classList.contains('open') || customFloorList.classList.contains('open')) {
-        customWallPatternList.classList.remove('open')
-        customFloorList.classList.remove('open')
-
-        customObjectsList.classList.toggle('open')
-    } else {
-        customObjectsList.classList.toggle('open')
-    }
-})
-
-
-customBtn.addEventListener('click', () => {
-    if (custom.classList.contains('open')) {
-        custom.classList.remove('open')
-        customBtn.classList.remove('down')
-    } else {
-        custom.classList.add('open')
-        customBtn.classList.add('down')
-    }
-})
-
-moveUpBtn.addEventListener('click', () => {
-    if (moveUpBtn.classList.contains('down')) {
-        orderList.classList.remove('open')
-        moveUpBtn.classList.remove('down')
-    } else {
-        orderList.classList.add('open')
-        moveUpBtn.classList.add('down')
-    }
-})
-
-customItemBtnWallPatter.addEventListener('click', () => {
-    if (customItemBtnWallPatter.classList.contains('down')) {
-        customItemBtnWallPatter.classList.remove('down')
-    } else {
-        customItemBtnWallPatter.classList.add('down')
-    }
-})
-
-customItemBtnFloor.addEventListener('click', () => {
-    if (customItemBtnFloor.classList.contains('down')) {
-        customItemBtnFloor.classList.remove('down')
-    } else {
-        customItemBtnFloor.classList.add('down')
-    }
-})
-
-customItemBtnObjects.addEventListener('click', () => {
-    if (customItemBtnObjects.classList.contains('down')) {
-        customItemBtnObjects.classList.remove('down')
-    } else {
-        customItemBtnObjects.classList.add('down')
-    }
-})
-
 
 // Show Share Modal
 var closeShareModal = document.querySelectorAll('.close-share-modal')
@@ -197,7 +122,6 @@ optionsBtnSave.addEventListener('click', () => {
 })
 
 
-
 // Options Btn Save
 optionsBtnSave.addEventListener('mouseover', () => {
     tipSave.classList.add('active')
@@ -206,7 +130,6 @@ optionsBtnSave.addEventListener('mouseover', () => {
 optionsBtnSave.addEventListener('mouseout', () => {
     tipSave.classList.remove('active')
 })
-
 
 // Options Btn Download
 optionsBtnDownload.addEventListener('mouseover', () => {
@@ -217,7 +140,6 @@ optionsBtnDownload.addEventListener('mouseout', () => {
     tipDownload.classList.remove('active')
 })
 
-
 // Options Btn Share
 optionsBtnShare.addEventListener('mouseover', () => {
     tipShare.classList.add('active')
@@ -226,7 +148,6 @@ optionsBtnShare.addEventListener('mouseover', () => {
 optionsBtnShare.addEventListener('mouseout', () => {
     tipShare.classList.remove('active')
 })
-
 
 // Options Btn 3D
 optionsBtn3d.addEventListener('mouseover', () => {
@@ -237,7 +158,6 @@ optionsBtn3d.addEventListener('mouseout', () => {
     tip3d.classList.remove('active')
 })
 
-
 // Options Btn Print
 optionsBtnPrint.addEventListener('mouseover', () => {
     tipPrint.classList.add('active')
@@ -246,3 +166,158 @@ optionsBtnPrint.addEventListener('mouseover', () => {
 optionsBtnPrint.addEventListener('mouseout', () => {
     tipPrint.classList.remove('active')
 })
+
+
+// Custon Item Btns
+var customItemBtn = document.querySelectorAll('.custom-item-btn')
+var customDropList = document.querySelectorAll('.custom-drop-list')
+var customBtn = document.querySelector('.custom-btn')
+var custom = document.querySelector('.custom')
+var lastClickedButton = null;
+
+customItemBtn.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        var btn = e.target;
+        var buttonAttr = btn.getAttribute('data-item');
+
+        customDropList.forEach(el => {
+            var listAttr = el.getAttribute('data-item')
+            if (buttonAttr == listAttr) {
+                el.classList.toggle('open')
+            } else {
+                el.classList.remove('open')
+            }
+        })
+
+        button.classList.toggle('open');
+
+        if (lastClickedButton && lastClickedButton !== button) {
+            lastClickedButton.classList.remove('open');
+        }
+
+        lastClickedButton = button;
+
+    });
+});
+
+
+customBtn.addEventListener('click', () => {
+    custom.classList.toggle('open')
+})
+
+
+// Products Array
+var customArr = [];
+
+// Custom Objects Bar Stools
+var objectBarStoolsBtn = document.querySelectorAll('.object-bar-stool-btn');
+var barStoolsImg = document.querySelectorAll('.bar-stool-img');
+
+objectBarStoolsBtn.forEach(button => {
+    customObjectsHandler(button, barStoolsImg)
+})
+
+// Custom Objects Lamps
+var objectLamp = document.querySelectorAll('.object-lamp-btn');
+var lampImg = document.querySelectorAll('.lamp-img');
+
+objectLamp.forEach(button => {
+    customObjectsHandler(button, lampImg)
+})
+
+// Custom Objects Fartuk 
+var objectFartukBtn = document.querySelectorAll('.object-fartuk-btn')
+var fartukImg = document.querySelectorAll('.fartuk-img')
+
+objectFartukBtn.forEach(button => {
+    customObjectsHandler(button, fartukImg)
+})
+
+// Custom Objects Portuquet
+var objectParquetBtn = document.querySelectorAll('.object-parquet-btn')
+var portuquetImg = document.querySelectorAll('.portuquet-img')
+
+objectParquetBtn.forEach(button => {
+    customObjectsHandler(button, portuquetImg)
+})
+
+
+// Custom Objects Handler
+function customObjectsHandler(button, object) {
+    button.addEventListener('click', (e) => {
+        var objectBtn = e.target;
+        var objectBtnAttr = objectBtn.getAttribute('data-object');
+
+        object.forEach((el) => {
+            var objectAttr = el.getAttribute('data-object');
+
+            if (objectAttr == objectBtnAttr) {
+                el.classList.add('object-visible');
+            } else {
+                el.classList.remove('object-visible');
+            }
+        });
+
+        checkObjectProduct(object);
+    });
+}
+
+
+// Check Object Product
+function checkObjectProduct(product) {
+    product.forEach(el => {
+        var elProduct = el.getAttribute('data-product');
+        var elPrice = el.getAttribute('data-price');
+
+        if (el.classList.contains('object-visible')) {
+            var existingProductIndex = customArr.findIndex(item => item.elProduct === elProduct);
+
+            if (existingProductIndex === -1) {
+                customArr.push({
+                    elProduct,
+                    elPrice
+                });
+            }
+        } else {
+            var existingProductIndex = customArr.findIndex(item => item.elProduct === elProduct);
+
+            if (existingProductIndex !== -1) {
+                customArr.splice(existingProductIndex, 1);
+            }
+        }
+    });
+
+    pushProductOrder();
+}
+
+
+// Push Products to Order
+function pushProductOrder() {
+    var orderList = document.querySelector('.order__list');
+    orderList.innerHTML = '';
+
+    customArr.forEach((item) => {
+        var product = item.elProduct;
+        var price = item.elPrice;
+        var itemElement = document.createElement('div');
+
+        itemElement.innerHTML = `
+            <div class="order__item d-flex flex-column">
+                <span class="order__item_title">${product}</span>
+                <span class="order__item_price">$${price}</span>
+            </div>
+        `;
+
+        orderList.appendChild(itemElement);
+    });
+
+    pushLocalStorage();
+}
+
+
+// Push Custom Array to LocalStorage
+function pushLocalStorage() {
+    var customArrString = JSON.stringify(customArr);
+
+    localStorage.setItem('customArr', customArrString);
+}

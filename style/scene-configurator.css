@@ -1,16 +1,18 @@
 .scene__container {
+    max-width: 1440px;
+    min-height: 100%;
+    margin: 0 auto;
+
     overflow-y: hidden;
     overflow-x: hidden;
 }
 
 .scene-main-img {
     width: 100%;
-    height: 1082px;
-
-    position: relative;
+    height: 700px;
 }
 
-@media(max-width: 1280px) {
+/* @media(max-width: 1280px) {
     .scene-main-img {
         width: 100%;
         height: 700px;
@@ -27,7 +29,7 @@
     .scene-main-img {
         height: 600px !important;
     }
-}
+} */
 
 .container {
     position: relative !important;
@@ -86,6 +88,10 @@
     font-weight: 500;
 }
 
+.options__tip.active {
+    display: flex;
+}
+
 .tip-save.active {
     display: flex;
 }
@@ -93,18 +99,6 @@
 .tip-3d.active {
     display: flex;
     width: 100px;
-}
-
-.tip-download.active {
-    display: flex;
-}
-
-.tip-print.active {
-    display: flex;
-}
-
-.tip-share.active {
-    display: flex;
 }
 
 /* Options */
@@ -186,17 +180,13 @@
     position: absolute;
     top: 20%;
     right: -27%;
-    z-index: 1;
+    z-index: 10;
     transform: translate(0%, -25%);
     transition: all .3s ease;
 }
 
 .custom.open {
     right: 0;
-}
-
-@media(max-width: 480px) {
-    .custom {}
 }
 
 .custom__items {
@@ -228,65 +218,71 @@
     color: var(--main-black);
 }
 
-.custom__drop-list {
+.custom__img {
+    width: 80px;
+    height: 60px;
+    border-radius: 12px;
+}
+
+.custom-drop-list {
     display: none;
+}
+
+.custom-drop-list.open {
+    overflow: scroll;
+    background: rgba(0, 0, 0, 0.1);
+
+    height: 180px;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     column-gap: 20px;
     row-gap: 20px;
     padding: 20px;
-
-    overflow-x: scroll;
-
-    background: rgba(0, 0, 0, 0.1);
-    /* background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.00) 15.94%, rgba(255, 255, 255, 0.00) 83.65%, rgba(0, 0, 0, 0.05) 100%); */
 }
 
-.custom-wall-pattern-list.open {
-    display: grid;
-}
-
-.custom-floor-list.open {
-    display: grid;
-}
-
-.custom-wall-pattern-list.open {
-    display: grid;
-}
-
-.custom-objects-list.open {
-    display: grid;
-}
-
-.custom__drop-list_img {
-    width: 80px;
-    height: 60px;
-}
-
-.custom-item-btn-wall-patter {
+.custom-item-btn {
     transition: all .3s ease;
 }
 
-.custom-item-btn-wall-patter.down {
-    transform: rotate(90deg);
-}
-
-.custom-item-btn-floor {
+.custom-item-btn.open {
     transition: all .3s ease;
-}
-
-.custom-item-btn-floor.down {
     transform: rotate(90deg);
 }
 
-.custom-item-btn-objects {
-    transition: all .3s ease;
+.foreground-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 
-.custom-item-btn-objects.down {
-    transform: rotate(90deg);
+.bar-stool-img {
+    display: none;
+}
+
+.lamp-img {
+    display: none;
+}
+
+.fartuk-img {
+    display: none;
+}
+
+.portuquet-img {
+    display: none;
+}
+
+.object-visible {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 
 /* Custom */
+
 
 
 /** Share Modal */
@@ -354,6 +350,7 @@
 }
 
 /* Share Modal */
+
 
 /** Saved Modal */
 .saved-modal {

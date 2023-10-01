@@ -6,23 +6,10 @@
 
 .gallery__grid {
     display: grid;
-    grid-template-columns: repeat(4, 380px);
+    grid-template-columns: repeat(3, 380px);
     column-gap: 40px;
+    row-gap: 40px;
     margin-bottom: 40px;
-
-    overflow-x: scroll;
-}
-
-.gallery__grid-bottom {
-    display: grid;
-    grid-template-columns: repeat(4, 380px);
-    column-gap: 40px;
-
-    overflow-x: scroll;
-}
-
-::-webkit-scrollbar {
-    display: none;
 }
 
 .gallery__title {

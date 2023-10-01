@@ -500,7 +500,7 @@ footer {
     position: absolute;
     top: 130px;
     right: 10px;
-    z-index: 20;
+    z-index: 50;
 
     background: var(--main-white);
     border-radius: 12px;
