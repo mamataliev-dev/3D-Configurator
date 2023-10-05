@@ -20,8 +20,6 @@ document.addEventListener('click', (e) => {
     if (e.target.classList.contains('blackout')) {
         blackout.classList.remove('active')
         mynavDropDown.classList.remove('open')
-    } else {
-        console.log();
     }
 })
 
@@ -29,24 +27,14 @@ document.addEventListener('click', (e) => {
     if (e.target.classList.contains('second-blackout')) {
         secondDropDown.classList.remove('open')
         secondBlackout.classList.remove('active')
-    } else {
-        console.log();
     }
 })
 
-// Scene 
-var orderList = document.querySelector('.order__list')
-var moveUpBtn = document.querySelector('.move-up')
 
-moveUpBtn.addEventListener('click', () => {
-    if (moveUpBtn.classList.contains('down')) {
-        orderList.classList.remove('open')
-        moveUpBtn.classList.remove('down')
-    } else {
-        orderList.classList.add('open')
-        moveUpBtn.classList.add('down')
-    }
-})
+// Products Array
+var customArr = [];
+// Products Count
+var countItems = 0;
 
 
 // Options Btns
@@ -56,115 +44,128 @@ var optionsBtnDownload = document.querySelector('.options-btn-download')
 var optionsBtnPrint = document.querySelector('.options-btn-print')
 var optionsBtnShare = document.querySelector('.options-btn-share')
 
-// Option Drop-Down Lists
-var customFloorList = document.querySelector('.custom-floor-list')
-var customObjectsList = document.querySelector('.custom-objects-list')
-var customWallPatternList = document.querySelector('.custom-wall-pattern-list')
 
-// Show Tips
+// Tips
 var tipSave = document.querySelector('.tip-save')
 var tip3d = document.querySelector('.tip-3d')
 var tipDownload = document.querySelector('.tip-download')
 var tipPrint = document.querySelector('.tip-print')
 var tipShare = document.querySelector('.tip-share')
 
-// Show Share Modal
+
+// Option Modals
 var closeShareModal = document.querySelectorAll('.close-share-modal')
-var blackout = document.querySelector('.share-blackout')
-var savedBlackout = document.querySelector('.saved-blackout')
+var shareModal = document.querySelector('.share-blackout')
+var savedModal = document.querySelector('.saved-blackout')
+var savedModalEmpty = document.querySelector('.saved-modal-empty')
+var savedModal = document.querySelector('.saved-modal')
 var closeSavedModal = document.querySelectorAll('.close-saved-modal')
 var checkOutSavedModal = document.querySelector('.check-out-saved-modal')
-var downloadModalBlackout = document.querySelector('.download-modal-blackout')
-var downloadModal = document.querySelector('.download-modal')
+var downloadModal = document.querySelector('.download-blackout')
 
-optionsBtnSave.addEventListener('click', () => {
-    savedBlackout.classList.add('active')
+
+// Show Order List 
+var orderList = document.querySelector('.order__list')
+var moveUpBtn = document.querySelector('.move-up')
+
+moveUpBtn.addEventListener('click', () => {
+    orderList.classList.toggle('open')
+    moveUpBtn.classList.toggle('down')
 })
 
-optionsBtnDownload.addEventListener('click', () => {
-    downloadModalBlackout.classList.add('active')
-    downloadModal.classList.add('open')
-})
 
-optionsBtnShare.addEventListener('click', () => {
-    blackout.classList.add('active')
-})
+// Close Share Modal
+// closeShareModal.forEach((e) => {
+//     e.addEventListener('click', () => {
+//         blackout.classList.remove('active')
+//     })
+// })
 
-closeShareModal.forEach((e) => {
-    e.addEventListener('click', () => {
-        blackout.classList.remove('active')
+// Close Saved Modal
+// closeSavedModal.forEach(element => {
+//     element.addEventListener('click', () => {
+//         savedBlackout.classList.remove('active')
+//     })
+// });
+
+// Move to My Gallary
+// checkOutSavedModal.addEventListener('click', () => {
+//     window.location.href = '../gallery.html';
+// })
+
+// Show Options Btn Tips 
+var optionsBtn = document.querySelectorAll('.options__btn')
+var optionsTip = document.querySelectorAll('.options__tip')
+
+optionsBtn.forEach(button => {
+    // Show Options Tips
+    button.addEventListener('mouseover', (e) => {
+        var buttonTarget = e.target
+        var buttonAttr = buttonTarget.getAttribute('data-tip')
+
+        optionsTip.forEach(el => {
+            var elAttr = el.getAttribute('data-tip')
+
+            if (buttonAttr == elAttr) {
+                el.classList.add('active')
+            } else {
+                el.classList.remove('active')
+            }
+        })
+    })
+
+    // Hide Options Tips
+    button.addEventListener('mouseout', (e) => {
+        var buttonTarget = e.target
+        var buttonAttr = buttonTarget.getAttribute('data-tip')
+
+        optionsTip.forEach(el => {
+            var elAttr = el.getAttribute('data-tip')
+
+            if (buttonAttr == elAttr) {
+                el.classList.remove('active')
+            }
+        })
     })
 })
 
-document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('share-blackout') || e.target.classList.contains('saved-blackout') || e.target.classList.contains('download-modal-blackout')) {
-        blackout.classList.remove('active')
-        savedBlackout.classList.remove('active')
-        downloadModalBlackout.classList.remove('active')
-        downloadModal.classList.remove('open')
-    } else {
-        console.log();
-    }
-})
 
-closeSavedModal.forEach(element => {
-    element.addEventListener('click', () => {
-        savedBlackout.classList.remove('active')
+// Show Options Modal
+optionsBtn.forEach(button => {
+    // Open Options Modal
+    button.addEventListener('click', (e) => {
+        var buttonTarget = e.target
+        var buttonAttr = buttonTarget.getAttribute('data-tip')
+
+        switch (buttonAttr) {
+            case 'share':
+                shareModal.classList.add('active')
+                break;
+            case 'save':
+                savedModal.classList.add('active')
+                break;
+            case 'download':
+                downloadModal.classList.add('active')
+                break;
+            case 'share':
+                shareModal.classList.add('active')
+                break;
+
+            default:
+                break;
+        }
     })
 });
 
-checkOutSavedModal.addEventListener('click', () => {
-    window.location.href = '../gallery.html';
-})
 
-optionsBtnSave.addEventListener('click', () => {
-    tipSave.classList.add('active')
-})
-
-
-// Options Btn Save
-optionsBtnSave.addEventListener('mouseover', () => {
-    tipSave.classList.add('active')
-})
-
-optionsBtnSave.addEventListener('mouseout', () => {
-    tipSave.classList.remove('active')
-})
-
-// Options Btn Download
-optionsBtnDownload.addEventListener('mouseover', () => {
-    tipDownload.classList.add('active')
-})
-
-optionsBtnDownload.addEventListener('mouseout', () => {
-    tipDownload.classList.remove('active')
-})
-
-// Options Btn Share
-optionsBtnShare.addEventListener('mouseover', () => {
-    tipShare.classList.add('active')
-})
-
-optionsBtnShare.addEventListener('mouseout', () => {
-    tipShare.classList.remove('active')
-})
-
-// Options Btn 3D
-optionsBtn3d.addEventListener('mouseover', () => {
-    tip3d.classList.add('active')
-})
-
-optionsBtn3d.addEventListener('mouseout', () => {
-    tip3d.classList.remove('active')
-})
-
-// Options Btn Print
-optionsBtnPrint.addEventListener('mouseover', () => {
-    tipPrint.classList.add('active')
-})
-
-optionsBtnPrint.addEventListener('mouseout', () => {
-    tipPrint.classList.remove('active')
+// Remove All Blackouts From Modals
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('share-blackout') || e.target.classList.contains('saved-blackout') || e.target.classList.contains('download-modal-blackout')) {
+        shareModal.classList.remove('active')
+        savedModal.classList.remove('active')
+        savedModalEmpty.classList.remove('saved-modal-active')
+        downloadModal.classList.remove('open')
+    }
 })
 
 
@@ -174,6 +175,7 @@ var customDropList = document.querySelectorAll('.custom-drop-list')
 var customBtn = document.querySelector('.custom-btn')
 var custom = document.querySelector('.custom')
 var lastClickedButton = null;
+
 
 customItemBtn.forEach((button) => {
     button.addEventListener('click', (e) => {
@@ -206,10 +208,7 @@ customBtn.addEventListener('click', () => {
 })
 
 
-// Products Array
-var customArr = [];
-
-// Custom Objects Bar Stools
+// Custom Objects Chairs
 var objectBarStoolsBtn = document.querySelectorAll('.object-bar-stool-btn');
 var barStoolsImg = document.querySelectorAll('.bar-stool-img');
 
@@ -247,6 +246,12 @@ function customObjectsHandler(button, object) {
     button.addEventListener('click', (e) => {
         var objectBtn = e.target;
         var objectBtnAttr = objectBtn.getAttribute('data-object');
+
+        const group = objectBtn.getAttribute('data-object');
+
+        if (group) {
+            countItems++;
+        }
 
         object.forEach((el) => {
             var objectAttr = el.getAttribute('data-object');
@@ -291,9 +296,15 @@ function checkObjectProduct(product) {
 }
 
 
+if (customArr.length !== 0) {
+    var empty = document.querySelector('.order__list-text-empty')
+    empty.style = "display: none"
+}
+
 // Push Products to Order
 function pushProductOrder() {
     var orderList = document.querySelector('.order__list');
+    var orderCount = document.querySelector('.order__count')
     orderList.innerHTML = '';
 
     customArr.forEach((item) => {
@@ -302,12 +313,13 @@ function pushProductOrder() {
         var itemElement = document.createElement('div');
 
         itemElement.innerHTML = `
-            <div class="order__item d-flex flex-column">
-                <span class="order__item_title">${product}</span>
-                <span class="order__item_price">$${price}</span>
-            </div>
+                <div class="order__item d-flex flex-column">
+                    <span class="order__item_title">${product}</span>
+                    <span class="order__item_price">$${price}</span>
+                </div>
         `;
 
+        orderCount.innerHTML = countItems
         orderList.appendChild(itemElement);
     });
 
@@ -321,3 +333,28 @@ function pushLocalStorage() {
 
     localStorage.setItem('customArr', customArrString);
 }
+
+// Add Products to Save To My Gallary
+function addProductSaveModal() {
+    item.innerHTML = `
+    <div class="saved-modal__item">
+        <h5 class="saved-modal__item_title h5">Content</h5>
+        <span class="saved-modal__item_desc">Content</span>
+    </div>
+`
+}
+
+
+// Show masks
+var wallPatternArea = document.querySelector('.wall-pattern-area')
+var kitchenFartukMask = document.querySelector('.kitchen-fartuk-mask')
+
+
+
+wallPatternArea.addEventListener('click', () => {
+    kitchenFartukMask.classList.add('active')
+
+    setTimeout(() => {
+        kitchenFartukMask.classList.remove('active')
+    }, 150);
+})

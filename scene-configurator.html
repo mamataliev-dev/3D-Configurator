@@ -75,6 +75,7 @@
         </div>
     </header>
 
+
     <!-- Main -->
     <main class="main">
         <!-- Blackout -->
@@ -127,19 +128,159 @@
                 </div>
             </div>
         </div>
-    </main>
 
-    <div class="scene">
-        <div class="container-xxl scene__container">
-            <img class="scene-main-img position-relative" src="./img/scene-img/scene-background.jpg"
-                alt="Kitchen black">
 
+        <!-- Scene Configurator -->
+        <div class="scene">
+            <!-- Options Menu -->
+            <div class="options">
+                <!-- Save -->
+                <button class="options__btn options-btn-save position-relative" data-tip="save">
+                    <img data-tip="save" class="options__btn-img" src="./img/icons/Heart.svg" alt="Save">
+
+                    <!-- Tip Save -->
+                    <div data-tip="save" class="options__tip tip-save">
+                        <span>Save</span>
+                    </div>
+                </button>
+
+                <!-- 3D View -->
+                <button class="options__btn options-btn-3d position-relative" data-tip="3d">
+                    <img data-tip="3d" src="./img/icons/Rotation.svg" alt="3D View">
+
+                    <!-- Tip 3D View -->
+                    <div data-tip="3d" class="options__tip tip-3d">
+                        <span>Camera view</span>
+                    </div>
+                </button>
+
+                <!-- Download -->
+                <button class="options__btn options-btn-download position-relative" data-tip="download">
+                    <img data-tip="download" src="./img/icons/Download.svg" alt="Download">
+
+                    <!-- Tip Download -->
+                    <div data-tip="download" class="options__tip tip-download">
+                        <span>Download</span>
+                    </div>
+                </button>
+
+                <!-- Download Modal -->
+                <div class="download-modal-blackout"></div>
+                <div class="download-modal">
+                    <button class="download-modal__btn download-modal-png me-auto">PNG</button>
+                    <button class="download-modal__btn download-modal-jpg me-auto">PDF</button>
+                </div>
+
+                <!-- Print -->
+                <button class="options__btn options-btn-print position-relative" data-tip="print">
+                    <img data-tip="print" src="./img/icons/Printer.svg" alt="Print">
+
+                    <!-- Tip Print -->
+                    <div data-tip="print" class="options__tip tip-print">
+                        <span>Print</span>
+                    </div>
+                </button>
+
+                <!-- Share -->
+                <button class="options__btn options-btn-share position-relative" data-tip="share">
+                    <img data-tip="share" src="./img/icons/Share.svg" alt="Share">
+
+                    <!-- Tip Share -->
+                    <div data-tip="share" class="options__tip tip-share">
+                        <span>Share</span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- ? Custom Container ? -->
+            <div class="custom-container">
+                <!-- Order Menu -->
+                <div class="order">
+                    <div class="order__menu">
+                        <button class="move-up">
+                            <img src="./img/icons/move-up.svg" alt="move-up">
+                        </button>
+
+                        <span class="order__count ms-2">0 item</span>
+
+                        <button class="order__btn ms-3">Order</button>
+                    </div>
+
+                    <!-- Order List -->
+                    <div class="order__list">
+                        <span class="order__list-text-empty">No products yet</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Foreground -->
             <img class="foreground-img" data-object="foreground" src="./img/scene-img/objects-png/Foreground.png"
                 alt="Foreground">
 
+
+            <!-- Options Menu -->
+            <div class="options">
+                <!-- Save -->
+                <button class="options__btn options-btn-save position-relative" data-tip="save">
+                    <img data-tip="save" class="options__btn-img" src="./img/icons/Heart.svg" alt="Save">
+
+                    <!-- Tip Save -->
+                    <div data-tip="save" class="options__tip tip-save">
+                        <span>Save</span>
+                    </div>
+                </button>
+
+                <!-- 3D View -->
+                <button class="options__btn options-btn-3d position-relative" data-tip="3d">
+                    <img data-tip="3d" src="./img/icons/Rotation.svg" alt="3D View">
+
+                    <!-- Tip 3D View -->
+                    <div data-tip="3d" class="options__tip tip-3d">
+                        <span>Camera view</span>
+                    </div>
+                </button>
+
+                <!-- Download -->
+                <button class="options__btn options-btn-download position-relative" data-tip="download">
+                    <img data-tip="download" src="./img/icons/Download.svg" alt="Download">
+
+                    <!-- Tip Download -->
+                    <div data-tip="download" class="options__tip tip-download">
+                        <span>Download</span>
+                    </div>
+                </button>
+
+                <!-- Download Modal -->
+                <div class="download-modal-blackout"></div>
+                <div class="download-modal">
+                    <button class="download-modal__btn download-modal-png me-auto">PNG</button>
+                    <button class="download-modal__btn download-modal-jpg me-auto">PDF</button>
+                </div>
+
+                <!-- Print -->
+                <button class="options__btn options-btn-print position-relative" data-tip="print">
+                    <img data-tip="print" src="./img/icons/Printer.svg" alt="Print">
+
+                    <!-- Tip Print -->
+                    <div data-tip="print" class="options__tip tip-print">
+                        <span>Print</span>
+                    </div>
+                </button>
+
+                <!-- Share -->
+                <button class="options__btn options-btn-share position-relative" data-tip="share">
+                    <img data-tip="share" src="./img/icons/Share.svg" alt="Share">
+
+                    <!-- Tip Share -->
+                    <div data-tip="share" class="options__tip tip-share">
+                        <span>Share</span>
+                    </div>
+                </button>
+            </div>
+
+
             <!-- Object Images -->
             <div class="object__images">
-
                 <!-- Portuquets -->
                 <div class="portuquets">
                     <img class="portuquet-img" src="./img/scene-img/objects-png/parquet-1.png" data-object="parquet1"
@@ -158,6 +299,7 @@
                         data-product="Parquet 5" data-price="500" alt="">
                 </div>
 
+
                 <!-- Fartuks -->
                 <div class="fartuks">
                     <img class="fartuk-img" data-object="fartuk1" data-product="Fartuk 1" data-price="100"
@@ -169,6 +311,7 @@
                     <img class="fartuk-img" data-object="fartuk3" data-product="Fartuk 3" data-price="300"
                         src="./img/scene-img/objects-png/Kitchen-Fartuk-3.png" alt="Fartuk">
                 </div>
+
 
                 <!-- Bar Stools -->
                 <div class="bar-stools">
@@ -183,6 +326,7 @@
                     <img class="bar-stool-img" data-price="500" data-product="Bar-Stool-5" data-object="Bar-Stool-5"
                         src="./img/scene-img/objects-png/Bar Stool 5.png" alt="Bar Stool 5">
                 </div>
+
 
                 <!-- Lamps -->
                 <div class="lamps">
@@ -207,16 +351,15 @@
                 </button>
 
                 <div class="custom__items">
-
-                    <!-- Wall pattern -->
+                    <!-- Wall panels -->
                     <div class="custom__block">
                         <!-- Custom Item -->
                         <div class="custom__item">
-                            <img src="./img/wall-patter.png" alt="">
-                            <span class="custom__item_title">Wall pattern</span>
+                            <img class="custom__item_img" src="./img/wall-patter.png" alt="">
+                            <span class="custom__item_title">Wall panels</span>
 
                             <button class="custom-item-btn">
-                                <img src="./img/icons/open-custom.svg" alt="" data-item="wall-pattern">
+                                <img data-item="wall-pattern" src="./img/icons/open-custom.svg" alt="">
                             </button>
                         </div>
 
@@ -241,12 +384,12 @@
                     </div>
 
 
-                    <!-- Foor -->
+                    <!-- Floor covering -->
                     <div class="custom__block">
                         <!-- Custom Item -->
                         <div class="custom__item">
-                            <img src="./img/floor.png" alt="">
-                            <span class="custom__item_title">Floor</span>
+                            <img class="custom__item_img" src="./img/floor.png" alt="">
+                            <span class="custom__item_title">Floor covering</span>
 
                             <button class="custom-item-btn">
                                 <img data-item="floor" src="./img/icons/open-custom.svg" alt="">
@@ -284,20 +427,21 @@
                     </div>
 
 
-                    <!-- Objects -->
+                    <!-- Bar Stools -->
                     <div class="custom__block">
                         <!-- Custom Item -->
                         <div class="custom__item">
-                            <img src="./img/objects.png" alt="">
-                            <span class="custom__item_title">Objects</span>
+                            <img class="custom__item_img" src="./img/scene-img/object-icons/Bar-Stool-1.jpg" alt="">
+                            <span class="custom__item_title">Chairs</span>
 
                             <button class="custom-item-btn">
-                                <img data-item="objects" src="./img/icons/open-custom.svg" alt="">
+                                <img data-item="chairs" src="./img/icons/open-custom.svg" alt="">
                             </button>
                         </div>
 
+
                         <!-- Objects -->
-                        <div class="custom-drop-list" data-item="objects">
+                        <div class="custom-drop-list" data-item="chairs">
                             <!-- Objects Bar Stool -->
                             <button class="object-bar-stool-btn">
                                 <img class="custom__img" data-object="Bar-Stool-1"
@@ -323,7 +467,25 @@
                                 <img class="custom__img" data-object="Bar-Stool-5"
                                     src="./img/scene-img/object-icons/Bar-Stool-5.jpg" alt="Bar-Stool-5">
                             </button>
+                        </div>
+                    </div>
 
+
+                    <!-- Lamps -->
+                    <div class="custom__block">
+                        <!-- Custom Item -->
+                        <div class="custom__item">
+                            <img class="custom__item_img" src="./img/scene-img/object-icons/Lamp 1.jpg" alt="">
+                            <span class="custom__item_title">Lamps</span>
+
+                            <button class="custom-item-btn">
+                                <img data-item="lamps" src="./img/icons/open-custom.svg" alt="">
+                            </button>
+                        </div>
+
+
+                        <!-- Objects -->
+                        <div class="custom-drop-list" data-item="lamps">
                             <!-- Objects Lamp -->
                             <button class="object-lamp-btn">
                                 <img class="custom__img" data-object="lamp-1"
@@ -354,28 +516,12 @@
                 </div>
             </div>
 
-            <!-- Order Menu -->
-            <div class="order">
-                <div class="order__menu">
-                    <button class="move-up">
-                        <img src="./img/icons/move-up.svg" alt="move-up">
-                    </button>
-
-                    <span class="order__count ms-2">4 items</span>
-
-                    <button class="order__btn ms-3">Order</button>
-                </div>
-
-                <!-- Order List -->
-                <div class="order__list">
-                </div>
-            </div>
 
             <!-- Options Menu -->
             <div class="options">
                 <!-- Save -->
-                <button class="options__btn options-btn-save position-relative">
-                    <img data-tip="save" src="./img/icons/Heart.svg" alt="Save">
+                <button class="options__btn options-btn-save position-relative" data-tip="save">
+                    <img data-tip="save" class="options__btn-img" src="./img/icons/Heart.svg" alt="Save">
 
                     <!-- Tip Save -->
                     <div data-tip="save" class="options__tip tip-save">
@@ -384,7 +530,7 @@
                 </button>
 
                 <!-- 3D View -->
-                <button class="options__btn options-btn-3d position-relative">
+                <button class="options__btn options-btn-3d position-relative" data-tip="3d">
                     <img data-tip="3d" src="./img/icons/Rotation.svg" alt="3D View">
 
                     <!-- Tip 3D View -->
@@ -393,8 +539,9 @@
                     </div>
                 </button>
 
+
                 <!-- Download -->
-                <button class="options__btn options-btn-download position-relative">
+                <button class="options__btn options-btn-download position-relative" data-tip="download">
                     <img data-tip="download" src="./img/icons/Download.svg" alt="Download">
 
                     <!-- Tip Download -->
@@ -403,15 +550,9 @@
                     </div>
                 </button>
 
-                <!-- Download Modal -->
-                <div class="download-modal-blackout"></div>
-                <div class="download-modal">
-                    <button class="download-modal__btn download-modal-png me-auto">PNG</button>
-                    <button class="download-modal__btn download-modal-jpg me-auto">PDF</button>
-                </div>
 
                 <!-- Print -->
-                <button class="options__btn options-btn-print position-relative">
+                <button class="options__btn options-btn-print position-relative" data-tip="print">
                     <img data-tip="print" src="./img/icons/Printer.svg" alt="Print">
 
                     <!-- Tip Print -->
@@ -420,8 +561,9 @@
                     </div>
                 </button>
 
+
                 <!-- Share -->
-                <button class="options__btn options-btn-share position-relative">
+                <button class="options__btn options-btn-share position-relative" data-tip="share">
                     <img data-tip="share" src="./img/icons/Share.svg" alt="Share">
 
                     <!-- Tip Share -->
@@ -431,8 +573,9 @@
                 </button>
             </div>
 
+
             <!-- Saved Modal -->
-            <div class="saved-blackout">
+            <div class="saved-blackout" data-modal="saved">
                 <div class="saved-modal">
                     <button class="close-saved-modal ms-auto">
                         <img src="./img/icons/Cancel.svg" alt="Cancel">
@@ -441,46 +584,36 @@
                     <h4 class="saved-modal__items_title h4 mt-2 mb-5">Saved to My gallery</h4>
 
                     <div class="saved-modal__items d-flex flex-column">
-                        <div class="saved-modal__item">
-                            <h5 class="saved-modal__item_title h5">1x something</h5>
-                            <p class="saved-modal__item_desc">
-                                Lorem ipsum dolor sit amet consectetur.
-                                Nec eget malesuada adipiscing ornare donec blandit
-                                rhoncus lorem tincidunt.
-                                Quis sociis amet lacus eu tincidunt in.
-                            </p>
-                        </div>
-
-                        <div class="saved-modal__item">
-                            <h5 class="saved-modal__item_title h5">1x something</h5>
-                            <p class="saved-modal__item_desc">
-                                Lorem ipsum dolor sit amet consectetur.
-                                Nec eget malesuada adipiscing ornare donec blandit
-                                rhoncus lorem tincidunt.
-                                Quis sociis amet lacus eu tincidunt in.
-                            </p>
-                        </div>
-
-                        <div class="saved-modal__item">
-                            <h5 class="saved-modal__item_title h5">1x something</h5>
-                            <p class="saved-modal__item_desc">
-                                Lorem ipsum dolor sit amet consectetur.
-                                Nec eget malesuada adipiscing ornare donec blandit
-                                rhoncus lorem tincidunt.
-                                Quis sociis amet lacus eu tincidunt in.
-                            </p>
-                        </div>
-
                         <div class="d-flex me-auto mt-2">
                             <button class="check-out-saved-modal mb-2 me-3">Check out</button>
                             <button class="close-saved-modal mb-2">Back</button>
                         </div>
                     </div>
                 </div>
+
+                <!-- Empty Modal -->
+                <div class="saved-modal-empty">
+                    <button class="close-saved-modal ms-auto">
+                        <img src="./img/icons/Cancel.svg" alt="Cancel">
+                    </button>
+
+                    <h4 class="saved-modal__items_title mt-3 h4">No products to save</h4>
+                    <button class="close-saved-modal mb-2">Back</button>
+                </div>
             </div>
 
+
+            <!-- Download Modal -->
+            <div class="download-blackout" data-modal="share">
+                <div class="download-modal">
+                    <button class="download-modal__btn download-modal-png me-auto">PNG</button>
+                    <button class="download-modal__btn download-modal-jpg me-auto">PDF</button>
+                </div>
+            </div>
+
+            
             <!-- Share Modal -->
-            <div class="share-blackout">
+            <div class="share-blackout" data-modal="share">
                 <div class="share-modal">
                     <button class="close-share-modal ms-auto">
                         <img src="./img/icons/Cancel.svg" alt="Cancel">
@@ -508,7 +641,7 @@
 
                         <div class="share-modal__item d-flex flex-column align-items-center">
                             <a href="#!">
-                                <img src="./img/icons/Email.svg" alt="Email">
+                                <img src="./img/icons/Email.png" width="48px" heihgt="48px" alt="Email">
                             </a>
 
                             <span class="share-modal__item_title mt-2">Email</span>
@@ -527,8 +660,22 @@
                     <button class="close-share-modal mb-2">Back</button>
                 </div>
             </div>
+
+
+            <!-- Map -->
+            <map name="my-map">
+                <area class="wall-pattern-area" alt="parquent" title="parquent" href="#!" target=""
+                    coords="601,511,1328,672" shape="rect">
+
+                <!-- <img class="kitchen-fartuk-mask" src="./img/scene-img/masks/kitchen-fartuk-mask.png" alt=""> -->
+            </map>
+
+
+            <!-- Background Image -->
+            <img class="scene__bg" src="./img/scene-img/scene-background.jpg" alt="Kitchen black" usemap="#my-map">
+
         </div>
-    </div>
+    </main>
 
 
     <!-- Footer -->
@@ -599,6 +746,8 @@
             </div>
         </div>
     </footer>
+
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
