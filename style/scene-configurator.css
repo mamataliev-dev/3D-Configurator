@@ -25,19 +25,6 @@
     left: 0;
 }
 
-.kitchen-fartuk-mask.active {
-    opacity: 1;
-}
-
-.kitchen-fartuk-mask {
-    transition: all .2s ease;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
 .container {
     position: relative !important;
 }
@@ -186,12 +173,6 @@
     transform: translateY(0px);
 }
 
-/* @media(max-width: 1280px) {
-    .order__list {
-        left: 10%;
-    }
-} */
-
 .order__list-text-empty {
     color: var(--main-black);
 }
@@ -295,6 +276,7 @@
 }
 
 .foreground-img {
+    pointer-events: none;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -321,6 +303,7 @@
 }
 
 .object-visible {
+    pointer-events: none;
     display: block;
     width: 100%;
     height: 100%;
@@ -423,10 +406,15 @@
     box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.05);
 }
 
+.saved-modal-empty.active {
+    display: flex;
+}
+
 .saved-modal {
     width: 766px;
     height: 650px;
 
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
@@ -441,6 +429,10 @@
     border-radius: 24px;
     background: var(--main-white);
     box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.05);
+}
+
+.saved-modal.active {
+    display: flex;
 }
 
 .saved-modal__items {
@@ -502,14 +494,14 @@
 
 /** Download Modal */
 .download-modal {
-    display: flex;
+    display: none;
     flex-direction: column;
     row-gap: 15px;
 
     position: absolute;
     top: 43%;
     left: 112%;
-    z-index: 10;
+    z-index: 9999;
 
     background: #F0F0F0;
     box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.05);
@@ -518,6 +510,10 @@
     width: 132px;
     height: 74px;
     padding: 10px 20px;
+}
+
+.download-modal.active {
+    display: flex;
 }
 
 .download-modal__btn {
@@ -536,11 +532,43 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 999;
 }
 
-.download-modal-blackout.active {
+.download-blackout.active {
     display: block;
 }
 
 /* Download Modal */
+
+
+/** Masks */
+.mask {
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.mask-wall-panels.active {
+    opacity: 1;
+}
+
+.mask-chairs.active {
+    opacity: 1;
+}
+
+.mask-floor.active {
+    opacity: 1;
+}
+
+.mask-lamps.active {
+    opacity: 1;
+}
+
+/* Masks */

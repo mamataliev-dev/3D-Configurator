@@ -33,9 +33,12 @@ document.addEventListener('click', (e) => {
 
 // Products Array
 var customArr = [];
+
 // Products Count
 var countItems = 0;
 
+// Products Array For My Gallary
+var productArr = []
 
 // Options Btns
 var optionsBtnSave = document.querySelector('.options-btn-save')
@@ -44,24 +47,18 @@ var optionsBtnDownload = document.querySelector('.options-btn-download')
 var optionsBtnPrint = document.querySelector('.options-btn-print')
 var optionsBtnShare = document.querySelector('.options-btn-share')
 
-
-// Tips
-var tipSave = document.querySelector('.tip-save')
-var tip3d = document.querySelector('.tip-3d')
-var tipDownload = document.querySelector('.tip-download')
-var tipPrint = document.querySelector('.tip-print')
-var tipShare = document.querySelector('.tip-share')
-
-
 // Option Modals
-var closeShareModal = document.querySelectorAll('.close-share-modal')
 var shareModal = document.querySelector('.share-blackout')
-var savedModal = document.querySelector('.saved-blackout')
-var savedModalEmpty = document.querySelector('.saved-modal-empty')
 var savedModal = document.querySelector('.saved-modal')
-var closeSavedModal = document.querySelectorAll('.close-saved-modal')
-var checkOutSavedModal = document.querySelector('.check-out-saved-modal')
-var downloadModal = document.querySelector('.download-blackout')
+var savedModalBlackout = document.querySelector('.saved-blackout')
+var savedModalEmpty = document.querySelector('.saved-modal-empty')
+var downloadModalBlackout = document.querySelector('.download-blackout')
+var downloadModal = document.querySelector('.download-modal')
+
+// Option Btns Close Modals
+var btnCloseShareModal = document.querySelectorAll('.close-share-modal')
+var btnCloseSavedModal = document.querySelectorAll('.close-saved-modal')
+var btnMoveToGallary = document.querySelector('.check-out-saved-modal')
 
 
 // Show Order List 
@@ -73,25 +70,6 @@ moveUpBtn.addEventListener('click', () => {
     moveUpBtn.classList.toggle('down')
 })
 
-
-// Close Share Modal
-// closeShareModal.forEach((e) => {
-//     e.addEventListener('click', () => {
-//         blackout.classList.remove('active')
-//     })
-// })
-
-// Close Saved Modal
-// closeSavedModal.forEach(element => {
-//     element.addEventListener('click', () => {
-//         savedBlackout.classList.remove('active')
-//     })
-// });
-
-// Move to My Gallary
-// checkOutSavedModal.addEventListener('click', () => {
-//     window.location.href = '../gallery.html';
-// })
 
 // Show Options Btn Tips 
 var optionsBtn = document.querySelectorAll('.options__btn')
@@ -130,9 +108,27 @@ optionsBtn.forEach(button => {
 })
 
 
-// Show Options Modal
+btnCloseShareModal.forEach(el => {
+    el.addEventListener('click', () => {
+        shareModal.classList.remove('active')
+    })
+})
+
+btnCloseSavedModal.forEach(el => {
+    el.addEventListener('click', () => {
+        savedModalBlackout.classList.remove('active')
+        savedModalEmpty.classList.remove('active')
+        savedModal.classList.remove('active')
+    })
+});
+
+btnMoveToGallary.addEventListener('click', () => {
+    window.location.href = '../gallery.html';
+})
+
+
+// Open Options Modal
 optionsBtn.forEach(button => {
-    // Open Options Modal
     button.addEventListener('click', (e) => {
         var buttonTarget = e.target
         var buttonAttr = buttonTarget.getAttribute('data-tip')
@@ -142,15 +138,21 @@ optionsBtn.forEach(button => {
                 shareModal.classList.add('active')
                 break;
             case 'save':
-                savedModal.classList.add('active')
+                if (customArr.length !== 0) {
+                    savedModalBlackout.classList.add('active')
+                    savedModal.classList.add('active')
+                } else {
+                    savedModalBlackout.classList.add('active')
+                    savedModalEmpty.classList.add('active')
+                }
                 break;
             case 'download':
+                downloadModalBlackout.classList.add('active')
                 downloadModal.classList.add('active')
                 break;
             case 'share':
                 shareModal.classList.add('active')
                 break;
-
             default:
                 break;
         }
@@ -160,11 +162,13 @@ optionsBtn.forEach(button => {
 
 // Remove All Blackouts From Modals
 document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('share-blackout') || e.target.classList.contains('saved-blackout') || e.target.classList.contains('download-modal-blackout')) {
+    if (e.target.classList.contains('share-blackout') || e.target.classList.contains('saved-blackout') || e.target.classList.contains('download-blackout')) {
         shareModal.classList.remove('active')
+        savedModalBlackout.classList.remove('active')
+        savedModalEmpty.classList.remove('active')
         savedModal.classList.remove('active')
-        savedModalEmpty.classList.remove('saved-modal-active')
-        downloadModal.classList.remove('open')
+        downloadModalBlackout.classList.remove('active')
+        downloadModal.classList.remove('active')
     }
 })
 
@@ -247,12 +251,6 @@ function customObjectsHandler(button, object) {
         var objectBtn = e.target;
         var objectBtnAttr = objectBtn.getAttribute('data-object');
 
-        const group = objectBtn.getAttribute('data-object');
-
-        if (group) {
-            countItems++;
-        }
-
         object.forEach((el) => {
             var objectAttr = el.getAttribute('data-object');
 
@@ -263,7 +261,7 @@ function customObjectsHandler(button, object) {
             }
         });
 
-        checkObjectProduct(object);
+        checkObjectProduct(object, button);
     });
 }
 
@@ -282,12 +280,21 @@ function checkObjectProduct(product) {
                     elProduct,
                     elPrice
                 });
+
+                productArr.push({
+                    elProduct,
+                })
+
+                countItems++;
             }
         } else {
-            var existingProductIndex = customArr.findIndex(item => item.elProduct === elProduct);
+            var existingItemIndex = customArr.findIndex(item => item.elProduct === elProduct);
+            var existingProductIndex = productArr.findIndex(item => item.elProduct === elProduct);
 
-            if (existingProductIndex !== -1) {
-                customArr.splice(existingProductIndex, 1);
+            if (existingItemIndex !== -1 || existingProductIndex !== -1) {
+                customArr.splice(existingItemIndex, 1);
+                productArr.splice(existingProductIndex, 1);
+                countItems--;
             }
         }
     });
@@ -300,6 +307,7 @@ if (customArr.length !== 0) {
     var empty = document.querySelector('.order__list-text-empty')
     empty.style = "display: none"
 }
+
 
 // Push Products to Order
 function pushProductOrder() {
@@ -319,11 +327,34 @@ function pushProductOrder() {
                 </div>
         `;
 
-        orderCount.innerHTML = countItems
         orderList.appendChild(itemElement);
     });
 
+    if (countItems <= 1) {
+        orderCount.innerHTML = `${countItems} item`
+    } else {
+        orderCount.innerHTML = `${countItems} items`
+    }
+
     pushLocalStorage();
+}
+
+// ! TODO Fix Products Saved On Galarry / Show products on 'My Gallary'
+// Save Products To My Gallary
+function pushProductsToSavedModal() {
+    productArr.forEach(item => {
+        var product = item.elProduct
+        var savedModalItems = document.querySelector('.saved-modal__items')
+        var savedItem = document.createElement('div')
+
+        savedItem.innerHTML = `
+                <div class="saved-modal__item">
+                    <h5 class="saved-modal__item_title h5">${product}</h5>
+                </div>
+            `
+
+        savedModalItems.appendChild(savedItem)
+    })
 }
 
 
@@ -334,27 +365,75 @@ function pushLocalStorage() {
     localStorage.setItem('customArr', customArrString);
 }
 
-// Add Products to Save To My Gallary
-function addProductSaveModal() {
-    item.innerHTML = `
-    <div class="saved-modal__item">
-        <h5 class="saved-modal__item_title h5">Content</h5>
-        <span class="saved-modal__item_desc">Content</span>
-    </div>
-`
-}
-
 
 // Show masks
-var wallPatternArea = document.querySelector('.wall-pattern-area')
-var kitchenFartukMask = document.querySelector('.kitchen-fartuk-mask')
+document.addEventListener("DOMContentLoaded", () => {
+    var map = document.querySelector('map')
+    var maskWallPanels = document.querySelector('.mask-wall-panels')
+    var maskChairs = document.querySelector('.mask-chairs')
+    var maskFloor = document.querySelector('.mask-floor')
+    var maskLamps = document.querySelector('.mask-lamps')
+
+    map.addEventListener('click', (e) => {
+        e.preventDefault();
+        var buttonTarget = e.target
+        var buttonAtrr = buttonTarget.getAttribute('data-mask')
+
+        switch (buttonAtrr) {
+            case 'wall-pattern':
+                hideMasks(maskWallPanels, buttonAtrr)
+                break;
+            case 'chairs':
+                hideMasks(maskChairs, buttonAtrr)
+                break;
+            case 'floor1':
+                hideMasks(maskFloor, buttonAtrr)
+                break;
+            case 'floor2':
+                hideMasks(maskFloor, buttonAtrr)
+                break;
+            case 'lamps':
+                hideMasks(maskLamps, buttonAtrr)
+                break;
+            default:
+                break;
+        }
+    })
 
 
+    function hideMasks(mask, customMenu) {
+        // Remove Masks
+        mask.classList.add('active')
 
-wallPatternArea.addEventListener('click', () => {
-    kitchenFartukMask.classList.add('active')
+        setTimeout(() => {
+            mask.classList.remove('active')
+        }, 150);
 
-    setTimeout(() => {
-        kitchenFartukMask.classList.remove('active')
-    }, 150);
+        // Open Custom by button click
+        customItemBtn.forEach(button => {
+            var buttonAttr = button.getAttribute('data-mask')
+
+            if (buttonAttr == customMenu) {
+                button.classList.toggle('open')
+            } else {
+                button.classList.remove('open')
+            }
+        })
+
+        customDropList.forEach(el => {
+            var listArtt = el.getAttribute('data-mask')
+
+            if (listArtt == customMenu) {
+                el.classList.toggle('open')
+            } else {
+                el.classList.remove('open')
+            }
+        })
+
+        custom.classList.add('open')
+    }
+
+    function openCustom(customMenu) {
+
+    }
 })
