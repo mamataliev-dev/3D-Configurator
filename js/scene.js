@@ -177,6 +177,7 @@ document.addEventListener('click', (e) => {
 var customItemBtn = document.querySelectorAll('.custom-item-btn')
 var customDropList = document.querySelectorAll('.custom-drop-list')
 var customBtn = document.querySelector('.custom-btn')
+var removeBtn = document.querySelectorAll('.custom-item-remove')
 var custom = document.querySelector('.custom')
 var lastClickedButton = null;
 
@@ -250,6 +251,7 @@ function customObjectsHandler(button, object) {
     button.addEventListener('click', (e) => {
         var objectBtn = e.target;
         var objectBtnAttr = objectBtn.getAttribute('data-object');
+        var objectRemoveAttr = objectBtn.getAttribute('data-remove');
 
         object.forEach((el) => {
             var objectAttr = el.getAttribute('data-object');
@@ -261,7 +263,35 @@ function customObjectsHandler(button, object) {
             }
         });
 
-        checkObjectProduct(object, button);
+        // Remove added products
+        removeBtn.forEach(btn => {
+            var btnAttr = btn.getAttribute('data-remove')
+
+            if (btnAttr == objectRemoveAttr) {
+
+
+                btn.classList.add('active')
+
+                btn.addEventListener('click', () => {
+
+                    object.forEach(el => {
+                        var elProduct = el.getAttribute('data-product');
+
+                        var removeProductIndexCs = customArr.findIndex(item => item.elProduct === elProduct);
+                        customArr.splice(elProduct, 1)
+
+                        el.classList.remove('object-visible');
+                        btn.classList.remove('active')
+                        countItems--
+                    })
+
+                })
+
+
+            }
+        })
+
+        checkObjectProduct(object);
     });
 }
 
@@ -283,6 +313,7 @@ function checkObjectProduct(product) {
 
                 productArr.push({
                     elProduct,
+                    elPrice
                 })
 
                 countItems++;
@@ -300,6 +331,7 @@ function checkObjectProduct(product) {
     });
 
     pushProductOrder();
+    pushProductsToSavedModal();
 }
 
 
@@ -330,6 +362,7 @@ function pushProductOrder() {
         orderList.appendChild(itemElement);
     });
 
+
     if (countItems <= 1) {
         orderCount.innerHTML = `${countItems} item`
     } else {
@@ -339,19 +372,23 @@ function pushProductOrder() {
     pushLocalStorage();
 }
 
-// ! TODO Fix Products Saved On Galarry / Show products on 'My Gallary'
+
 // Save Products To My Gallary
 function pushProductsToSavedModal() {
+    var savedModalItems = document.querySelector('.saved-modal__items')
+    savedModalItems.innerHTML = '';
+
     productArr.forEach(item => {
         var product = item.elProduct
-        var savedModalItems = document.querySelector('.saved-modal__items')
+        var price = item.elPrice;
         var savedItem = document.createElement('div')
 
         savedItem.innerHTML = `
-                <div class="saved-modal__item">
-                    <h5 class="saved-modal__item_title h5">${product}</h5>
-                </div>
-            `
+        <div class="saved-modal__item d-flex">
+            <h5 class="saved-modal__item_title h5">${product} &nbsp;</h5>
+            <h5 class="saved-modal__item-price">$${price}</h5>
+        </div>
+    `
 
         savedModalItems.appendChild(savedItem)
     })
@@ -402,12 +439,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     function hideMasks(mask, customMenu) {
-        // Remove Masks
         mask.classList.add('active')
 
+        // Remove Masks
         setTimeout(() => {
             mask.classList.remove('active')
         }, 150);
+
 
         // Open Custom by button click
         customItemBtn.forEach(button => {
@@ -431,9 +469,5 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
         custom.classList.add('open')
-    }
-
-    function openCustom(customMenu) {
-
     }
 })
