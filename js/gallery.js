@@ -64,28 +64,45 @@ document.addEventListener('click', (e) => {
 })
 
 
-// ? Pushing Custom Order
-// var customArrString = localStorage.getItem('customArr');
-// var customArr = JSON.parse(customArrString);
-// var galleryGrid = document.querySelector('.gallery__grid')
+var retrievedArrayOfObjects = JSON.parse(localStorage.getItem('customArr'));
+var galleryGrid = document.querySelector('.gallery__grid');
 
-// for (let index = 0; index < customArr.length; index++) {
-//     var girdItem = document.createAttribute('div')
-//     girdItem.innerHTML = `
-//         <div class="gallery__item">
-//         <img class="gallery__img mb-2" src="./img/scene-bg.jpg" alt="Kitchen">
-    
-//         <div class="gallery__cont">
-//             <h3 class="gallery__item_title mb-3">Kitchen</h3>
-    
-//             <div class="gallery__desc d-flex flex-column">
-//                 <span class="gallery__accessors">${}</span>
-//             </div>
-    
-//             <button class="gallery__btn">Check out</button>
-//         </div>
-//         </div>
-//     `
+if (retrievedArrayOfObjects && retrievedArrayOfObjects.length > 0) {
+    for (let i = 0; i < retrievedArrayOfObjects.length; i++) {
+        var gridItem = document.createElement('div');
+        gridItem.className = "gallery__item";
 
-//     galleryGrid.appendChild(girdItem)
-// }
+        var image = document.createElement('img');
+        image.className = "gallery__img mb-2";
+        image.src = "./img/scene-bg.jpg";
+        image.alt = "Kitchen";
+        gridItem.appendChild(image);
+
+        var galleryCont = document.createElement('div');
+        galleryCont.className = "gallery__cont";
+
+        var h3 = document.createElement('h3');
+        h3.className = "gallery__item_title mb-3";
+        h3.textContent = "Kitchen";
+        galleryCont.appendChild(h3);
+
+        retrievedArrayOfObjects.forEach(el => {
+            var productDiv = document.createElement('div');
+            productDiv.innerHTML = `
+            <span class="gallery__accessors_title">${el.elProduct}</span>
+        `
+            galleryCont.appendChild(productDiv);
+        });
+
+        var btn = document.createElement('button');
+        btn.className = "gallery__btn";
+        btn.textContent = "Check out";
+        galleryCont.appendChild(btn);
+
+        gridItem.appendChild(galleryCont);
+        galleryGrid.appendChild(gridItem);
+    }
+
+} else {
+    console.log('customArr is empty');
+}

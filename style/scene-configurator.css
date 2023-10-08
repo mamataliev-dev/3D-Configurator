@@ -1,6 +1,51 @@
+@media(max-width: 540px) {
+    .mobile-container {
+        width: 100vw;
+        height: 800px;
+        position: relative !important;
+    }
+
+    .options-box-mobile {
+        display: flex;
+        align-items: flex-start;
+
+        position: fixed;
+        top: 20%;
+        left: -80px;
+
+        z-index: 10;
+        transition: all .3s ease;
+    }
+
+    .options-box-mobile.active {
+        left: 0px;
+    }
+
+    .options-mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+
+        background: rgba(245, 245, 245, 0.80);
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 12px;
+        padding: 20px;
+    }
+
+    .custom {
+        position: fixed !important;
+        top: 20% !important;
+    }
+
+    .options {
+        position: fixed !important;
+    }
+}
+
 .custom-container {
     max-width: 1320px;
-    height: 100vh;
+    height: 800px;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -50,20 +95,23 @@
 }
 
 @media(max-width: 540px) {
+    .scene-main {
+        overflow-x: scroll;
+    }
+
     .custom-container {
-        width: 1280px;
+        width: 800px;
         height: 800px;
     }
 
     .scene {
-        width: 1280px;
+        min-width: 1280px;
         height: 800px;
     }
 
     .scene__bg {
-        width: 1280px;
+        min-width: 1280px;
         height: 800px;
-        overflow-x: scroll;
     }
 }
 
@@ -455,6 +503,10 @@
     .share-modal {
         width: 450px;
     }
+
+    .share-modal__items {
+        width: 330px;
+    }
 }
 
 @media(max-width: 412px) {
@@ -693,6 +745,71 @@
 
 
 /** Masks */
+.masks-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.mask_lamps {
+    width: 70%;
+    height: 31%;
+
+    background: transparent;
+    position: absolute;
+    top: 13%;
+    left: 15.5%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.mask_wall-pattern {
+    width: 39%;
+    height: 20%;
+
+    background: transparent;
+    position: absolute;
+    top: 44%;
+    left: 31%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.mask_floor1 {
+    width: 17%;
+    height: 20%;
+
+    background: transparent;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.mask_floor2 {
+    width: 15%;
+    height: 34%;
+
+    background: transparent;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.mask_chairs {
+    width: 24%;
+    height: 19%;
+
+    background: transparent;
+    position: absolute;
+    bottom: 15%;
+    right: 20%;
+    z-index: 1;
+    cursor: pointer;
+}
+
 .mask {
     pointer-events: none;
     width: 100%;

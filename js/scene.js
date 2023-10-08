@@ -55,12 +55,19 @@ var savedModalBlackout = document.querySelector('.saved-blackout')
 var savedModalEmpty = document.querySelector('.saved-modal-empty')
 var downloadModalBlackout = document.querySelector('.download-blackout')
 var downloadModal = document.querySelector('.download-modal')
+var optionsBoxMobile = document.querySelector('.options-box-mobile')
 
 // Option Btns Close Modals
 var btnCloseShareModal = document.querySelectorAll('.close-share-modal')
 var btnCloseSavedModal = document.querySelectorAll('.close-saved-modal')
 var btnMoveToGallary = document.querySelector('.check-out-saved-modal')
+var openOptionsBtnMobile = document.querySelector('.open-options-btn-mobile')
 
+
+// Show Mobile Options Menu
+openOptionsBtnMobile.addEventListener('click', () => {
+    optionsBoxMobile.classList.toggle('active')
+})
 
 // Show Order List 
 var orderList = document.querySelector('.order__list')
@@ -353,6 +360,7 @@ function checkObjectProduct(product) {
 
 optionsBtnSave.addEventListener('click', () => {
     pushProductsToSavedModal();
+    pushLocalStorage();
 })
 
 document.addEventListener('click', () => {
@@ -390,8 +398,6 @@ function pushProductsOrder() {
     } else {
         orderCount.innerHTML = `${countItems} items`
     }
-
-    pushLocalStorage();
 }
 
 
@@ -427,33 +433,35 @@ function pushLocalStorage() {
 
 // Show masks
 document.addEventListener("DOMContentLoaded", () => {
-    var map = document.querySelector('map')
+    var maskBtn = document.querySelectorAll('.mask_btn')
     var maskWallPanels = document.querySelector('.mask-wall-panels')
     var maskChairs = document.querySelector('.mask-chairs')
     var maskFloor = document.querySelector('.mask-floor')
     var maskLamps = document.querySelector('.mask-lamps')
 
-    map.addEventListener('click', (e) => {
-        e.preventDefault();
-        var buttonTarget = e.target
-        var buttonAtrr = buttonTarget.getAttribute('data-mask')
 
-        switch (buttonAtrr) {
-            case 'wall-pattern':
-                hideMasks(maskWallPanels, buttonAtrr)
-                break;
-            case 'chairs':
-                hideMasks(maskChairs, buttonAtrr)
-                break;
-            case 'floor':
-                hideMasks(maskFloor, buttonAtrr)
-                break;
-            case 'lamps':
-                hideMasks(maskLamps, buttonAtrr)
-                break;
-            default:
-                break;
-        }
+    maskBtn.forEach(button => {
+        button.addEventListener('click', (e) => {
+            var buttonTarget = e.target
+            var buttonAttr = buttonTarget.getAttribute('data-mask')
+
+            switch (buttonAttr) {
+                case 'wall-pattern':
+                    hideMasks(maskWallPanels, buttonAttr)
+                    break;
+                case 'chairs':
+                    hideMasks(maskChairs, buttonAttr)
+                    break;
+                case 'floor':
+                    hideMasks(maskFloor, buttonAttr)
+                    break;
+                case 'lamps':
+                    hideMasks(maskLamps, buttonAttr)
+                    break;
+                default:
+                    break;
+            }
+        })
     })
 
 
@@ -490,48 +498,3 @@ document.addEventListener("DOMContentLoaded", () => {
         custom.classList.add('open')
     }
 })
-
-
-// Background image mobile zoom
-// document.addEventListener('DOMContentLoaded', function () {
-//     const zoomedImage = document.querySelector('.scene__bg');
-
-//     let isZoomed = false; // Флаг для определения, увеличено ли изображение
-//     let initialTouchX = null; // Изначальная позиция касания по оси X
-//     let currentScale = 1;
-
-//     // Функция для увеличения и уменьшения масштаба
-//     function toggleZoom() {
-//         if (!isZoomed) {
-//             // Увеличиваем масштаб при первом касании
-//             currentScale += 1
-//             zoomedImage.style.transform = `scale(${currentScale})`;
-//             isZoomed = true;
-//         } else {
-//             currentScale -= 1
-//             zoomedImage.style.transform = `scale(${currentScale})`;
-//         }
-//     }
-
-//     // Обработчик события начала касания (touchstart)
-//     zoomedImage.addEventListener('touchstart', function (event) {
-//         if (event.touches.length === 1) {
-//             // Запоминаем изначальную позицию касания по оси X
-//             initialTouchX = event.touches[0].pageX;
-//         }
-//     });
-
-//     // Обработчик события окончания касания (touchend)
-//     zoomedImage.addEventListener('touchstart', function (event) {
-//         if (event.changedTouches.length === 1) {
-//             // Рассчитываем разницу между начальной и конечной позициями касания по оси X
-//             const touchX = event.changedTouches[0].pageX;
-//             const deltaX = touchX - initialTouchX;
-
-//             // Если разница по X небольшая (например, менее 10px), считаем это кликом и не увеличиваем/уменьшаем масштаб
-//             if (Math.abs(deltaX) < 10) {
-//                 toggleZoom();
-//             }
-//         }
-//     });
-// });

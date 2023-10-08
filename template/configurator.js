@@ -1,11 +1,11 @@
 // JavaScript source code
 
 
-    
+
 
 
 /*
-*/
+ */
 
 // share functional implementation
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 var is_dropdown_menu_showed = 0;
+
 function show_dropdown_menu() {
     if (is_dropdown_menu_showed == 0) {
         // show close button
@@ -45,11 +46,15 @@ function show_dropdown_menu() {
         is_dropdown_menu_showed = 1;
     }
 
-    $("#decor_name_MenuButton").parents('.dropdown').find(".dropdown-menu li.active").parent()[0].scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    $("#decor_name_MenuButton").parents('.dropdown').find(".dropdown-menu li.active").parent()[0].scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center"
+    });
 }
 
 // dropdown menu close btn
-$('#btn_close').click(function() {
+$('#btn_close').click(function () {
     $(this).parents('.dropdown').find('button.dropdown-toggle').dropdown('toggle');
     $("#btn_close").removeClass("visible");
     is_dropdown_menu_showed = 0;
@@ -59,20 +64,21 @@ $('#btn_close').click(function() {
 
 
 // add cart button processing (temp)
-function add_cart_click(){
+function add_cart_click() {
     alert("Cart is being on maintenance")
 }
 
 
 class Overlay_popup_class {
 
-    #modalCl;
-    #overlayCl;
-    #btns;
-    #img;
-    #img_data;
-    #title;
-    #loading_dots;
+    #
+    modalCl;#
+    overlayCl;#
+    btns;#
+    img;#
+    img_data;#
+    title;#
+    loading_dots;
 
     constructor() {
 
@@ -157,8 +163,11 @@ class Overlay_popup_class {
 
 
     // Function to download data to a file
-    #download(data, filename, type) {
-        var file = new Blob([data], { type: type });
+    #
+    download(data, filename, type) {
+        var file = new Blob([data], {
+            type: type
+        });
         if (window.navigator.msSaveOrOpenBlob) // IE10+
             window.navigator.msSaveOrOpenBlob(file, filename);
         else { // Others
@@ -192,7 +201,7 @@ class Panels_set_class {
     }
 
 
-    #Panel_instance = class {
+    # Panel_instance = class {
         constructor(decor_name_, tile_pattern_) {
             this.decor_name = decor_name_;
             this.tile_pattern = tile_pattern_;
@@ -290,7 +299,7 @@ class Configurator_class {
         let scene = "NO_Market_2400";
 
         ajax.open("GET", `${host}server_side.php?cmd=load_decor_list&scene=${scene}`,
-        true);
+            true);
         // (CORS issue) solving Cross Domain AJAX Request
         // https://zinoui.com/blog/cross-domain-ajax-request
         //ajax.setRequestHeader('X-PINGOTHER', 'pingpong');
@@ -312,15 +321,14 @@ class Configurator_class {
                     if (item != null)
                         item.classList.add("active");
                 }
-            }
-            else {
+            } else {
                 //console.log('something is wrong. items were not loaded');
             }
         };
 
         ajax.send();
 
-        document.addEventListener("DOMContentLoaded",  () => {
+        document.addEventListener("DOMContentLoaded", () => {
 
             // adding clickable areas
             var map = document.querySelector('map');
@@ -336,55 +344,52 @@ class Configurator_class {
                     });
                 }
                 e.stopPropagation();
-            },
-                false);
+            }, false);
 
             // resizing clickable areas
             const ImageMap = function () {
-
-
-                var n,
-                    areas = document.getElementById('iMap').getElementsByTagName('area'),
-                    len = areas.length,
-                    coords = [],
-                    previousWidth = 1600;
-                for (n = 0; n < len; n++) {
-                    coords[n] = areas[n].coords.split(',');
-                }
-
-                this.resize = function () {
-                    var n, m, clen,
-                        // x = document.body.clientWidth / previousWidth;
-                        x = document.getElementById('pic_B').clientWidth / previousWidth;
-
+                    var n,
+                        areas = document.getElementById('iMap').getElementsByTagName('area'),
+                        len = areas.length,
+                        coords = [],
+                        previousWidth = 1600;
                     for (n = 0; n < len; n++) {
-                        clen = coords[n].length;
-                        for (m = 0; m < clen; m++) {
-                            coords[n][m] *= x;
-                        }
-                        areas[n].coords = coords[n].join(',');
+                        coords[n] = areas[n].coords.split(',');
                     }
-                    //previousWidth = document.body.clientWidth;
-                    previousWidth = document.getElementById('pic_B').clientWidth;
-                    console.log("clickable areas resized: " + x);
-                    return true;
-                };
 
-                window.onresize = this.resize;
-            },
+                    this.resize = function () {
+                        var n, m, clen,
+                            // x = document.body.clientWidth / previousWidth;
+                            x = document.getElementById('pic_B').clientWidth / previousWidth;
+
+                        for (n = 0; n < len; n++) {
+                            clen = coords[n].length;
+                            for (m = 0; m < clen; m++) {
+                                coords[n][m] *= x;
+                            }
+                            areas[n].coords = coords[n].join(',');
+                        }
+                        //previousWidth = document.body.clientWidth;
+                        previousWidth = document.getElementById('pic_B').clientWidth;
+                        console.log("clickable areas resized: " + x);
+                        return true;
+                    };
+
+                    window.onresize = this.resize;
+                },
                 imageMap = new ImageMap(this.doc);
             imageMap.resize();
 
         });
-        
+
     };
 
-    set_active(active_){
+    set_active(active_) {
         // dropdown focus on selected
         $(".dropdown").find(".dropdown-menu li active").focus();
         this.Panels_set.set_active(active_, this);
 
-        
+
 
     }
 
@@ -408,7 +413,7 @@ class Configurator_class {
         // Show the current tab, and add an "active" class to the button that opened the tab
         document.getElementById(tab).style.zIndex = 2;
         if (evt)
-        evt.currentTarget.className += " active";
+            evt.currentTarget.className += " active";
 
     }
 
@@ -438,7 +443,7 @@ class Configurator_class {
                 document.getElementById("pic_" + ps.active).setAttribute("src", "images/scene/" + data[0].path);
 
                 // update description
-                        let txt = `${ps.active}: ${ps[ps.active].decor_name}  ${ps[ps.active].tile_pattern} (high x width)`;
+                let txt = `${ps.active}: ${ps[ps.active].decor_name}  ${ps[ps.active].tile_pattern} (high x width)`;
 
                 //document.getElementById("description_" + ps.active).innerHTML = txt;
 
@@ -446,16 +451,16 @@ class Configurator_class {
         };
 
         ajax.send();
-     }
+    }
 
-     
+
     update_tiles(decor_name, cover_button_item = "0", update_image_ = 0) {
         if (decor_name == null) return;
-    
+
         var host = "https://www.romanprog.com/0/";
         var ajax = new XMLHttpRequest();
-        ajax.open("GET", host + "server_side.php?cmd=get_tiles&cn="+decor_name,
-        true);
+        ajax.open("GET", host + "server_side.php?cmd=get_tiles&cn=" + decor_name,
+            true);
         ajax.onreadystatechange = (e) => {
             if (ajax.readyState == 4 && ajax.status == 200) {
                 //console.log(this.responseText);
@@ -475,8 +480,7 @@ class Configurator_class {
                 // update cover-button
                 if (cover_button_item == "0") { // first child
                     document.getElementById("tile_pattern_MenuButton").innerHTML = obj.querySelector(":first-child").innerHTML;
-                }
-                else{ // choose from items
+                } else { // choose from items
                     document.getElementById("tile_pattern_MenuButton").innerHTML = obj.querySelector('#' + cover_button_item).innerHTML;
                 }
 
@@ -491,12 +495,12 @@ class Configurator_class {
 
             }
         };
-    
+
         ajax.send();
 
     }
 
-            // adding items dynamically
+    // adding items dynamically
     add_items(id, img, txt) {
         var demolist = document.getElementById(id);
 
@@ -524,8 +528,8 @@ class Configurator_class {
         demolist.appendChild(option);
 
     }
-    
-    tile_pattern_onclick(e){
+
+    tile_pattern_onclick(e) {
         //console.log(e);
 
         // update button content
@@ -544,7 +548,7 @@ class Configurator_class {
         if (item != null)
             item.classList.add("active");
 
-            // update variabe
+        // update variabe
         this.Panels_set.set_tile_pattern(id);
 
         // update_image_and_price
@@ -554,15 +558,15 @@ class Configurator_class {
 
     };
 
-     
-     decor_name_onclick(e){
+
+    decor_name_onclick(e) {
 
         // update button content
-         var obj = document.getElementById("decor_name_MenuButton");
+        var obj = document.getElementById("decor_name_MenuButton");
         obj.innerHTML = e.innerHTML;
 
         // remove old selection (if exists)
-         var qs_list = document.querySelector('#decor_name_list');
+        var qs_list = document.querySelector('#decor_name_list');
         var item = qs_list.querySelector('.active');
         if (item != null)
             item.classList.remove("active");
@@ -618,30 +622,27 @@ class Configurator_class {
                 this.Overlay_popup.set_img(text);
                 this.Overlay_popup.set_title("Here we are!");
                 this.Overlay_popup.btns_show();
-            
+
             })
             // Catch any errors that might happen, and display a message
             // in the `poemDisplay` box.
             .catch((error) => console.log(`Could not fetch verse: ${error}`));
 
-        };
-        
+    };
+
     // function print shot ()       
     btn_print_click() {
-            window.print();
+        window.print();
     };
 
     // function share image
-     btn_share_click(){
-         this.btn_download_click();
+    btn_share_click() {
+        this.btn_download_click();
     };
 
-    
 
-  
-    
+
+
+
 
 };
-
-
-
