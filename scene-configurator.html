@@ -77,7 +77,7 @@
 
 
     <!-- Main -->
-    <main class="main">
+    <main class="main scene-main">
         <!-- Blackout -->
         <div class="blackout-white"></div>
 
@@ -133,7 +133,7 @@
         <!-- Scene Configurator -->
         <div class="scene">
             <!-- Custom Container -->
-            <div class="custom-container">
+            <div class="c">
                 <!-- Order Menu -->
                 <div class="order">
                     <div class="order__menu">
@@ -285,92 +285,8 @@
             </div>
 
 
-            <!-- Saved Modal -->
-            <div class="saved-blackout" data-modal="saved">
-                <div class="saved-modal">
-                    <button class="close-saved-modal ms-auto mb-4">
-                        <img src="./img/icons/Cancel.svg" alt="Cancel">
-                    </button>
-
-                    <div class="saved-modal-container">
-
-                        <h4 class="saved-modal__items_title h4">Saved to My gallery</h4>
-
-                        <div class="saved-modal__items d-flex flex-column"></div>
-
-                        <div class="saved-modal__items d-flex flex-column">
-                            <div class="d-flex me-auto mt-2">
-                                <button class="check-out-saved-modal mb-2 me-3">Check out</button>
-                                <button class="close-saved-modal mb-2">Back</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Empty Modal -->
-                <div class="saved-modal-empty">
-                    <button class="close-saved-modal ms-auto">
-                        <img src="./img/icons/Cancel.svg" alt="Cancel">
-                    </button>
-
-                    <h4 class="saved-modal__items_title mt-3 h4">No products to save</h4>
-                    <button class="close-saved-modal mb-2">Back</button>
-                </div>
-            </div>
-
-
-            <!-- Share Modal -->
-            <div class="share-blackout" data-modal="share">
-                <div class="share-modal">
-                    <button class="close-share-modal ms-auto">
-                        <img src="./img/icons/Cancel.svg" alt="Cancel">
-                    </button>
-
-                    <h4 class="share-modal__items_title h4 mb-4">Share to</h4>
-
-                    <div class="share-modal__items d-flex align-items-center">
-
-                        <div class="share-modal__item d-flex flex-column align-items-center">
-                            <a href="#!">
-                                <img src="./img/icons/Whatsapp.svg" alt="Whatsapp">
-                            </a>
-
-                            <span class="share-modal__item_title mt-2">WhatsApp</span>
-                        </div>
-
-                        <div class="share-modal__item d-flex flex-column align-items-center">
-                            <a href="#!">
-                                <img src="./img/icons/Facebook.svg" alt="Facbook">
-                            </a>
-
-                            <span class="share-modal__item_title mt-2">Facebook</span>
-                        </div>
-
-                        <div class="share-modal__item d-flex flex-column align-items-center">
-                            <a href="#!">
-                                <img src="./img/icons/Email.png" width="48px" heihgt="48px" alt="Email">
-                            </a>
-
-                            <span class="share-modal__item_title mt-2">Email</span>
-                        </div>
-
-                        <div class="share-modal__item d-flex flex-column align-items-center">
-                            <a href="#!">
-                                <img src="./img/icons/Link.svg" alt="Link">
-                            </a>
-
-                            <span class="share-modal__item_title mt-2">Copy link</span>
-                        </div>
-
-                    </div>
-
-                    <button class="close-share-modal mb-2">Back</button>
-                </div>
-            </div>
-
-
             <!-- Custom Menu -->
-            <div class="custom open d-flex align-items-start">
+            <div class="custom d-flex align-items-start">
                 <button class="custom-btn">
                     <img src="./img/icons/Pencil.svg" alt="">
                 </button>
@@ -425,7 +341,7 @@
                         </div>
 
                         <!-- Custom Drop List -->
-                        <div class="custom-drop-list" data-item="floor" data-mask="floor1" data-mask="floor2">
+                        <div class="custom-drop-list" data-item="floor" data-mask="floor">
                             <button class="custom-item-remove" data-remove="floor">Remove</button>
 
                             <div class="drop-list-container">
@@ -556,6 +472,90 @@
             </div>
 
 
+            <!-- Saved Modal -->
+            <div class="saved-blackout" data-modal="saved">
+                <div class="saved-modal">
+                    <button class="close-saved-modal ms-auto mb-4">
+                        <img src="./img/icons/Cancel.svg" alt="Cancel">
+                    </button>
+
+                    <div class="saved-modal-container">
+
+                        <h4 class="saved-modal__items_title h4">Saved to My gallery</h4>
+
+                        <div class="saved-modal__items d-flex flex-column"></div>
+
+                        <div class="saved-modal__items d-flex flex-column">
+                            <div class="d-flex me-auto mt-2">
+                                <button class="check-out-saved-modal mb-2 me-3">Check out</button>
+                                <button class="close-saved-modal mb-2">Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty Modal -->
+                <div class="saved-modal-empty">
+                    <button class="close-saved-modal ms-auto">
+                        <img src="./img/icons/Cancel.svg" alt="Cancel">
+                    </button>
+
+                    <h4 class="saved-modal__items_title mt-3 h4">No products to save</h4>
+                    <button class="close-saved-modal mb-2">Back</button>
+                </div>
+            </div>
+
+
+            <!-- Share Modal -->
+            <div class="share-blackout" data-modal="share">
+                <div class="share-modal">
+                    <button class="close-share-modal ms-auto">
+                        <img src="./img/icons/Cancel.svg" alt="Cancel">
+                    </button>
+
+                    <h4 class="share-modal__items_title h4 mb-4">Share to</h4>
+
+                    <div class="share-modal__items d-flex align-items-center">
+
+                        <div class="share-modal__item d-flex flex-column align-items-center">
+                            <a href="#!">
+                                <img src="./img/icons/Whatsapp.svg" alt="Whatsapp">
+                            </a>
+
+                            <span class="share-modal__item_title mt-2">WhatsApp</span>
+                        </div>
+
+                        <div class="share-modal__item d-flex flex-column align-items-center">
+                            <a href="#!">
+                                <img src="./img/icons/Facebook.svg" alt="Facbook">
+                            </a>
+
+                            <span class="share-modal__item_title mt-2">Facebook</span>
+                        </div>
+
+                        <div class="share-modal__item d-flex flex-column align-items-center">
+                            <a href="#!">
+                                <img src="./img/icons/Email.png" width="48px" heihgt="48px" alt="Email">
+                            </a>
+
+                            <span class="share-modal__item_title mt-2">Email</span>
+                        </div>
+
+                        <div class="share-modal__item d-flex flex-column align-items-center">
+                            <a href="#!">
+                                <img src="./img/icons/Link.svg" alt="Link">
+                            </a>
+
+                            <span class="share-modal__item_title mt-2">Copy link</span>
+                        </div>
+
+                    </div>
+
+                    <button class="close-share-modal mb-2">Back</button>
+                </div>
+            </div>
+
+
             <!-- Map -->
             <map name="map">
                 <!-- Area Wall panels -->
@@ -563,21 +563,20 @@
                     coords="400,316,891,429" shape="rect">
 
                 <!-- Area Chairs -->
-                <area class="wall-pattern-area" data-mask="chairs" alt="chairs" href="" target=""
+                <area class="chairs-area" data-mask="chairs" alt="chairs" href="" target=""
                     coords="717,441 1021,441 1021,561 883,563 845,525 717,523" shape="polygon">
 
                 <!-- Area Floor 1-->
-                <area class="wall-pattern-area" data-mask="floor1" alt="floor" href="" target=""
+                <area class="floor1-area" data-mask="floor" alt="floor" href="" target=""
                     coords="-2,551 0,655 236,657 236,551" shape="polygon">
 
                 <!-- Area Floor 2-->
-                <area class="wall-pattern-area" data-mask="floor2" alt="floor" href="" target=""
+                <area class="floor2-area" data-mask="floor" alt="floor" href="" target=""
                     coords="1131,445 1280,482 1280,659 1133,657 982,657 881,563 1131,565 " shape="polygon">
 
                 <!-- Area Lamps-->
-                <area class="wall-pattern-area" data-mask="lamps" alt="lamps" href="" target="" coords="296,63,992,299"
+                <area class="lamps-area" data-mask="lamps" alt="lamps" href="" target="" coords="296,63,992,299"
                     shape="rect">
-
 
 
                 <!-- Mask Wall panels -->

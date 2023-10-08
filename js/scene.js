@@ -46,6 +46,7 @@ var optionsBtn3d = document.querySelector('.options-btn-3d')
 var optionsBtnDownload = document.querySelector('.options-btn-download')
 var optionsBtnPrint = document.querySelector('.options-btn-print')
 var optionsBtnShare = document.querySelector('.options-btn-share')
+var openOptionsBtn = document.querySelector('.open-options-btn')
 
 // Option Modals
 var shareModal = document.querySelector('.share-blackout')
@@ -208,8 +209,21 @@ customItemBtn.forEach((button) => {
 });
 
 
+// Open Custom Menu
 customBtn.addEventListener('click', () => {
     custom.classList.toggle('open')
+
+    if (custom.classList.contains('open')) {
+        console.log();
+    } else {
+        customItemBtn.forEach(el => {
+            el.classList.remove('open')
+        })
+
+        customDropList.forEach(el => {
+            el.classList.remove('open')
+        })
+    }
 })
 
 
@@ -355,7 +369,6 @@ function pushProductsOrder() {
         orderList.innerHTML = '';
     }
 
-
     customArr.forEach((item) => {
         var product = item.elProduct;
         var price = item.elPrice;
@@ -432,10 +445,7 @@ document.addEventListener("DOMContentLoaded", () => {
             case 'chairs':
                 hideMasks(maskChairs, buttonAtrr)
                 break;
-            case 'floor1':
-                hideMasks(maskFloor, buttonAtrr)
-                break;
-            case 'floor2':
+            case 'floor':
                 hideMasks(maskFloor, buttonAtrr)
                 break;
             case 'lamps':
@@ -480,3 +490,48 @@ document.addEventListener("DOMContentLoaded", () => {
         custom.classList.add('open')
     }
 })
+
+
+// Background image mobile zoom
+// document.addEventListener('DOMContentLoaded', function () {
+//     const zoomedImage = document.querySelector('.scene__bg');
+
+//     let isZoomed = false; // Флаг для определения, увеличено ли изображение
+//     let initialTouchX = null; // Изначальная позиция касания по оси X
+//     let currentScale = 1;
+
+//     // Функция для увеличения и уменьшения масштаба
+//     function toggleZoom() {
+//         if (!isZoomed) {
+//             // Увеличиваем масштаб при первом касании
+//             currentScale += 1
+//             zoomedImage.style.transform = `scale(${currentScale})`;
+//             isZoomed = true;
+//         } else {
+//             currentScale -= 1
+//             zoomedImage.style.transform = `scale(${currentScale})`;
+//         }
+//     }
+
+//     // Обработчик события начала касания (touchstart)
+//     zoomedImage.addEventListener('touchstart', function (event) {
+//         if (event.touches.length === 1) {
+//             // Запоминаем изначальную позицию касания по оси X
+//             initialTouchX = event.touches[0].pageX;
+//         }
+//     });
+
+//     // Обработчик события окончания касания (touchend)
+//     zoomedImage.addEventListener('touchstart', function (event) {
+//         if (event.changedTouches.length === 1) {
+//             // Рассчитываем разницу между начальной и конечной позициями касания по оси X
+//             const touchX = event.changedTouches[0].pageX;
+//             const deltaX = touchX - initialTouchX;
+
+//             // Если разница по X небольшая (например, менее 10px), считаем это кликом и не увеличиваем/уменьшаем масштаб
+//             if (Math.abs(deltaX) < 10) {
+//                 toggleZoom();
+//             }
+//         }
+//     });
+// });

@@ -24,6 +24,10 @@ body {
     flex-direction: column;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .container-xxl {
     position: relative !important;
 }
@@ -122,7 +126,7 @@ footer {
     .swiper-pagination {
         display: block !important;
 
-        top: 77px !important;
+        top: 30px !important;
     }
 }
 
@@ -182,7 +186,7 @@ footer {
 
 @media(max-width: 576px) {
     .carousel__img {
-        height: 650px !important;
+        height: 700px !important;
     }
 
     .carousel__title {
