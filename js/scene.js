@@ -237,6 +237,7 @@ objectFartukBtn.forEach(button => {
     customObjectsHandler(button, fartukImg)
 })
 
+
 // Custom Objects Portuquet
 var objectParquetBtn = document.querySelectorAll('.object-parquet-btn')
 var portuquetImg = document.querySelectorAll('.portuquet-img')
@@ -263,31 +264,34 @@ function customObjectsHandler(button, object) {
             }
         });
 
+
         // Remove added products
         removeBtn.forEach(btn => {
             var btnAttr = btn.getAttribute('data-remove')
 
             if (btnAttr == objectRemoveAttr) {
-
-
                 btn.classList.add('active')
 
                 btn.addEventListener('click', () => {
-
                     object.forEach(el => {
                         var elProduct = el.getAttribute('data-product');
 
-                        var removeProductIndexCs = customArr.findIndex(item => item.elProduct === elProduct);
-                        customArr.splice(elProduct, 1)
+                        if (el.classList.contains('object-visible')) {
+                            var indexProductArr = productArr.findIndex(item => item.elProduct === elProduct);
+                            var indexCustomArr = customArr.findIndex(item => item.elProduct === elProduct);
+
+
+                            if (indexProductArr !== -1 || indexCustomArr !== -1) {
+                                productArr.splice(indexProductArr, 1);
+                                customArr.splice(indexCustomArr, 1);
+                                countItems--
+                            }
+                        }
 
                         el.classList.remove('object-visible');
                         btn.classList.remove('active')
-                        countItems--
                     })
-
                 })
-
-
             }
         })
 
@@ -304,8 +308,9 @@ function checkObjectProduct(product) {
 
         if (el.classList.contains('object-visible')) {
             var existingProductIndex = customArr.findIndex(item => item.elProduct === elProduct);
+            var existingProductIndexPr = productArr.findIndex(item => item.elProduct === elProduct);
 
-            if (existingProductIndex === -1) {
+            if (existingProductIndex === -1 || existingProductIndexPr === -1) {
                 customArr.push({
                     elProduct,
                     elPrice
@@ -329,23 +334,27 @@ function checkObjectProduct(product) {
             }
         }
     });
+}
 
-    pushProductOrder();
+
+optionsBtnSave.addEventListener('click', () => {
     pushProductsToSavedModal();
-}
+})
 
-
-if (customArr.length !== 0) {
-    var empty = document.querySelector('.order__list-text-empty')
-    empty.style = "display: none"
-}
+document.addEventListener('click', () => {
+    pushProductsOrder();
+})
 
 
 // Push Products to Order
-function pushProductOrder() {
+function pushProductsOrder() {
     var orderList = document.querySelector('.order__list');
     var orderCount = document.querySelector('.order__count')
-    orderList.innerHTML = '';
+
+    if (customArr.length !== 0) {
+        orderList.innerHTML = '';
+    }
+
 
     customArr.forEach((item) => {
         var product = item.elProduct;

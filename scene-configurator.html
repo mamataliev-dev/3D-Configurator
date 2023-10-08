@@ -148,7 +148,7 @@
 
                     <!-- Order List -->
                     <div class="order__list">
-                        <span class="order__list-text-empty">No products yet</span>
+                        <span class="order__list-empty">No products yet</span>
                     </div>
                 </div>
             </div>
@@ -288,18 +288,21 @@
             <!-- Saved Modal -->
             <div class="saved-blackout" data-modal="saved">
                 <div class="saved-modal">
-                    <button class="close-saved-modal ms-auto">
+                    <button class="close-saved-modal ms-auto mb-4">
                         <img src="./img/icons/Cancel.svg" alt="Cancel">
                     </button>
 
-                    <h4 class="saved-modal__items_title h4 mt-4 mb-5">Saved to My gallery</h4>
+                    <div class="saved-modal-container">
 
-                    <div class="saved-modal__items d-flex flex-column mb-4"></div>
+                        <h4 class="saved-modal__items_title h4">Saved to My gallery</h4>
 
-                    <div class="saved-modal__items d-flex flex-column">
-                        <div class="d-flex me-auto mt-2">
-                            <button class="check-out-saved-modal mb-2 me-3">Check out</button>
-                            <button class="close-saved-modal mb-2">Back</button>
+                        <div class="saved-modal__items d-flex flex-column"></div>
+
+                        <div class="saved-modal__items d-flex flex-column">
+                            <div class="d-flex me-auto mt-2">
+                                <button class="check-out-saved-modal mb-2 me-3">Check out</button>
+                                <button class="close-saved-modal mb-2">Back</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -367,7 +370,7 @@
 
 
             <!-- Custom Menu -->
-            <div class="custom d-flex align-items-start">
+            <div class="custom open d-flex align-items-start">
                 <button class="custom-btn">
                     <img src="./img/icons/Pencil.svg" alt="">
                 </button>
@@ -390,7 +393,7 @@
                             <button class="custom-item-remove" data-remove="wall-pattern">Remove</button>
 
                             <div class="drop-list-container">
-                                <button class="object-fartuk-btn">
+                                <button class="object-fartuk-btn fartuk1">
                                     <img class="custom__img" data-object="fartuk1" data-remove="wall-pattern"
                                         src="./img/scene-img/wall-pattern/kitchen-fartuk-1.jpg" alt="" />
                                 </button>
@@ -543,7 +546,7 @@
                                 </button>
 
                                 <button class="object-lamp-btn">
-                                    <img class="custom__img" data-object="lamp-5"
+                                    <img class="custom__img" data-object="lamp-5" data-remove="lamps"
                                         src="./img/scene-img/object-icons/Lamp 5.jpg" alt="Lamp 5">
                                 </button>
                             </div>
