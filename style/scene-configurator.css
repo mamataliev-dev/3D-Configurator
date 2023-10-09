@@ -1,8 +1,28 @@
+.open-options-btn-mobile {
+    display: none;
+}
+
+.options-box-mobile {
+    display: none;
+}
+
 @media(max-width: 540px) {
+    .options {
+        display: none !important;
+    }
+
     .mobile-container {
         width: 100vw;
         height: 800px;
         position: relative !important;
+    }
+
+    .open-options-btn-mobile {
+        display: block;
+    }
+
+    .order__menu {
+        position: fixed !important;
     }
 
     .options-box-mobile {
@@ -35,17 +55,13 @@
 
     .custom {
         position: fixed !important;
-        top: 20% !important;
-    }
-
-    .options {
-        position: fixed !important;
+        top: 25% !important;
     }
 }
 
 .custom-container {
     max-width: 1320px;
-    height: 800px;
+    height: 100vh;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -326,6 +342,9 @@
 
 /** Custom */
 .custom {
+    display: flex;
+    align-items: start;
+
     position: absolute;
     top: 20%;
     right: -354px;

@@ -130,7 +130,7 @@
         <!-- Scene Configurator -->
         <div class="scene">
             <!-- Custom Container -->
-            <div class="custom-container d-lg-block">
+            <div class="custom-container d-none">
                 <!-- Order Menu -->
                 <div class="order">
                     <div class="order__menu">
@@ -152,7 +152,7 @@
 
 
             <div class="mobile-container">
-                <!-- Options Menu -->
+                <!-- Options Menu Mobile-->
                 <div class="options-box-mobile">
 
                     <div class="options-mobile">
@@ -405,6 +405,67 @@
             </div>
 
 
+            <!-- Options -->
+            <div class="options">
+                <!-- Save -->
+                <button class="options__btn options-btn-save position-relative" data-tip="save">
+                    <img data-tip="save" class="options__btn-img" src="./img/icons/Heart.svg" alt="Save">
+
+                    <!-- Tip Save -->
+                    <div data-tip="save" class="options__tip tip-save">
+                        <span>Save</span>
+                    </div>
+                </button>
+
+                <!-- 3D View -->
+                <button class="options__btn options-btn-3d position-relative" data-tip="3d">
+                    <img data-tip="3d" src="./img/icons/Rotation.svg" alt="3D View">
+
+                    <!-- Tip 3D View -->
+                    <div data-tip="3d" class="options__tip tip-3d">
+                        <span>Camera view</span>
+                    </div>
+                </button>
+
+                <!-- Download -->
+                <button class="options__btn options-btn-download position-relative" data-tip="download">
+                    <img data-tip="download" src="./img/icons/Download.svg" alt="Download">
+
+                    <!-- Tip Download -->
+                    <div data-tip="download" class="options__tip tip-download">
+                        <span>Download</span>
+                    </div>
+                </button>
+
+                <!-- Download Modal -->
+                <div class="download-blackout" data-modal="download"></div>
+                <div class="download-modal">
+                    <button class="download-modal__btn download-modal-png me-auto">PNG</button>
+                    <button class="download-modal__btn download-modal-jpg me-auto">PDF</button>
+                </div>
+
+                <!-- Print -->
+                <button class="options__btn options-btn-print position-relative" data-tip="print">
+                    <img data-tip="print" src="./img/icons/Printer.svg" alt="Print">
+
+                    <!-- Tip Print -->
+                    <div data-tip="print" class="options__tip tip-print">
+                        <span>Print</span>
+                    </div>
+                </button>
+
+                <!-- Share -->
+                <button class="options__btn options-btn-share position-relative" data-tip="share">
+                    <img data-tip="share" src="./img/icons/Share.svg" alt="Share">
+
+                    <!-- Tip Share -->
+                    <div data-tip="share" class="options__tip tip-share">
+                        <span>Share</span>
+                    </div>
+                </button>
+            </div>
+
+
             <!-- Foreground -->
             <img class="foreground-img" data-object="foreground" src="./img/scene-img/objects-png/Foreground.png"
                 alt="Foreground">
@@ -589,10 +650,8 @@
             </div>
 
             <!-- Background Image -->
-            <!-- <div class="background-container"> -->
             <img usemap="#imagemap" id="responsive-image" class="scene__bg" src="./img/scene-img/scene-background.jpg"
                 alt="Kitchen black" usemap="#iMap">
-            <!-- </div> -->
         </div>
     </main>
 
