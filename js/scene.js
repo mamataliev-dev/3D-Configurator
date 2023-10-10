@@ -475,9 +475,9 @@ document.addEventListener("DOMContentLoaded", () => {
         mask.classList.add('active')
 
         if (maskAttr == 'chairs') {
-            mask.src = `../img/scene-img/masks/${productMaskChairs}-mask.png`
+            mask.src = `./img/scene-img/masks/${productMaskChairs}-mask.png`
         } else if (maskAttr == 'lamps') {
-            mask.src = `../img/scene-img/masks/${productMaskLamps}-mask.png`
+            mask.src = `./img/scene-img/masks/${productMaskLamps}-mask.png`
         }
 
 
