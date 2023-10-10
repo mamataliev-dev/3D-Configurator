@@ -37,8 +37,12 @@ var customArr = [];
 // Products Count
 var countItems = 0;
 
-// Products Array For My Gallary
+// Products array for 'My Gallary'
 var productArr = []
+
+// Chosen product mask
+var productMaskChairs = 'Bar-Stool-1'
+var productMaskLamps = 'lamp-1'
 
 // Options Btns
 var optionsBtnSave = document.querySelector('.options-btn-save')
@@ -61,13 +65,6 @@ var optionsBoxMobile = document.querySelector('.options-box-mobile')
 var btnCloseShareModal = document.querySelectorAll('.close-share-modal')
 var btnCloseSavedModal = document.querySelectorAll('.close-saved-modal')
 var btnMoveToGallary = document.querySelector('.check-out-saved-modal')
-var openOptionsBtnMobile = document.querySelector('.open-options-btn-mobile')
-
-
-// Show Mobile Options Menu
-openOptionsBtnMobile.addEventListener('click', () => {
-    optionsBoxMobile.classList.toggle('active')
-})
 
 // Show Order List 
 var orderList = document.querySelector('.order__list')
@@ -190,6 +187,7 @@ var custom = document.querySelector('.custom')
 var lastClickedButton = null;
 
 
+// Open Cusotm Menu Items
 customItemBtn.forEach((button) => {
     button.addEventListener('click', (e) => {
         var btn = e.target;
@@ -273,6 +271,7 @@ function customObjectsHandler(button, object) {
     button.addEventListener('click', (e) => {
         var objectBtn = e.target;
         var objectBtnAttr = objectBtn.getAttribute('data-object');
+        var objectBtnMaskAttr = objectBtn.getAttribute('data-mask')
         var objectRemoveAttr = objectBtn.getAttribute('data-remove');
 
         object.forEach((el) => {
@@ -284,6 +283,14 @@ function customObjectsHandler(button, object) {
                 el.classList.remove('object-visible');
             }
         });
+
+
+        // Check clicked prodcut type for masks
+        if (objectBtnMaskAttr == 'chairs') {
+            productMaskChairs = objectBtnAttr
+        } else if (objectBtnMaskAttr == 'lamps') {
+            productMaskLamps = objectBtnAttr
+        }
 
 
         // Remove added products
@@ -360,7 +367,6 @@ function checkObjectProduct(product) {
 
 optionsBtnSave.addEventListener('click', () => {
     pushProductsToSavedModal();
-    pushLocalStorage();
 })
 
 document.addEventListener('click', () => {
@@ -401,7 +407,7 @@ function pushProductsOrder() {
 }
 
 
-// Save Products To My Gallary
+// Save Products To Saved Modal
 function pushProductsToSavedModal() {
     var savedModalItems = document.querySelector('.saved-modal__items')
     savedModalItems.innerHTML = '';
@@ -423,22 +429,14 @@ function pushProductsToSavedModal() {
 }
 
 
-// Push Custom Array to LocalStorage
-function pushLocalStorage() {
-    var customArrString = JSON.stringify(customArr);
-
-    localStorage.setItem('customArr', customArrString);
-}
-
-
 // Show masks
 document.addEventListener("DOMContentLoaded", () => {
     var maskBtn = document.querySelectorAll('.mask_btn')
+    var masks = document.querySelectorAll('.mask')
     var maskWallPanels = document.querySelector('.mask-wall-panels')
     var maskChairs = document.querySelector('.mask-chairs')
     var maskFloor = document.querySelector('.mask-floor')
     var maskLamps = document.querySelector('.mask-lamps')
-
 
     maskBtn.forEach(button => {
         button.addEventListener('click', (e) => {
@@ -447,16 +445,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
             switch (buttonAttr) {
                 case 'wall-pattern':
-                    hideMasks(maskWallPanels, buttonAttr)
+                    showMasks(maskWallPanels, buttonAttr)
                     break;
                 case 'chairs':
-                    hideMasks(maskChairs, buttonAttr)
+                    showMasks(maskChairs, buttonAttr)
                     break;
                 case 'floor':
-                    hideMasks(maskFloor, buttonAttr)
+                    showMasks(maskFloor, buttonAttr)
                     break;
                 case 'lamps':
-                    hideMasks(maskLamps, buttonAttr)
+                    showMasks(maskLamps, buttonAttr)
                     break;
                 default:
                     break;
@@ -465,21 +463,30 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
 
-    function hideMasks(mask, customMenu) {
-        mask.classList.add('active')
-
+    function showMasks(mask, customMenu) {
         // Remove Masks
         setTimeout(() => {
             mask.classList.remove('active')
         }, 150);
 
 
-        // Open Custom by button click
+        // Check Chosen Product Mask
+        var maskAttr = mask.getAttribute('data-mask')
+        mask.classList.add('active')
+
+        if (maskAttr == 'chairs') {
+            mask.src = `../img/scene-img/masks/${productMaskChairs}-mask.png`
+        } else if (maskAttr == 'lamps') {
+            mask.src = `../img/scene-img/masks/${productMaskLamps}-mask.png`
+        }
+
+
+        // Open Custom Menu
         customItemBtn.forEach(button => {
             var buttonAttr = button.getAttribute('data-mask')
 
             if (buttonAttr == customMenu) {
-                button.classList.toggle('open')
+                button.classList.add('open')
             } else {
                 button.classList.remove('open')
             }
@@ -489,7 +496,7 @@ document.addEventListener("DOMContentLoaded", () => {
             var listArtt = el.getAttribute('data-mask')
 
             if (listArtt == customMenu) {
-                el.classList.toggle('open')
+                el.classList.add('open')
             } else {
                 el.classList.remove('open')
             }

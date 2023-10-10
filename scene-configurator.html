@@ -78,6 +78,7 @@
         <!-- Blackout -->
         <div class="blackout-white"></div>
 
+
         <!-- Drop Down List -->
         <div class="blackout drop-down-blackout">
             <div class="mynav-drop-down">
@@ -100,6 +101,7 @@
                 </ul>
             </div>
         </div>
+
 
         <!-- Second Nav Drop Down List -->
         <div class="second-blackout second-nav-drop-down-blackout">
@@ -130,7 +132,7 @@
         <!-- Scene Configurator -->
         <div class="scene">
             <!-- Custom Container -->
-            <div class="custom-container d-none">
+            <div class="custom-container">
                 <!-- Order Menu -->
                 <div class="order">
                     <div class="order__menu">
@@ -143,7 +145,6 @@
                         <button class="order__btn ms-3">Order</button>
                     </div>
 
-                    <!-- Order List -->
                     <div class="order__list">
                         <span class="order__list-empty">No products yet</span>
                     </div>
@@ -151,253 +152,186 @@
             </div>
 
 
-            <div class="mobile-container">
-                <!-- Options Menu Mobile-->
-                <div class="options-box-mobile">
+            <!-- Custom Menu -->
+            <div class="custom d-flex align-items-start">
+                <button class="custom-btn">
+                    <img src="./img/icons/Pencil.svg" alt="">
+                </button>
 
-                    <div class="options-mobile">
-                        <!-- Save -->
-                        <button class="options__btn options-btn-save position-relative" data-tip="save">
-                            <img data-tip="save" class="options__btn-img" src="./img/icons/Heart.svg" alt="Save">
+                <div class="custom__items">
+                    <!-- Wall panels -->
+                    <div class="custom__block">
+                        <!-- Custom Item -->
+                        <div class="custom__item">
+                            <img class="custom__item_img" src="./img/wall-patter.png" alt="">
+                            <span class="custom__item_title">Wall panels</span>
 
-                            <!-- Tip Save -->
-                            <div data-tip="save" class="options__tip tip-save">
-                                <span>Save</span>
-                            </div>
-                        </button>
-
-                        <!-- 3D View -->
-                        <button class="options__btn options-btn-3d position-relative" data-tip="3d">
-                            <img data-tip="3d" src="./img/icons/Rotation.svg" alt="3D View">
-
-                            <!-- Tip 3D View -->
-                            <div data-tip="3d" class="options__tip tip-3d">
-                                <span>Camera view</span>
-                            </div>
-                        </button>
-
-                        <!-- Download -->
-                        <button class="options__btn options-btn-download position-relative" data-tip="download">
-                            <img data-tip="download" src="./img/icons/Download.svg" alt="Download">
-
-                            <!-- Tip Download -->
-                            <div data-tip="download" class="options__tip tip-download">
-                                <span>Download</span>
-                            </div>
-                        </button>
-
-                        <!-- Download Modal -->
-                        <div class="download-blackout" data-modal="download"></div>
-                        <div class="download-modal">
-                            <button class="download-modal__btn download-modal-png me-auto">PNG</button>
-                            <button class="download-modal__btn download-modal-jpg me-auto">PDF</button>
+                            <button class="custom-item-btn" data-mask="wall-pattern">
+                                <img data-item="wall-pattern" src="./img/icons/open-custom.svg" alt="">
+                            </button>
                         </div>
 
-                        <!-- Print -->
-                        <button class="options__btn options-btn-print position-relative" data-tip="print">
-                            <img data-tip="print" src="./img/icons/Printer.svg" alt="Print">
+                        <!-- Custom Drop List -->
+                        <div class="custom-drop-list" data-item="wall-pattern" data-mask="wall-pattern">
+                            <button class="custom-item-remove" data-remove="wall-pattern">Remove</button>
 
-                            <!-- Tip Print -->
-                            <div data-tip="print" class="options__tip tip-print">
-                                <span>Print</span>
+                            <div class="drop-list-container">
+                                <button class="object-fartuk-btn fartuk1">
+                                    <img class="custom__img" data-object="fartuk1" data-remove="wall-pattern"
+                                        src="./img/scene-img/wall-pattern/kitchen-fartuk-1.jpg" alt="" />
+                                </button>
+
+                                <button class="object-fartuk-btn">
+                                    <img class="custom__img" data-object="fartuk2" data-remove="wall-pattern"
+                                        src="./img/scene-img/wall-pattern/kitchen-fartuk-2.jpg" alt="" />
+                                </button>
+
+                                <button class="object-fartuk-btn">
+                                    <img class="custom__img" data-object="fartuk3" data-remove="wall-pattern"
+                                        src="./img/scene-img/wall-pattern/kitchen-fartuk-3.jpg" alt="" />
+                                </button>
                             </div>
-                        </button>
-
-                        <!-- Share -->
-                        <button class="options__btn options-btn-share position-relative" data-tip="share">
-                            <img data-tip="share" src="./img/icons/Share.svg" alt="Share">
-
-                            <!-- Tip Share -->
-                            <div data-tip="share" class="options__tip tip-share">
-                                <span>Share</span>
-                            </div>
-                        </button>
+                        </div>
                     </div>
 
-                    <img class="open-options-btn-mobile" src="./img/icons/open-options-btn.svg" alt="">
-                </div>
 
-                <!-- Custom Menu -->
-                <div class="custom d-flex align-items-start">
-                    <button class="custom-btn">
-                        <img src="./img/icons/Pencil.svg" alt="">
-                    </button>
+                    <!-- Floor covering -->
+                    <div class="custom__block">
+                        <!-- Custom Item -->
+                        <div class="custom__item">
+                            <img class="custom__item_img" src="./img/floor.png" alt="">
+                            <span class="custom__item_title">Floor covering</span>
 
-                    <div class="custom__items">
-                        <!-- Wall panels -->
-                        <div class="custom__block">
-                            <!-- Custom Item -->
-                            <div class="custom__item">
-                                <img class="custom__item_img" src="./img/wall-patter.png" alt="">
-                                <span class="custom__item_title">Wall panels</span>
+                            <button class="custom-item-btn" data-mask="floor">
+                                <img data-item="floor" data-mask="floor" src="./img/icons/open-custom.svg" alt="">
+                            </button>
+                        </div>
 
-                                <button class="custom-item-btn" data-mask="wall-pattern">
-                                    <img data-item="wall-pattern" src="./img/icons/open-custom.svg" alt="">
+                        <!-- Custom Drop List -->
+                        <div class="custom-drop-list" data-item="floor" data-mask="floor">
+                            <button class="custom-item-remove" data-remove="floor">Remove</button>
+
+                            <div class="drop-list-container">
+                                <button class="object-parquet-btn">
+                                    <img class="custom__img" data-object="parquet1" data-remove="floor"
+                                        src="./img/scene-img/wall-pattern/Parquet 1.jpg" alt="" />
+                                </button>
+
+                                <button class="object-parquet-btn">
+                                    <img class="custom__img" data-object="parquet2" data-remove="floor"
+                                        src="./img/scene-img/wall-pattern/Parquet 2.jpg" alt="" />
+                                </button>
+
+                                <button class="object-parquet-btn">
+                                    <img class="custom__img" data-object="parquet3" data-remove="floor"
+                                        src="./img/scene-img/wall-pattern/Parquet 3.jpg" alt="" />
+                                </button>
+
+                                <button class="object-parquet-btn">
+                                    <img class="custom__img" data-object="parquet4" data-remove="floor"
+                                        src="./img/scene-img/wall-pattern/Parquet 4.jpg" alt="" />
+                                </button>
+
+                                <button class="object-parquet-btn">
+                                    <img class="custom__img" data-object="parquet5" data-remove="floor"
+                                        src="./img/scene-img/wall-pattern/Parquet 5.jpg" alt="" />
                                 </button>
                             </div>
+                        </div>
+                    </div>
 
-                            <!-- Custom Drop List -->
-                            <div class="custom-drop-list" data-item="wall-pattern" data-mask="wall-pattern">
-                                <button class="custom-item-remove" data-remove="wall-pattern">Remove</button>
 
-                                <div class="drop-list-container">
-                                    <button class="object-fartuk-btn fartuk1">
-                                        <img class="custom__img" data-object="fartuk1" data-remove="wall-pattern"
-                                            src="./img/scene-img/wall-pattern/kitchen-fartuk-1.jpg" alt="" />
-                                    </button>
+                    <!-- Chairs -->
+                    <div class="custom__block">
+                        <!-- Custom Item -->
+                        <div class="custom__item">
+                            <img class="custom__item_img" src="./img/scene-img/object-icons/Bar-Stool-1.jpg" alt="">
+                            <span class="custom__item_title">Chairs</span>
 
-                                    <button class="object-fartuk-btn">
-                                        <img class="custom__img" data-object="fartuk2" data-remove="wall-pattern"
-                                            src="./img/scene-img/wall-pattern/kitchen-fartuk-2.jpg" alt="" />
-                                    </button>
-
-                                    <button class="object-fartuk-btn">
-                                        <img class="custom__img" data-object="fartuk3" data-remove="wall-pattern"
-                                            src="./img/scene-img/wall-pattern/kitchen-fartuk-3.jpg" alt="" />
-                                    </button>
-                                </div>
-                            </div>
+                            <button class="custom-item-btn" data-mask="chairs">
+                                <img data-item="chairs" src="./img/icons/open-custom.svg" alt="">
+                            </button>
                         </div>
 
 
-                        <!-- Floor covering -->
-                        <div class="custom__block">
-                            <!-- Custom Item -->
-                            <div class="custom__item">
-                                <img class="custom__item_img" src="./img/floor.png" alt="">
-                                <span class="custom__item_title">Floor covering</span>
+                        <!-- Objects -->
+                        <div class="custom-drop-list" data-item="chairs" data-mask="chairs">
+                            <button class="custom-item-remove" data-remove="chairs">Remove</button>
 
-                                <button class="custom-item-btn" data-mask="floor">
-                                    <img data-item="floor" data-mask="floor" src="./img/icons/open-custom.svg" alt="">
+                            <div class="drop-list-container">
+
+                                <button class="object-bar-stool-btn">
+                                    <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-1" data-remove="chairs"
+                                        src="./img/scene-img/object-icons/Bar-Stool-1.jpg" alt="Bar-Stool-1" />
+                                </button>
+
+                                <button class="object-bar-stool-btn">
+                                    <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-2" data-remove="chairs"
+                                        src="./img/scene-img/object-icons/Bar-Stool-2.jpg" alt="Bar-Stool-2" />
+                                </button>
+
+                                <button class="object-bar-stool-btn">
+                                    <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-3" data-remove="chairs"
+                                        src="./img/scene-img/object-icons/Bar-Stool-3.jpg" alt="Bar-Stool-3" />
+                                </button>
+
+                                <button class="object-bar-stool-btn">
+                                    <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-4" data-remove="chairs"
+                                        src="./img/scene-img/object-icons/Bar-Stool-4.jpg" alt="Bar-Stool-4" />
+                                </button>
+
+                                <button class="object-bar-stool-btn">
+                                    <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-5" data-remove="chairs"
+                                        src="./img/scene-img/object-icons/Bar-Stool-5.jpg" alt="Bar-Stool-5" />
                                 </button>
                             </div>
+                        </div>
+                    </div>
 
-                            <!-- Custom Drop List -->
-                            <div class="custom-drop-list" data-item="floor" data-mask="floor">
-                                <button class="custom-item-remove" data-remove="floor">Remove</button>
 
-                                <div class="drop-list-container">
-                                    <button class="object-parquet-btn">
-                                        <img class="custom__img" data-object="parquet1" data-remove="floor"
-                                            src="./img/scene-img/wall-pattern/Parquet 1.jpg" alt="" />
-                                    </button>
+                    <!-- Lamps -->
+                    <div class="custom__block">
+                        <!-- Custom Item -->
+                        <div class="custom__item">
+                            <img class="custom__item_img" src="./img/scene-img/object-icons/Lamp 1.jpg" alt="">
+                            <span class="custom__item_title">Lamps</span>
 
-                                    <button class="object-parquet-btn">
-                                        <img class="custom__img" data-object="parquet2" data-remove="floor"
-                                            src="./img/scene-img/wall-pattern/Parquet 2.jpg" alt="" />
-                                    </button>
-
-                                    <button class="object-parquet-btn">
-                                        <img class="custom__img" data-object="parquet3" data-remove="floor"
-                                            src="./img/scene-img/wall-pattern/Parquet 3.jpg" alt="" />
-                                    </button>
-
-                                    <button class="object-parquet-btn">
-                                        <img class="custom__img" data-object="parquet4" data-remove="floor"
-                                            src="./img/scene-img/wall-pattern/Parquet 4.jpg" alt="" />
-                                    </button>
-
-                                    <button class="object-parquet-btn">
-                                        <img class="custom__img" data-object="parquet5" data-remove="floor"
-                                            src="./img/scene-img/wall-pattern/Parquet 5.jpg" alt="" />
-                                    </button>
-                                </div>
-                            </div>
+                            <button class="custom-item-btn" data-mask="lamps">
+                                <img data-item="lamps" data-mask="lamps" src="./img/icons/open-custom.svg" alt="">
+                            </button>
                         </div>
 
 
-                        <!-- Chairs -->
-                        <div class="custom__block">
-                            <!-- Custom Item -->
-                            <div class="custom__item">
-                                <img class="custom__item_img" src="./img/scene-img/object-icons/Bar-Stool-1.jpg" alt="">
-                                <span class="custom__item_title">Chairs</span>
+                        <!-- Objects -->
+                        <div class="custom-drop-list" data-item="lamps" data-mask="lamps">
+                            <button class="custom-item-remove" data-remove="lamps">Remove</button>
 
-                                <button class="custom-item-btn" data-mask="chairs">
-                                    <img data-item="chairs" src="./img/icons/open-custom.svg" alt="">
+                            <div class="drop-list-container">
+
+                                <button class="object-lamp-btn">
+                                    <img class="custom__img" data-mask="lamps" data-object="lamp-1" data-remove="lamps"
+                                        src="./img/scene-img/object-icons/Lamp 1.jpg" alt="Lamp 1" />
                                 </button>
-                            </div>
 
-
-                            <!-- Objects -->
-                            <div class="custom-drop-list" data-item="chairs" data-mask="chairs">
-                                <button class="custom-item-remove" data-remove="chairs">Remove</button>
-
-                                <div class="drop-list-container">
-
-                                    <button class="object-bar-stool-btn">
-                                        <img class="custom__img" data-object="Bar-Stool-1" data-remove="chairs"
-                                            src="./img/scene-img/object-icons/Bar-Stool-1.jpg" alt="Bar-Stool-1" />
-                                    </button>
-
-                                    <button class="object-bar-stool-btn">
-                                        <img class="custom__img" data-object="Bar-Stool-2" data-remove="chairs"
-                                            src="./img/scene-img/object-icons/Bar-Stool-2.jpg" alt="Bar-Stool-2" />
-                                    </button>
-
-                                    <button class="object-bar-stool-btn">
-                                        <img class="custom__img" data-object="Bar-Stool-3" data-remove="chairs"
-                                            src="./img/scene-img/object-icons/Bar-Stool-3.jpg" alt="Bar-Stool-3" />
-                                    </button>
-
-                                    <button class="object-bar-stool-btn">
-                                        <img class="custom__img" data-object="Bar-Stool-4" data-remove="chairs"
-                                            src="./img/scene-img/object-icons/Bar-Stool-4.jpg" alt="Bar-Stool-4" />
-                                    </button>
-
-                                    <button class="object-bar-stool-btn">
-                                        <img class="custom__img" data-object="Bar-Stool-5" data-remove="chairs"
-                                            src="./img/scene-img/object-icons/Bar-Stool-5.jpg" alt="Bar-Stool-5" />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <!-- Lamps -->
-                        <div class="custom__block">
-                            <!-- Custom Item -->
-                            <div class="custom__item">
-                                <img class="custom__item_img" src="./img/scene-img/object-icons/Lamp 1.jpg" alt="">
-                                <span class="custom__item_title">Lamps</span>
-
-                                <button class="custom-item-btn" data-mask="lamps">
-                                    <img data-item="lamps" data-mask="lamps" src="./img/icons/open-custom.svg" alt="">
+                                <button class="object-lamp-btn">
+                                    <img class="custom__img" data-mask="lamps" data-object="lamp-2" data-remove="lamps"
+                                        src="./img/scene-img/object-icons/Lamp 2.jpg" alt="Lamp 2" />
                                 </button>
-                            </div>
 
+                                <button class="object-lamp-btn">
+                                    <img class="custom__img" data-mask="lamps" data-object="lamp-3" data-remove="lamps"
+                                        src="./img/scene-img/object-icons/Lamp 3.jpg" alt="Lamp 3" />
+                                </button>
 
-                            <!-- Objects -->
-                            <div class="custom-drop-list" data-item="lamps" data-mask="lamps">
-                                <button class="custom-item-remove" data-remove="lamps">Remove</button>
+                                <button class="object-lamp-btn">
+                                    <img class="custom__img" data-mask="lamps" data-object="lamp-4" data-remove="lamps"
+                                        src="./img/scene-img/object-icons/Lamp 4.jpg" alt="Lamp 4" />
+                                </button>
 
-                                <div class="drop-list-container">
-
-                                    <button class="object-lamp-btn">
-                                        <img class="custom__img" data-object="lamp-1" data-remove="lamps"
-                                            src="./img/scene-img/object-icons/Lamp 1.jpg" alt="Lamp 1" />
-                                    </button>
-
-                                    <button class="object-lamp-btn">
-                                        <img class="custom__img" data-object="lamp-2" data-remove="lamps"
-                                            src="./img/scene-img/object-icons/Lamp 2.jpg" alt="Lamp 2" />
-                                    </button>
-
-                                    <button class="object-lamp-btn">
-                                        <img class="custom__img" data-object="lamp-3" data-remove="lamps"
-                                            src="./img/scene-img/object-icons/Lamp 3.jpg" alt="Lamp 3" />
-                                    </button>
-
-                                    <button class="object-lamp-btn">
-                                        <img class="custom__img" data-object="lamp-4" data-remove="lamps"
-                                            src="./img/scene-img/object-icons/Lamp 4.jpg" alt="Lamp 4" />
-                                    </button>
-
-                                    <button class="object-lamp-btn">
-                                        <img class="custom__img" data-object="lamp-5" data-remove="lamps"
-                                            src="./img/scene-img/object-icons/Lamp 5.jpg" alt="Lamp 5">
-                                    </button>
-                                </div>
+                                <button class="object-lamp-btn">
+                                    <img class="custom__img" data-mask="lamps" data-object="lamp-5" data-remove="lamps"
+                                        src="./img/scene-img/object-icons/Lamp 5.jpg" alt="Lamp 5">
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -579,7 +513,7 @@
 
                     <h4 class="share-modal__items_title h4 mb-4">Share to</h4>
 
-                    <div class="share-modal__items d-flex align-items-center">
+                    <div class="share-modal__items">
 
                         <div class="share-modal__item d-flex flex-column align-items-center">
                             <a href="#!">
@@ -631,27 +565,25 @@
 
                 <div class="mask_btn mask_lamps" data-mask="lamps"></div>
 
-                <!-- Mask Wall panels -->
-                <img class="mask mask-wall-panels" src="./img/scene-img/masks/kitchen-fartuk-mask.png"
-                    alt="wall-panels">
 
                 <!-- Mask Wall panels -->
-                <img class="mask mask-wall-panels" src="./img/scene-img/masks/kitchen-fartuk-mask.png"
-                    alt="wall-panels">
+                <img class="mask mask-wall-panels" data-mask="wall-pattern"
+                    src="./img/scene-img/masks/kitchen-fartuk-mask.png" alt="wall-panels">
 
                 <!-- Mask Chairs -->
-                <img class="mask mask-chairs" src="./img/scene-img/masks/bar-stool-mask-1.png" alt="chairs">
+                <img class="mask mask-chairs" data-mask="chairs" src="./img/scene-img/masks/Bar-Stool-1-mask.png"
+                    alt="chairs">
 
                 <!-- Mask Floor -->
-                <img class="mask mask-floor" src="./img/scene-img/masks/parquet-mask.png" alt="floor">
+                <img class="mask mask-floor" data-mask="floor" src="./img/scene-img/masks/parquet-mask.png" alt="floor">
 
                 <!-- Mask Lamps -->
-                <img class="mask mask-lamps" src="./img/scene-img/masks/lamp-mask-1.png" alt="floor">
+                <img class="mask mask-lamps" data-mask="lamps" src="./img/scene-img/masks/lamp-1-mask.png" alt="floor">
             </div>
 
+
             <!-- Background Image -->
-            <img usemap="#imagemap" id="responsive-image" class="scene__bg" src="./img/scene-img/scene-background.jpg"
-                alt="Kitchen black" usemap="#iMap">
+            <img class="scene__bg" src="./img/scene-img/scene-background.jpg" alt="Kitchen black">
         </div>
     </main>
 
