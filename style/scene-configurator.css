@@ -51,7 +51,7 @@
 
 @media(max-width: 540px) {
     .scene-main {
-        overflow-x: scroll;
+        overflow: hidden;
     }
 
     .custom-container {
@@ -60,7 +60,8 @@
     }
 
     .scene {
-        min-width: 1280px;
+        width: 1280px;
+        width: 100%;
         height: 800px;
     }
 
@@ -175,7 +176,7 @@
     flex-direction: column;
     row-gap: 10px;
 
-    width: 234px;
+    width: 222px;
     border-radius: 12px;
     padding: 12px 30px 12px 24px;
     background: var(--main-white);

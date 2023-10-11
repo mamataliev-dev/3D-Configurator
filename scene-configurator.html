@@ -261,28 +261,33 @@
                             <div class="drop-list-container">
 
                                 <button class="object-bar-stool-btn">
-                                    <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-1" data-remove="chairs"
-                                        src="./img/scene-img/object-icons/Bar-Stool-1.jpg" alt="Bar-Stool-1" />
+                                    <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-1"
+                                        data-remove="chairs" src="./img/scene-img/object-icons/Bar-Stool-1.jpg"
+                                        alt="Bar-Stool-1" />
                                 </button>
 
                                 <button class="object-bar-stool-btn">
-                                    <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-2" data-remove="chairs"
-                                        src="./img/scene-img/object-icons/Bar-Stool-2.jpg" alt="Bar-Stool-2" />
+                                    <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-2"
+                                        data-remove="chairs" src="./img/scene-img/object-icons/Bar-Stool-2.jpg"
+                                        alt="Bar-Stool-2" />
                                 </button>
 
                                 <button class="object-bar-stool-btn">
-                                    <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-3" data-remove="chairs"
-                                        src="./img/scene-img/object-icons/Bar-Stool-3.jpg" alt="Bar-Stool-3" />
+                                    <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-3"
+                                        data-remove="chairs" src="./img/scene-img/object-icons/Bar-Stool-3.jpg"
+                                        alt="Bar-Stool-3" />
                                 </button>
 
                                 <button class="object-bar-stool-btn">
-                                    <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-4" data-remove="chairs"
-                                        src="./img/scene-img/object-icons/Bar-Stool-4.jpg" alt="Bar-Stool-4" />
+                                    <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-4"
+                                        data-remove="chairs" src="./img/scene-img/object-icons/Bar-Stool-4.jpg"
+                                        alt="Bar-Stool-4" />
                                 </button>
 
                                 <button class="object-bar-stool-btn">
-                                    <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-5" data-remove="chairs"
-                                        src="./img/scene-img/object-icons/Bar-Stool-5.jpg" alt="Bar-Stool-5" />
+                                    <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-5"
+                                        data-remove="chairs" src="./img/scene-img/object-icons/Bar-Stool-5.jpg"
+                                        alt="Bar-Stool-5" />
                                 </button>
                             </div>
                         </div>
@@ -579,11 +584,23 @@
 
                 <!-- Mask Lamps -->
                 <img class="mask mask-lamps" data-mask="lamps" src="./img/scene-img/masks/lamp-1-mask.png" alt="floor">
+
+                <div class="mask__box d-none">
+                    <img src="./img/scene-img/masks/Bar-Stool-2-mask.png" alt="">
+                    <img src="./img/scene-img/masks/Bar-Stool-3-mask.png" alt="">
+                    <img src="./img/scene-img/masks/Bar-Stool-4-mask.png" alt="">
+                    <img src="./img/scene-img/masks/Bar-Stool-5-mask.png" alt="">
+
+                    <img src="./img/scene-img/masks/lamp-2-mask.png" alt="">
+                    <img src="./img/scene-img/masks/lamp-3-mask.png" alt="">
+                    <img src="./img/scene-img/masks/lamp-4-mask.png" alt="">
+                    <img src="./img/scene-img/masks/lamp-5-mask.png" alt="">
+                </div>
             </div>
 
 
             <!-- Background Image -->
-            <img class="scene__bg" src="./img/scene-img/scene-background.jpg" alt="Kitchen black">
+            <img id="panzoom-element" class="scene__bg" src="./img/scene-img/scene-background.jpg" alt="Kitchen black">
         </div>
     </main>
 
@@ -666,6 +683,9 @@
 
     <!-- JS -->
     <script src="./js/scene.js"></script>
+
+    <!-- Panzoom -->
+    <script src="https://unpkg.com/panzoom"></script>
 </body>
 
 </html>

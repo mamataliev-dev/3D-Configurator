@@ -505,3 +505,19 @@ document.addEventListener("DOMContentLoaded", () => {
         custom.classList.add('open')
     }
 })
+
+
+
+// * Zooming
+// Пример использования Panzoom
+const element = document.getElementById('panzoom-element');
+const panzoomInstance = panzoom(element, {
+    maxZoom: 2,
+    minZoom: 0.5
+});
+
+// Для масштабирования можно использовать метод `zoomTo`
+panzoomInstance.zoomTo(0, 0, 1.5); // Масштабируем изображение до 1.5 раз его оригинального размера
+
+// Для программного панорамирования можно использовать метод `moveTo`
+panzoomInstance.moveTo(50, 50); // Пер
