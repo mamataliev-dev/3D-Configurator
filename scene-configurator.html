@@ -127,125 +127,129 @@
 
     <!-- Scene Configurator -->
     <div class="scene">
+      <!-- Popup Notify -->
+      <div class="popup-blackout">
+        <div class="popup">
+          <button class="close-popup">
+            <img src="./img/icons/Cancel.svg" alt="">
+          </button>
+
+          <span class="popup-txt">Swipe to move</span>
+          <img src="./img/icons/Swipe-Icon.svg" alt="">
+        </div>
+      </div>
+
       <!-- Panzoom / Scene images -->
-      <div class="f-panzoom">
-        <div class="f-panzoom__content" id="myPanzoom">
-          <!-- Backogrund img -->
-          <img class="scene__bg" src="./img/kitchen-black/View 1/Jpeg/Background.jpg" />
+      <div class="my-cont">
+        <div class="f-panzoom">
+          <div class="f-panzoom__content" id="myPanzoom">
+            <!-- Backogrund img -->
+            <img class="scene__bg" src="./img/kitchen-black/View 1/Jpeg/Background.jpg" />
 
-          <!-- Popup Notify -->
-          <div class="popup">
-            <button class="close-popup">
-              <img src="./img/icons/Cancel.svg" alt="">
-            </button>
+            <!-- Foreground -->
+            <img class="foreground" src="./img/kitchen-black/View 1/Png/Foreground.png" alt="">
 
-            <span class="popup-txt">Swipe to move</span>
-            <img src="./img/icons/Swipe-Icon.svg" alt="">
-          </div>
+            <!-- Object Images -->
+            <div class="object__images">
+              <!-- Floor -->
+              <div class="portuquets">
+                <img class="portuquet-img" src="./img/kitchen-black/View 1/Png/Parquet 1.png" data-object="parquet1"
+                  data-product="Parquet 1" data-price="100" data-remove="floor" alt="" />
 
-          <!-- Foreground -->
-          <img class="foreground" src="./img/kitchen-black/View 1/Png/Foreground.png" alt="">
+                <img class="portuquet-img" src="./img/kitchen-black/View 1/Png/Parquet 2.png" data-object="parquet2"
+                  data-product="Parquet 2" data-price="200" data-remove="floor" alt="" />
 
-          <!-- Object Images -->
-          <div class="object__images">
-            <!-- Floor -->
-            <div class="portuquets">
-              <img class="portuquet-img" src="./img/kitchen-black/View 1/Png/Parquet 1.png" data-object="parquet1"
-                data-product="Parquet 1" data-price="100" data-remove="floor" alt="" />
+                <img class="portuquet-img" src="./img/kitchen-black/View 1/Png/Parquet 3.png" data-object="parquet3"
+                  data-product="Parquet 3" data-price="300" data-remove="floor" alt="" />
 
-              <img class="portuquet-img" src="./img/kitchen-black/View 1/Png/Parquet 2.png" data-object="parquet2"
-                data-product="Parquet 2" data-price="200" data-remove="floor" alt="" />
+                <img class="portuquet-img" src="./img/kitchen-black/View 1/Png/Parquet 4.png" data-object="parquet4"
+                  data-product="Parquet 4" data-price="400" data-remove="floor" alt="" />
 
-              <img class="portuquet-img" src="./img/kitchen-black/View 1/Png/Parquet 3.png" data-object="parquet3"
-                data-product="Parquet 3" data-price="300" data-remove="floor" alt="" />
+                <img class="portuquet-img" src="./img/kitchen-black/View 1/Png/Parquet 5.png" data-object="parquet5"
+                  data-product="Parquet 5" data-price="500" data-remove="floor" alt="" />
+              </div>
 
-              <img class="portuquet-img" src="./img/kitchen-black/View 1/Png/Parquet 4.png" data-object="parquet4"
-                data-product="Parquet 4" data-price="400" data-remove="floor" alt="" />
+              <!-- Wall Patterns -->
+              <div class="fartuks">
+                <img class="fartuk-img" data-object="fartuk1" data-product="Fartuk 1" data-remove="wall-pattern"
+                  data-price="100" src="./img/kitchen-black/View 1/Png/Kitchen Fartuk 1.png" alt="Fartuk" />
 
-              <img class="portuquet-img" src="./img/kitchen-black/View 1/Png/Parquet 5.png" data-object="parquet5"
-                data-product="Parquet 5" data-price="500" data-remove="floor" alt="" />
+                <img class="fartuk-img" data-object="fartuk2" data-product="Fartuk 2" data-remove="wall-pattern"
+                  data-price="200" src="./img/kitchen-black/View 1/Png/Kitchen Fartuk 2.png" alt="Fartuk" />
+
+                <img class="fartuk-img" data-object="fartuk3" data-product="Fartuk 3" data-remove="wall-patternor"
+                  data-price="300" src="./img/kitchen-black/View 1/Png/Kitchen Fartuk 3.png" alt="Fartuk" />
+              </div>
+
+              <!-- Chairs -->
+              <div class="bar-stools">
+                <img class="bar-stool-img" data-price="100" data-product="Bar-Stool-1" data-object="Bar-Stool-1"
+                  data-remove="chairs" src="./img/kitchen-black/View 1/Png/Bar Stool 1.png" alt="Bar Stool 1" />
+                <img class="bar-stool-img" data-price="200" data-product="Bar-Stool-2" data-object="Bar-Stool-2"
+                  data-remove="chairs" src="./img/kitchen-black/View 1/Png/Bar Stool 2.png" alt="Bar Stool 2" />
+                <img class="bar-stool-img" data-price="300" data-product="Bar-Stool-3" data-object="Bar-Stool-3"
+                  data-remove="chairs" src="./img/kitchen-black/View 1/Png/Bar Stool 3.png" alt="Bar Stool 3" />
+                <img class="bar-stool-img" data-price="400" data-product="Bar-Stool-4" data-object="Bar-Stool-4"
+                  data-remove="chairs" src="./img/kitchen-black/View 1/Png/Bar Stool 4.png" alt="Bar Stool 4" />
+                <img class="bar-stool-img" data-price="500" data-product="Bar-Stool-5" data-object="Bar-Stool-5"
+                  data-remove="chairs" src="./img/kitchen-black/View 1/Png/Bar Stool 5.png" alt="Bar Stool 5" />
+              </div>
+
+              <!-- Lamps -->
+              <div class="lamps">
+                <img class="lamp-img" data-price="100" data-product="lamp1" data-object="lamp-1" data-remove="lamps"
+                  src="./img/kitchen-black/View 1/Png/Lamp 1.png" alt="Lamp 1" />
+                <img class="lamp-img" data-price="200" data-product="lamp2" data-object="lamp-2" data-remove="lamps"
+                  src="./img/kitchen-black/View 1/Png/Lamp 2.png" alt="Lamp 2" />
+                <img class="lamp-img" data-price="300" data-product="lamp3" data-object="lamp-3" data-remove="lamps"
+                  src="./img/kitchen-black/View 1/Png/Lamp 3.png" alt="Lamp 3" />
+                <img class="lamp-img" data-price="400" data-product="lamp4" data-object="lamp-4" data-remove="lamps"
+                  src="./img/kitchen-black/View 1/Png/Lamp 4.png" alt="Lamp 4" />
+                <img class="lamp-img" data-price="500" data-product="lamp5" data-object="lamp-5" data-remove="lamps"
+                  src="./img/kitchen-black/View 1/Png/Lamp 5.png" alt="Lamp 5" />
+              </div>
             </div>
 
-            <!-- Wall Patterns -->
-            <div class="fartuks">
-              <img class="fartuk-img" data-object="fartuk1" data-product="Fartuk 1" data-remove="wall-pattern"
-                data-price="100" src="./img/kitchen-black/View 1/Png/Kitchen Fartuk 1.png" alt="Fartuk" />
+            <!-- Masks -->
+            <div class="masks-container">
+              <div class="mask_btn mask_wall-pattern" data-mask="wall-pattern"></div>
 
-              <img class="fartuk-img" data-object="fartuk2" data-product="Fartuk 2" data-remove="wall-pattern"
-                data-price="200" src="./img/kitchen-black/View 1/Png/Kitchen Fartuk 2.png" alt="Fartuk" />
+              <div class="mask_btn mask_chairs" data-mask="chairs"></div>
 
-              <img class="fartuk-img" data-object="fartuk3" data-product="Fartuk 3" data-remove="wall-patternor"
-                data-price="300" src="./img/kitchen-black/View 1/Png/Kitchen Fartuk 3.png" alt="Fartuk" />
-            </div>
+              <div class="mask_btn mask_floor1" data-mask="floor"></div>
 
-            <!-- Chairs -->
-            <div class="bar-stools">
-              <img class="bar-stool-img" data-price="100" data-product="Bar-Stool-1" data-object="Bar-Stool-1"
-                data-remove="chairs" src="./img/kitchen-black/View 1/Png/Bar Stool 1.png" alt="Bar Stool 1" />
-              <img class="bar-stool-img" data-price="200" data-product="Bar-Stool-2" data-object="Bar-Stool-2"
-                data-remove="chairs" src="./img/kitchen-black/View 1/Png/Bar Stool 2.png" alt="Bar Stool 2" />
-              <img class="bar-stool-img" data-price="300" data-product="Bar-Stool-3" data-object="Bar-Stool-3"
-                data-remove="chairs" src="./img/kitchen-black/View 1/Png/Bar Stool 3.png" alt="Bar Stool 3" />
-              <img class="bar-stool-img" data-price="400" data-product="Bar-Stool-4" data-object="Bar-Stool-4"
-                data-remove="chairs" src="./img/kitchen-black/View 1/Png/Bar Stool 4.png" alt="Bar Stool 4" />
-              <img class="bar-stool-img" data-price="500" data-product="Bar-Stool-5" data-object="Bar-Stool-5"
-                data-remove="chairs" src="./img/kitchen-black/View 1/Png/Bar Stool 5.png" alt="Bar Stool 5" />
-            </div>
+              <div class="mask_btn mask_floor2" data-mask="floor"></div>
 
-            <!-- Lamps -->
-            <div class="lamps">
-              <img class="lamp-img" data-price="100" data-product="lamp1" data-object="lamp-1" data-remove="lamps"
-                src="./img/kitchen-black/View 1/Png/Lamp 1.png" alt="Lamp 1" />
-              <img class="lamp-img" data-price="200" data-product="lamp2" data-object="lamp-2" data-remove="lamps"
-                src="./img/kitchen-black/View 1/Png/Lamp 2.png" alt="Lamp 2" />
-              <img class="lamp-img" data-price="300" data-product="lamp3" data-object="lamp-3" data-remove="lamps"
-                src="./img/kitchen-black/View 1/Png/Lamp 3.png" alt="Lamp 3" />
-              <img class="lamp-img" data-price="400" data-product="lamp4" data-object="lamp-4" data-remove="lamps"
-                src="./img/kitchen-black/View 1/Png/Lamp 4.png" alt="Lamp 4" />
-              <img class="lamp-img" data-price="500" data-product="lamp5" data-object="lamp-5" data-remove="lamps"
-                src="./img/kitchen-black/View 1/Png/Lamp 5.png" alt="Lamp 5" />
-            </div>
-          </div>
+              <div class="mask_btn mask_lamps" data-mask="lamps"></div>
 
-          <!-- Masks -->
-          <div class="masks-container">
-            <div class="mask_btn mask_wall-pattern" data-mask="wall-pattern"></div>
+              <!-- Mask Wall panels -->
+              <img class="mask mask-wall-panels" data-mask="wall-pattern"
+                src="./img/kitchen-black/View 1/Masks/Png/Kitchen Fartuk.png" alt="wall-panels" />
 
-            <div class="mask_btn mask_chairs" data-mask="chairs"></div>
+              <!-- Mask Chairs -->
+              <img class="mask mask-chairs" data-mask="chairs"
+                src="./img/kitchen-black/View 1/Masks/Png/Bar Stool 1.png" alt="chairs" />
 
-            <div class="mask_btn mask_floor1" data-mask="floor"></div>
+              <!-- Mask Floor -->
+              <img class="mask mask-floor" data-mask="floor" src="./img/kitchen-black/View 1/Masks/Png/Parquet.png"
+                alt="floor" />
 
-            <div class="mask_btn mask_floor2" data-mask="floor"></div>
+              <!-- Mask Lamps -->
+              <img class="mask mask-lamps" data-mask="lamps" src="./img/kitchen-black/View 1/Masks/Png/Lamp 1.png"
+                alt="floor" />
 
-            <div class="mask_btn mask_lamps" data-mask="lamps"></div>
+              <!-- All masks For Fast Load Images-->
+              <div class="mask__box d-none">
+                <img src="./img/kitchen-black/View 1/Masks/Png/Bar Stool 2.png" alt="" />
+                <img src="./img/kitchen-black/View 1/Masks/Png/Bar Stool 3.png" alt="" />
+                <img src="./img/kitchen-black/View 1/Masks/Png/Bar Stool 4.png" alt="" />
+                <img src="./img/kitchen-black/View 1/Masks/Png/Bar Stool 5.png" alt="" />
 
-            <!-- Mask Wall panels -->
-            <img class="mask mask-wall-panels" data-mask="wall-pattern"
-              src="./img/kitchen-black/View 1/Masks/Png/Kitchen Fartuk.png" alt="wall-panels" />
-
-            <!-- Mask Chairs -->
-            <img class="mask mask-chairs" data-mask="chairs" src="./img/kitchen-black/View 1/Masks/Png/Bar Stool 1.png"
-              alt="chairs" />
-
-            <!-- Mask Floor -->
-            <img class="mask mask-floor" data-mask="floor" src="./img/kitchen-black/View 1/Masks/Png/Parquet.png"
-              alt="floor" />
-
-            <!-- Mask Lamps -->
-            <img class="mask mask-lamps" data-mask="lamps" src="./img/kitchen-black/View 1/Masks/Png/Lamp 1.png"
-              alt="floor" />
-
-            <!-- All masks For Fast Load Images-->
-            <div class="mask__box d-none">
-              <img src="./img/kitchen-black/View 1/Masks/Png/Bar Stool 2.png" alt="" />
-              <img src="./img/kitchen-black/View 1/Masks/Png/Bar Stool 3.png" alt="" />
-              <img src="./img/kitchen-black/View 1/Masks/Png/Bar Stool 4.png" alt="" />
-              <img src="./img/kitchen-black/View 1/Masks/Png/Bar Stool 5.png" alt="" />
-
-              <img src="./img/kitchen-black/View 1/Masks/Png/Lamp 2.png" alt="" />
-              <img src="./img/kitchen-black/View 1/Masks/Png/Lamp 3.png" alt="" />
-              <img src="./img/kitchen-black/View 1/Masks/Png/Lamp 4.png" alt="" />
-              <img src="./img/kitchen-black/View 1/Masks/Png/Lamp 5.png" alt="" />
+                <img src="./img/kitchen-black/View 1/Masks/Png/Lamp 2.png" alt="" />
+                <img src="./img/kitchen-black/View 1/Masks/Png/Lamp 3.png" alt="" />
+                <img src="./img/kitchen-black/View 1/Masks/Png/Lamp 4.png" alt="" />
+                <img src="./img/kitchen-black/View 1/Masks/Png/Lamp 5.png" alt="" />
+              </div>
             </div>
           </div>
         </div>
@@ -463,67 +467,71 @@
       </div>
 
       <!-- Options -->
-      <div class="options">
-        <!-- Save -->
-        <button class="options__btn options-btn-save position-relative" data-tip="save">
-          <img data-tip="save" class="options__btn-img" src="./img/icons/Heart.svg" alt="Save" />
+      <div class="d-flex">
+        <img class="open-options" src="./img/icons/open-options-btn.svg" alt="">
 
-          <!-- Tip Save -->
-          <div data-tip="save" class="options__tip tip-save">
-            <span>Save</span>
-          </div>
-        </button>
+        <div class="options">
+          <!-- Save -->
+          <button class="options__btn options-btn-save position-relative" data-tip="save">
+            <img data-tip="save" class="options__btn-img" src="./img/icons/Heart.svg" alt="Save" />
 
-        <!-- 3D View -->
-        <button class="options__btn options-btn-3d position-relative" data-tip="3d">
-          <img data-tip="3d" src="./img/icons/Rotation.svg" alt="3D View" />
-
-          <!-- Tip 3D View -->
-          <div data-tip="3d" class="options__tip tip-3d">
-            <span>Camera view</span>
-          </div>
-        </button>
-
-        <!-- Download -->
-        <button class="options__btn options-btn-download position-relative" data-tip="download">
-          <img data-tip="download" src="./img/icons/Download.svg" alt="Download" />
-
-          <!-- Tip Download -->
-          <div data-tip="download" class="options__tip tip-download">
-            <span>Download</span>
-          </div>
-        </button>
-
-        <!-- Download Modal -->
-        <div class="download-blackout" data-modal="download"></div>
-        <div class="download-modal">
-          <button class="download-modal__btn download-modal-png me-auto">
-            PNG
+            <!-- Tip Save -->
+            <div data-tip="save" class="options__tip tip-save">
+              <span>Save</span>
+            </div>
           </button>
-          <button class="download-modal__btn download-modal-jpg me-auto">
-            PDF
+
+          <!-- 3D View -->
+          <button class="options__btn options-btn-3d position-relative" data-tip="3d">
+            <img data-tip="3d" src="./img/icons/Rotation.svg" alt="3D View" />
+
+            <!-- Tip 3D View -->
+            <div data-tip="3d" class="options__tip tip-3d">
+              <span>Camera view</span>
+            </div>
+          </button>
+
+          <!-- Download -->
+          <button class="options__btn options-btn-download position-relative" data-tip="download">
+            <img data-tip="download" src="./img/icons/Download.svg" alt="Download" />
+
+            <!-- Tip Download -->
+            <div data-tip="download" class="options__tip tip-download">
+              <span>Download</span>
+            </div>
+          </button>
+
+          <!-- Download Modal -->
+          <div class="download-blackout" data-modal="download"></div>
+          <div class="download-modal">
+            <button class="download-modal__btn download-modal-png me-auto">
+              PNG
+            </button>
+            <button class="download-modal__btn download-modal-jpg me-auto">
+              PDF
+            </button>
+          </div>
+
+          <!-- Print -->
+          <button class="options__btn options-btn-print position-relative" data-tip="print">
+            <img data-tip="print" src="./img/icons/Printer.svg" alt="Print" />
+
+            <!-- Tip Print -->
+            <div data-tip="print" class="options__tip tip-print">
+              <span>Print</span>
+            </div>
+          </button>
+
+          <!-- Share -->
+          <button class="options__btn options-btn-share position-relative" data-tip="share">
+            <img data-tip="share" src="./img/icons/Share.svg" alt="Share" />
+
+            <!-- Tip Share -->
+            <div data-tip="share" class="options__tip tip-share">
+              <span>Share</span>
+            </div>
           </button>
         </div>
-
-        <!-- Print -->
-        <button class="options__btn options-btn-print position-relative" data-tip="print">
-          <img data-tip="print" src="./img/icons/Printer.svg" alt="Print" />
-
-          <!-- Tip Print -->
-          <div data-tip="print" class="options__tip tip-print">
-            <span>Print</span>
-          </div>
-        </button>
-
-        <!-- Share -->
-        <button class="options__btn options-btn-share position-relative" data-tip="share">
-          <img data-tip="share" src="./img/icons/Share.svg" alt="Share" />
-
-          <!-- Tip Share -->
-          <div data-tip="share" class="options__tip tip-share">
-            <span>Share</span>
-          </div>
-        </button>
       </div>
 
       <!-- Saved Modal -->

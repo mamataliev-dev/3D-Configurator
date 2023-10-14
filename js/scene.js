@@ -500,27 +500,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Open Popup notify
 var closePopup = document.querySelector(".close-popup");
-var popup = document.querySelector(".popup");
+var popupBlackout = document.querySelector(".popup-blackout");
+
+var popupMobile = window.matchMedia("(max-width: 540px)").matches;
+
+if (popupMobile) {
+  popupBlackout.classList.add("active");
+}
 
 closePopup.addEventListener("click", () => {
-  popup.classList.add("hide");
+  popupBlackout.classList.remove("active");
 });
 
-// Zooming / Panzoom
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("popup-blackout")) {
+    popupBlackout.classList.remove("active");
+  }
+});
+
+// Zooming / Panzoom;
 var container = document.querySelector("#myPanzoom");
 var zoomInButton = document.getElementById("zoomInButton");
 var zoomOutButton = document.getElementById("zoomOutButton");
 
 var maxScale = 5;
+var isMobile = window.matchMedia("(max-width: 540px)").matches;
 
 var panzoomInstance = new Panzoom(container, {
   disablePan: maxScale <= 1,
-  minScale: 1,
+  minScale: isMobile ? 0.4 : 1,
   startScale: 1,
   increment: 0.1,
-  contain: "outside",
+  contain: isMobile ? false : "outside",
   disableZoom: false,
 });
+
+if (isMobile) {
+  container.addEventListener("wheel", panzoomInstance.zoomWithWheel);
+  panzoomInstance.setOptions({ cursor: "grab" });
+}
 
 // Masks
 var masks = document.querySelectorAll(".mask_btn");
@@ -536,8 +554,8 @@ slider.addEventListener("input", function () {
     panzoomInstance.zoomOut(parseFloat(slider.value));
   }
 
-  checkForZoom();
   previousValue = slider.value;
+  checkForZoom();
 });
 
 zoomInButton.addEventListener("click", () => {
