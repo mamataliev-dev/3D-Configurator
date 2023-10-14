@@ -498,27 +498,47 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// * Zooming / Panzoom
+// Open Popup notify
+var closePopup = document.querySelector(".close-popup");
+var popup = document.querySelector(".popup");
+
+closePopup.addEventListener("click", () => {
+  popup.classList.add("hide");
+});
+
+// Zooming / Panzoom
 var container = document.querySelector("#myPanzoom");
 var zoomInButton = document.getElementById("zoomInButton");
 var zoomOutButton = document.getElementById("zoomOutButton");
 
+var maxScale = 5;
+
 var panzoomInstance = new Panzoom(container, {
-  maxScale: 4,
+  disablePan: maxScale <= 1,
   minScale: 1,
   startScale: 1,
   increment: 0.1,
+  contain: "outside",
+  disableZoom: false,
 });
 
+// Masks
 var masks = document.querySelectorAll(".mask_btn");
 
 // Zoom count
 var slider = document.getElementById("myRange");
+var previousValue = slider.value;
 
-slider.oninput = () => {
-  panzoomInstance.zoomTo(parseFloat(slider.value));
+slider.addEventListener("input", function () {
+  if (slider.value > previousValue) {
+    panzoomInstance.zoomIn(parseFloat(slider.value));
+  } else if (slider.value < previousValue) {
+    panzoomInstance.zoomOut(parseFloat(slider.value));
+  }
+
   checkForZoom();
-};
+  previousValue = slider.value;
+});
 
 zoomInButton.addEventListener("click", () => {
   var currentVal = parseFloat(slider.value);
@@ -540,6 +560,7 @@ zoomOutButton.addEventListener("click", () => {
   }
 });
 
+// if zoom started pointer-events = none
 function checkForZoom() {
   if (slider.value == 1) {
     masks.forEach((el) => {

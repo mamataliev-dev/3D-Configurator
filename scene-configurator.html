@@ -11,9 +11,6 @@
   <!-- Style Base -->
   <link rel="stylesheet" href="./style/base.css" />
 
-  <!-- Panzoom -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/panzoom/panzoom.css" />
-
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
@@ -128,15 +125,23 @@
       </div>
     </div>
 
-
     <!-- Scene Configurator -->
     <div class="scene">
       <!-- Panzoom / Scene images -->
-      <div class="f-panzoom" id="myPanzoom">
-        <div class="f-panzoom__content">
-
+      <div class="f-panzoom">
+        <div class="f-panzoom__content" id="myPanzoom">
           <!-- Backogrund img -->
           <img class="scene__bg" src="./img/kitchen-black/View 1/Jpeg/Background.jpg" />
+
+          <!-- Popup Notify -->
+          <div class="popup">
+            <button class="close-popup">
+              <img src="./img/icons/Cancel.svg" alt="">
+            </button>
+
+            <span class="popup-txt">Swipe to move</span>
+            <img src="./img/icons/Swipe-Icon.svg" alt="">
+          </div>
 
           <!-- Foreground -->
           <img class="foreground" src="./img/kitchen-black/View 1/Png/Foreground.png" alt="">
@@ -243,21 +248,11 @@
               <img src="./img/kitchen-black/View 1/Masks/Png/Lamp 5.png" alt="" />
             </div>
           </div>
-
-          <!-- <button class="asd" data-panzoom-action="zoomIn">Zoom in</button> -->
         </div>
       </div>
 
-      <!-- Zoom in / Zoom out -->
-      <div class="slidecontainer">
-        <button class="zoom-btn" id="zoomOutButton">-</button>
-        <input type="range" min="1" max="4" value="0" class="slider" id="myRange">
-        <button class="zoom-btn" id="zoomInButton">+</button>
-      </div>
-
-
       <!-- Order Menu -->
-      <div class="container-xxl">
+      <div class="order__container">
         <div class="order__menu">
           <button class="move-up">
             <img src="./img/icons/move-up.svg" alt="move-up" />
@@ -271,6 +266,13 @@
         <div class="order__list">
           <span class="order__list-empty">No products yet</span>
         </div>
+      </div>
+
+      <!-- Zoom in / Zoom out -->
+      <div class="slidecontainer">
+        <button class="zoom-btn" id="zoomOutButton">-</button>
+        <input type="range" min="1" max="4" value="0" class="slider" id="myRange">
+        <button class="zoom-btn" id="zoomInButton">+</button>
       </div>
 
       <!-- Custom Menu -->
@@ -560,7 +562,6 @@
         </div>
       </div>
 
-
       <!-- Share Modal -->
       <div class="share-blackout" data-modal="share">
         <div class="share-modal">
@@ -608,9 +609,6 @@
         </div>
       </div>
     </div>
-
-
-
   </main>
 
 
@@ -683,14 +681,13 @@
   </footer>
 
 
-
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
   </script>
 
   <!-- Panzoom -->
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/panzoom/panzoom.umd.js"></script>
+  <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
 
   <!-- JS -->
   <script src="./js/scene.js"></script>
