@@ -127,156 +127,333 @@
 
     <!-- Scene Configurator -->
     <div class="scene">
-      <!-- Popup Notify -->
-      <div class="popup-blackout">
-        <div class="popup">
-          <button class="close-popup">
-            <img src="./img/icons/Cancel.svg" alt="">
-          </button>
+      <!-- Camera View -->
+      <div class="camera-view">
+        <button class="camera__item d-flex flex-column" data-view="View1">
+          <img data-view="View1" class="camera__item_img view1" src="" alt="">
+          <span class="camera__item_txt">View 1</span>
+        </button>
 
-          <span class="popup-txt">Swipe to move</span>
-          <img src="./img/icons/Swipe-Icon.svg" alt="">
-        </div>
+        <button class="camera__item d-flex flex-column" data-view="View2">
+          <img data-view="View2" class="camera__item_img view2" src="" alt="">
+          <span class="camera__item_txt">View 2</span>
+        </button>
+
+        <button class="camera__item d-flex flex-column" data-view="View3">
+          <img data-view="View3" class="camera__item_img view3" src="" alt="">
+          <span class="camera__item_txt">View 3</span>
+        </button>
       </div>
 
-      <!-- Panzoom / Scene images -->
-      <div class="my-cont">
-        <div class="f-panzoom">
-          <div class="f-panzoom__content" id="myPanzoom">
-            <!-- Backogrund img -->
-            <img class="scene__bg" src="./img/kitchen-black/View 1/Jpeg/Background.jpg" />
+      <!-- Scene Image / Masks / Objects -->
+      <div class="view-scene">
+        <!-- Popup Notify -->
+        <div class="popup-blackout">
+          <div class="popup">
+            <button class="close-popup">
+              <img src="./img/icons/Cancel.svg" alt="">
+            </button>
 
-            <!-- Foreground -->
-            <img class="foreground" src="./img/kitchen-black/View 1/Png/Foreground.png" alt="">
+            <span class="popup-txt">Swipe to move</span>
+            <img src="./img/icons/Swipe-Icon.svg" alt="">
+          </div>
+        </div>
 
-            <!-- Object Images -->
-            <div class="object__images">
-              <!-- Floor -->
-              <div class="portuquets">
-                <img class="portuquet-img" src="./img/kitchen-black/View 1/Png/Parquet 1.png" data-object="parquet1"
-                  data-product="Parquet 1" data-price="100" data-remove="floor" alt="" />
+        <!-- Panzoom / Scene images -->
+        <div class="my-cont">
+          <div class="f-panzoom">
+            <div class="f-panzoom__content" id="myPanzoom">
+              <!-- Backogrund img -->
+              <img usemap="#image-map" id="scene-img" class="scene__bg" src="" />
 
-                <img class="portuquet-img" src="./img/kitchen-black/View 1/Png/Parquet 2.png" data-object="parquet2"
-                  data-product="Parquet 2" data-price="200" data-remove="floor" alt="" />
+              <!-- Foreground -->
+              <img class="foreground foreground-black" src="./img/kitchen-black/View1/Png/Foreground.png" alt="">
+              <img class="foreground foreground-black-view2" src="./img/kitchen-black/View2/Png/Foreground.png" alt="">
+              <img class="foreground foreground-red" src="./img/kitchen-red/View1/Png/Table.png" alt="">
 
-                <img class="portuquet-img" src="./img/kitchen-black/View 1/Png/Parquet 3.png" data-object="parquet3"
-                  data-product="Parquet 3" data-price="300" data-remove="floor" alt="" />
+              <!-- Object Images -->
+              <div class="object__images">
+                <!-- Floor -->
+                <div class="portuquets">
+                  <img class="portuquet-img" src="" data-object="parquet1" data-product="Parquet 1" data-price="100"
+                    data-remove="floor" alt="Floor" />
 
-                <img class="portuquet-img" src="./img/kitchen-black/View 1/Png/Parquet 4.png" data-object="parquet4"
-                  data-product="Parquet 4" data-price="400" data-remove="floor" alt="" />
+                  <img class="portuquet-img" src="" data-object="parquet2" data-product="Parquet 2" data-price="200"
+                    data-remove="floor" alt="Floor" />
 
-                <img class="portuquet-img" src="./img/kitchen-black/View 1/Png/Parquet 5.png" data-object="parquet5"
-                  data-product="Parquet 5" data-price="500" data-remove="floor" alt="" />
+                  <img class="portuquet-img" src="" data-object="parquet3" data-product="Parquet 3" data-price="300"
+                    data-remove="floor" alt="Floor" />
+
+                  <img class="portuquet-img" src="" data-object="parquet4" data-product="Parquet 4" data-price="400"
+                    data-remove="floor" alt="Floor" />
+
+                  <img class="portuquet-img" src="" data-object="parquet5" data-product="Parquet 5" data-price="500"
+                    data-remove="floor" alt="Floor" />
+                </div>
+
+                <!-- Wall Patterns -->
+                <div class="fartuks">
+                  <img class="fartuk-img" data-object="fartuk1" data-product="Fartuk 1" data-remove="wall-pattern"
+                    data-price="100" src="" alt="Fartuk" />
+
+                  <img class="fartuk-img" data-object="fartuk2" data-product="Fartuk 2" data-remove="wall-pattern"
+                    data-price="200" src="" alt="Fartuk" />
+
+                  <img class="fartuk-img" data-object="fartuk3" data-product="Fartuk 3" data-remove="wall-patternor"
+                    data-price="300" src="" alt="Fartuk" />
+                </div>
+
+                <!-- Chairs -->
+                <div class="bar-stools">
+                  <img class="bar-stool-img" data-price="100" data-product="BarStool1" data-object="BarStool1"
+                    data-remove="chairs" src="" alt="Chair" />
+                  <img class="bar-stool-img" data-price="200" data-product="BarStool2" data-object="BarStool2"
+                    data-remove="chairs" src="" alt="Chair" />
+                  <img class="bar-stool-img" data-price="300" data-product="BarStool3" data-object="BarStool3"
+                    data-remove="chairs" src="" alt="Chair" />
+                  <img class="bar-stool-img" data-price="400" data-product="BarStool4" data-object="BarStool4"
+                    data-remove="chairs" src="" alt="Chair" />
+                  <img class="bar-stool-img" data-price="500" data-product="BarStool5" data-object="BarStool5"
+                    data-remove="chairs" src="" alt="Chair" />
+                  <img class="bar-stool-img" data-price="300" data-product="BarStool6" data-object="BarStool6"
+                    data-remove="chairs" src="" alt="Chair" />
+                </div>
+
+                <!-- Lamps -->
+                <div class="lamps">
+                  <img class="lamp-img" data-price="100" data-product="lamp1" data-object="Lamp1" data-remove="lamps"
+                    src="" alt="Lamp" />
+                  <img class="lamp-img" data-price="200" data-product="lamp2" data-object="Lamp2" data-remove="lamps"
+                    src="" alt="Lamp" />
+                  <img class="lamp-img" data-price="300" data-product="lamp3" data-object="Lamp3" data-remove="lamps"
+                    src="" alt="Lamp" />
+                  <img class="lamp-img" data-price="400" data-product="lamp4" data-object="Lamp4" data-remove="lamps"
+                    src="" alt="Lamp" />
+                  <img class="lamp-img kitchen-white-lamp" data-price="500" data-product="Lamp5" data-object="Lamp5"
+                    data-remove="lamps" src="" alt="Lamp" />
+                  <img class="lamp-img kitchen-red-lamp" data-price="600" data-product="Lamp6" data-object="Lamp6"
+                    data-remove="lamps" src="" alt="Lamp" />
+                </div>
               </div>
 
-              <!-- Wall Patterns -->
-              <div class="fartuks">
-                <img class="fartuk-img" data-object="fartuk1" data-product="Fartuk 1" data-remove="wall-pattern"
-                  data-price="100" src="./img/kitchen-black/View 1/Png/Kitchen Fartuk 1.png" alt="Fartuk" />
+              <!-- Masks -->
+              <div class="masks-container">
+                <!-- Kithcen Black -->
+                <div class="kitchen-mask kitchen-black-masks">
+                  <!-- View 1 -->
+                  <map class="view-mask kitchen-view1" name="image-map" id="image-map1">
+                    <!-- Wall pattern -->
+                    <area id="area1" class="mask_btn" data-mask="wall-pattern" target="" alt="wall-pattern" title=""
+                      href="#!" data-coords="590,519,1340,678" coords="590,519,1340,678" shape="rect">
+                    <!-- Lamps -->
+                    <area id="area2" class="mask_btn" data-mask="lamps" target="" alt="lamp" title="" href="#!"
+                      data-coords="443,151,1489,515" coords="443,151,1489,515" shape="rect">
+                    <!-- Chairs -->
+                    <area id="area3" class="mask_btn" data-mask="chairs" target="" alt="chairs" title="" href="#!"
+                      data-coords="1077,832,1272,836,1321,890,1530,888,1528,709,1074,709"
+                      coords="1077,832,1272,836,1321,890,1530,888,1528,709,1074,709" shape="poly">
+                    <!-- Floor 1 -->
+                    <area id="area4" class="mask_btn" data-mask="floor" target="" alt="floor" title="" href="#!"
+                      data-coords="-2,871,354,1078" coords="-2,871,354,1078" shape="rect">
+                    <!-- Floor 2 -->
+                    <area id="area5" class="mask_btn" data-mask="floor" target="" alt="floor" title="" href="#!"
+                      data-coords="1700,714,1918,768,1918,1077,1737,1078,1530,890,1696,890"
+                      coords="1700,714,1918,768,1918,1077,1737,1078,1530,890,1696,890" shape="poly">
+                  </map>
 
-                <img class="fartuk-img" data-object="fartuk2" data-product="Fartuk 2" data-remove="wall-pattern"
-                  data-price="200" src="./img/kitchen-black/View 1/Png/Kitchen Fartuk 2.png" alt="Fartuk" />
+                  <!-- View 2 -->
+                  <map class="view-mask kitchen-view2" name="image-map" id="image-map2">
+                    <!-- Wall pattern -->
+                    <area id="area6" class="mask_btn" data-mask="wall-pattern" target="" alt="wall-pattern" title=""
+                      href="#!" data-coords="360,504,962,511,960,671,360,704" coords="360,504,962,511,960,671,360,704"
+                      shape="poly">
+                    <!-- Chairs -->
+                    <area id="area7" class="mask_btn" data-mask="chairs" target="" alt="" title="" href="#!"
+                      data-coords="1228,704,1486,686,1486,733,1540,732,1574,947,1365,989,1253,974,1213,977"
+                      coords="1228,704,1486,686,1486,733,1540,732,1574,947,1365,989,1253,974,1213,977" shape="poly">
+                    <!-- Lamps -->
+                    <area id="area8" class="mask_btn" data-mask="lamps" target="" alt="lamp" title="" href="#!"
+                      data-coords="356,81,1387,486" coords="356,81,1387,486" shape="rect">
+                    <!-- Floor 1 -->
+                    <area id="area9" class="mask_btn" data-mask="floor" target="" alt="floor" title="" href="#!"
+                      data-coords="0,1077,2,1016,424,957,449,1028,631,1074"
+                      coords="0,1077,2,1016,424,957,449,1028,631,1074" shape="poly">
+                    <!-- Floor 2 -->
+                    <area id="area10" class="mask_btn" data-mask="floor" target="" alt="" title="" href="#!"
+                      data-coords="672,1077,1208,977,1365,991,1577,947,1545,815,1742,833,1744,1079"
+                      coords="672,1077,1208,977,1365,991,1577,947,1545,815,1742,833,1744,1079" shape="poly">
+                  </map>
 
-                <img class="fartuk-img" data-object="fartuk3" data-product="Fartuk 3" data-remove="wall-patternor"
-                  data-price="300" src="./img/kitchen-black/View 1/Png/Kitchen Fartuk 3.png" alt="Fartuk" />
+                  <!-- View 3 -->
+                  <map class="view-mask kitchen-view3" name="image-map" id="image-map3">
+                    <!-- Wall pattern -->
+                    <area id="area11" class="mask_btn" data-mask="wall-pattern" target="" alt="wall-pattern" title=""
+                      href="#!" data-coords="-2,478,1264,766" coords="-2,478,1264,766" shape="rect">
+                    <!-- Chairs -->
+                    <area id="area12" class="mask_btn" data-mask="chairs" target="" alt="" title="" href="#!"
+                      data-coords="561,895,1623,1078" coords="561,895,1623,1078" shape="rect">
+                    <!-- Lamps -->
+                    <area id="area13" class="mask_btn" data-mask="lamps" target="" alt="lamp" title="" href="#!"
+                      data-coords="2,0,1263,480" coords="2,0,1263,480" shape="rect">
+                    <!-- Floor 1 -->
+                    <area id="area14" class="mask_btn" data-mask="floor" target="" alt="floor" title="" href="#!"
+                      data-coords="0,1077,2,1016,424,957,449,1028,631,1074"
+                      coords="0,1077,2,1016,424,957,449,1028,631,1074" shape="poly">
+                    <!-- Floor 2 -->
+                    <area id="area15" class="mask_btn" data-mask="floor" target="" alt="" title="" href="#!"
+                      data-coords="672,1077,1208,977,1365,991,1577,947,1545,815,1742,833,1744,1079"
+                      coords="672,1077,1208,977,1365,991,1577,947,1545,815,1742,833,1744,1079" shape="poly">
+                  </map>
+                </div>
+
+                <!-- Kitchen Red -->
+                <div class="kitchen-mask kitchen-red-masks">
+                  <!-- View 1 -->
+                  <map class="view-mask kitchen-view1" name="image-map" id="image-map4">
+                    <!-- Wall pattern -->
+                    <area id="area16" class="mask_btn" data-mask="wall-pattern" target="" alt="wall-pattern" title=""
+                      href="#!" data-coords="746,509,1172,656" ccoords="746,509,1172,656" shape="rect">
+                    <!-- Lamps -->
+                    <area id="area17" class="mask_btn" data-mask="lamps" target="" alt="lamp" title="" href="#!"
+                      data-coords="414,2,1506,505" coords="414,2,1506,505" shape="rect">
+                    <!-- Floor -->
+                    <area id="area18" class="mask_btn" data-mask="floor" target="" alt="floor" title="" href="#!"
+                      data-coords="3,1076,397,860,606,850,606,930,1306,932,1311,857,1504,859,1527,876,1642,871,1917,1010,1917,1077"
+                      coords="3,1076,397,860,606,850,606,930,1306,932,1311,857,1504,859,1527,876,1642,871,1917,1010,1917,1077"
+                      shape="poly">
+                  </map>
+
+                  <!-- View 2 -->
+                  <map class="view-mask kitchen-view2" name="image-map" id="image-map5">
+                    <!-- Wall pattern -->
+                    <area id="area19" class="mask_btn" data-mask="wall-pattern" target="" alt="wall-pattern" title=""
+                      href="#!" data-coords="614,504,1252,730" coords="614,504,1252,730" shape="rect">
+                    <!-- Lamps -->
+                    <area id="area20" class="mask_btn" data-mask="lamps" target="" alt="lamp" title="" href="#!"
+                      data-coords="111,1,1759,499" coords="111,1,1759,499" shape="rect">
+                  </map>
+
+                  <!-- View 3 -->
+                  <map class="view-mask kitchen-view3" name="image-map" id="image-map6">
+                    <!-- Wall pattern -->
+                    <area id="area21" class="mask_btn" data-mask="wall-pattern" target="" alt="wall-pattern" title=""
+                      href="#!" data-coords="141,364,1428,810" coords="141,364,1428,810" shape="rect">
+                  </map>
+                </div>
+
+                <!-- Kitchen White -->
+                <div class="kitchen-mask kitchen-white-masks">
+                  <!-- View 1 -->
+                  <map class="view-mask kitchen-view1" name="image-map" id="image-map7">
+                    <!-- Wall pattern -->
+                    <area id="area22" class="mask_btn" data-mask="wall-pattern" target="" alt="wall-pattern" title=""
+                      href="#!" data-coords="590,519,1340,678" coords="590,519,1340,678" shape="rect">
+                    <!-- Lamps -->
+                    <area id="area23" class="mask_btn" data-mask="lamps" target="" alt="lamp" title="" href="#!"
+                      data-coords="762,470,1386,1" coords="762,470,1386,1" shape="rect">
+                    <!-- Chairs -->
+                    <area id="area24" class="mask_btn" data-mask="chairs" target="" alt="chairs" title="" href="#!"
+                      data-coords="663,642,1260,1076" coords="663,642,1260,1076" shape="rect">
+                    <!-- Floor 1 -->
+                    <area id="area25" class="mask_btn" data-mask="floor" target="" alt="floor" title="" href="#!"
+                      data-coords="1393,1079,1476,1037,1472,893,1608,913,1757,881,1755,718,1918,740,1918,1077,1487,1079"
+                      coords="1393,1079,1476,1037,1472,893,1608,913,1757,881,1755,718,1918,740,1918,1077,1487,1079"
+                      shape="poly">
+                    <!-- Floor 2 -->
+                    <area id="area26" class="mask_btn" data-mask="floor" target="" alt="floor" title="" href="#!"
+                      data-coords="668,1076,684,983,322,893,302,776,5,818,3,1077"
+                      coords="668,1076,684,983,322,893,302,776,5,818,3,1077" shape="poly">
+                  </map>
+
+                  <!-- View 2 -->
+                  <map class="view-mask kitchen-view2" name="image-map" id="image-map8">
+                    <!-- Floor -->
+                    <area id="area27" class="mask_btn" data-mask="floor" target="" alt="" title="" href="#!"
+                      data-coords="228,1074,428,931,620,940,632,923,689,899,691,747,940,748,939,942,1069,940,1117,1074"
+                      coords="228,1074,428,931,620,940,632,923,689,899,691,747,940,748,939,942,1069,940,1117,1074"
+                      shape="poly">
+                  </map>
+
+                  <!-- View 3 -->
+                  <map class="view-mask kitchen-view3" name="image-map" id="image-map9">
+                    <!-- Chairs -->
+                    <area id="area28" class="mask_btn" data-mask="chairs" target="" alt="" title="" href="#!"
+                      data-coords="397,557,1182,1077" coords="397,557,1182,1077" shape="rect">
+                    <!-- Floor 1 -->
+                    <area id="area29" class="mask_btn" data-mask="floor" target="" alt="floor" title="" href="#!"
+                      data-coords="404,1077,427,976,231,852,210,725,7,745,5,1076"
+                      coords="404,1077,427,976,231,852,210,725,7,745,5,1076" shape="poly">
+                    <!-- Floor 2 -->
+                    <area id="area30" class="mask_btn" data-mask="floor" target="" alt="" title="" href="#!"
+                      data-coords="1647,1076,1645,950,1727,927,1917,966,1918,1071,1910,1079"
+                      coords="1647,1076,1645,950,1727,927,1917,966,1918,1071,1910,1079" shape="poly">
+                  </map>
+                </div>
+
+                <div class="mask-block-kitchen-view-1 d-none">
+                  <div class="mask_btn mask_wall-pattern" data-mask="wall-pattern"></div>
+
+                  <div class="mask_btn mask_chairs" data-mask="chairs"></div>
+
+                  <div class="mask_btn mask_floor1" data-mask="floor"></div>
+
+                  <div class="mask_btn mask_floor2" data-mask="floor"></div>
+
+                  <div class="mask_btn mask_lamps" data-mask="lamps"></div>
+                </div>
+
+                <!-- Mask Wall panels -->
+                <img class="mask mask-wall-panels" data-mask="wall-pattern" src="" alt="wall-panels" />
+
+                <!-- Mask Chairs -->
+                <img class="mask mask-chairs" data-mask="chairs" src="" alt="chairs" />
+
+                <!-- Mask Floor -->
+                <img class="mask mask-floor" data-mask="floor" src="" alt="floor" />
+
+                <!-- Mask Lamps -->
+                <img class="mask mask-lamps" data-mask="lamps" src="" alt="floor" />
+
+                <!-- All masks For Fast Load Images-->
+                <div class="mask__box d-none">
+                  <img src="./img/kitchen-black/View1/Masks/Png/BarStool2.png" alt="" />
+                  <img src="./img/kitchen-black/View1/Masks/Png/BarStool3.png" alt="" />
+                  <img src="./img/kitchen-black/View1/Masks/Png/BarStool4.png" alt="" />
+                  <img src="./img/kitchen-black/View1/Masks/Png/BarStool5.png" alt="" />
+
+                  <img src="./img/kitchen-black/View1/Masks/Png/Lamp2.png" alt="" />
+                  <img src="./img/kitchen-black/View1/Masks/Png/Lamp3.png" alt="" />
+                  <img src="./img/kitchen-black/View1/Masks/Png/Lamp4.png" alt="" />
+                  <img src="./img/kitchen-black/View1/Masks/Png/Lamp5.png" alt="" />
+                </div>
               </div>
 
-              <!-- Chairs -->
-              <div class="bar-stools">
-                <img class="bar-stool-img" data-price="100" data-product="Bar-Stool-1" data-object="Bar-Stool-1"
-                  data-remove="chairs" src="./img/kitchen-black/View 1/Png/Bar Stool 1.png" alt="Bar Stool 1" />
-                <img class="bar-stool-img" data-price="200" data-product="Bar-Stool-2" data-object="Bar-Stool-2"
-                  data-remove="chairs" src="./img/kitchen-black/View 1/Png/Bar Stool 2.png" alt="Bar Stool 2" />
-                <img class="bar-stool-img" data-price="300" data-product="Bar-Stool-3" data-object="Bar-Stool-3"
-                  data-remove="chairs" src="./img/kitchen-black/View 1/Png/Bar Stool 3.png" alt="Bar Stool 3" />
-                <img class="bar-stool-img" data-price="400" data-product="Bar-Stool-4" data-object="Bar-Stool-4"
-                  data-remove="chairs" src="./img/kitchen-black/View 1/Png/Bar Stool 4.png" alt="Bar Stool 4" />
-                <img class="bar-stool-img" data-price="500" data-product="Bar-Stool-5" data-object="Bar-Stool-5"
-                  data-remove="chairs" src="./img/kitchen-black/View 1/Png/Bar Stool 5.png" alt="Bar Stool 5" />
-              </div>
-
-              <!-- Lamps -->
-              <div class="lamps">
-                <img class="lamp-img" data-price="100" data-product="lamp1" data-object="lamp-1" data-remove="lamps"
-                  src="./img/kitchen-black/View 1/Png/Lamp 1.png" alt="Lamp 1" />
-                <img class="lamp-img" data-price="200" data-product="lamp2" data-object="lamp-2" data-remove="lamps"
-                  src="./img/kitchen-black/View 1/Png/Lamp 2.png" alt="Lamp 2" />
-                <img class="lamp-img" data-price="300" data-product="lamp3" data-object="lamp-3" data-remove="lamps"
-                  src="./img/kitchen-black/View 1/Png/Lamp 3.png" alt="Lamp 3" />
-                <img class="lamp-img" data-price="400" data-product="lamp4" data-object="lamp-4" data-remove="lamps"
-                  src="./img/kitchen-black/View 1/Png/Lamp 4.png" alt="Lamp 4" />
-                <img class="lamp-img" data-price="500" data-product="lamp5" data-object="lamp-5" data-remove="lamps"
-                  src="./img/kitchen-black/View 1/Png/Lamp 5.png" alt="Lamp 5" />
-              </div>
-            </div>
-
-            <!-- Masks -->
-            <div class="masks-container">
-              <div class="mask_btn mask_wall-pattern" data-mask="wall-pattern"></div>
-
-              <div class="mask_btn mask_chairs" data-mask="chairs"></div>
-
-              <div class="mask_btn mask_floor1" data-mask="floor"></div>
-
-              <div class="mask_btn mask_floor2" data-mask="floor"></div>
-
-              <div class="mask_btn mask_lamps" data-mask="lamps"></div>
-
-              <!-- Mask Wall panels -->
-              <img class="mask mask-wall-panels" data-mask="wall-pattern"
-                src="./img/kitchen-black/View 1/Masks/Png/Kitchen Fartuk.png" alt="wall-panels" />
-
-              <!-- Mask Chairs -->
-              <img class="mask mask-chairs" data-mask="chairs"
-                src="./img/kitchen-black/View 1/Masks/Png/Bar Stool 1.png" alt="chairs" />
-
-              <!-- Mask Floor -->
-              <img class="mask mask-floor" data-mask="floor" src="./img/kitchen-black/View 1/Masks/Png/Parquet.png"
-                alt="floor" />
-
-              <!-- Mask Lamps -->
-              <img class="mask mask-lamps" data-mask="lamps" src="./img/kitchen-black/View 1/Masks/Png/Lamp 1.png"
-                alt="floor" />
-
-              <!-- All masks For Fast Load Images-->
-              <div class="mask__box d-none">
-                <img src="./img/kitchen-black/View 1/Masks/Png/Bar Stool 2.png" alt="" />
-                <img src="./img/kitchen-black/View 1/Masks/Png/Bar Stool 3.png" alt="" />
-                <img src="./img/kitchen-black/View 1/Masks/Png/Bar Stool 4.png" alt="" />
-                <img src="./img/kitchen-black/View 1/Masks/Png/Bar Stool 5.png" alt="" />
-
-                <img src="./img/kitchen-black/View 1/Masks/Png/Lamp 2.png" alt="" />
-                <img src="./img/kitchen-black/View 1/Masks/Png/Lamp 3.png" alt="" />
-                <img src="./img/kitchen-black/View 1/Masks/Png/Lamp 4.png" alt="" />
-                <img src="./img/kitchen-black/View 1/Masks/Png/Lamp 5.png" alt="" />
-              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Order Menu -->
-      <div class="order__container">
-        <div class="order__menu">
-          <button class="move-up">
-            <img src="./img/icons/move-up.svg" alt="move-up" />
-          </button>
+        <!-- Order Menu -->
+        <div class="order__container">
+          <div class="order__menu">
+            <button class="move-up">
+              <img src="./img/icons/move-up.svg" alt="move-up" />
+            </button>
 
-          <span class="order__count ms-2">0 item</span>
+            <span class="order__count ms-2">0 item</span>
 
-          <button class="order__btn ms-3">Order</button>
+            <button class="order__btn ms-3">Order</button>
+          </div>
+
+          <div class="order__list">
+            <span class="order__list-empty">No products yet</span>
+          </div>
         </div>
 
-        <div class="order__list">
-          <span class="order__list-empty">No products yet</span>
+        <!-- Zoom in / Zoom out -->
+        <div class="slidecontainer">
+          <button class="zoom-btn" id="zoomOutButton">-</button>
+          <button class="zoom-btn" id="zoomInButton">+</button>
         </div>
-      </div>
-
-      <!-- Zoom in / Zoom out -->
-      <div class="slidecontainer">
-        <button class="zoom-btn" id="zoomOutButton">-</button>
-        <input type="range" min="1" max="4" value="0" class="slider" id="myRange">
-        <button class="zoom-btn" id="zoomInButton">+</button>
       </div>
 
       <!-- Custom Menu -->
@@ -287,10 +464,10 @@
 
         <div class="custom__items">
           <!-- Wall panels -->
-          <div class="custom__block">
+          <div id="wall-pattern" class="custom__block">
             <!-- Custom Item -->
             <div class="custom__item">
-              <img class="custom__item_img" src="./img/kitchen-black/Detailed/Wall.jpg" alt="" />
+              <img class="custom__item_img" src="./img/kitchen-black/Detailed/Wall.jpg" alt="Wall panels" />
               <span class="custom__item_title">Wall panels</span>
 
               <button class="custom-item-btn" data-mask="wall-pattern">
@@ -305,19 +482,19 @@
               </button>
 
               <div class="drop-list-container">
-                <button class="object-fartuk-btn fartuk1">
-                  <img class="custom__img" data-object="fartuk1" data-remove="wall-pattern"
-                    src="./img/kitchen-black/Detailed/Kitchen Fartuk 1.jpg" alt="" />
+                <button class="object-fartuk-btn">
+                  <img class="custom__img custom-fartuk" data-object="fartuk1" data-remove="wall-pattern" src=""
+                    alt="Wall panels" />
                 </button>
 
                 <button class="object-fartuk-btn">
-                  <img class="custom__img" data-object="fartuk2" data-remove="wall-pattern"
-                    src="./img/kitchen-black/Detailed/Kitchen Fartuk 2.jpg" alt="" />
+                  <img class="custom__img custom-fartuk" data-object="fartuk2" data-remove="wall-pattern" src=""
+                    alt="Wall panels" />
                 </button>
 
                 <button class="object-fartuk-btn">
-                  <img class="custom__img" data-object="fartuk3" data-remove="wall-pattern"
-                    src="./img/kitchen-black/Detailed/Kitchen Fartuk 3.jpg" alt="" />
+                  <img class="custom__img custom-fartuk" data-object="fartuk3" data-remove="wall-pattern" src=""
+                    alt="Wall panels" />
                 </button>
               </div>
             </div>
@@ -327,7 +504,7 @@
           <div class="custom__block">
             <!-- Custom Item -->
             <div class="custom__item">
-              <img class="custom__item_img" src="./img/kitchen-black/Detailed/Parquet 1.jpg" alt="" />
+              <img class="custom__item_img floor-custom-img" src="" alt="" />
               <span class="custom__item_title">Floor covering</span>
 
               <button class="custom-item-btn" data-mask="floor">
@@ -343,38 +520,38 @@
 
               <div class="drop-list-container">
                 <button class="object-parquet-btn">
-                  <img class="custom__img" data-object="parquet1" data-remove="floor"
-                    src="./img/kitchen-black/Detailed/Parquet 1.jpg" alt="" />
+                  <img class="custom__img custom-parquet" data-object="parquet1" data-remove="floor" src=""
+                    alt="Floor" />
                 </button>
 
                 <button class="object-parquet-btn">
-                  <img class="custom__img" data-object="parquet2" data-remove="floor"
-                    src="./img/kitchen-black/Detailed/Parquet 2.jpg" alt="" />
+                  <img class="custom__img custom-parquet" data-object="parquet2" data-remove="floor" src=""
+                    alt="Floor" />
                 </button>
 
                 <button class="object-parquet-btn">
-                  <img class="custom__img" data-object="parquet3" data-remove="floor"
-                    src="./img/kitchen-black/Detailed/Parquet 3.jpg" alt="" />
+                  <img class="custom__img custom-parquet" data-object="parquet3" data-remove="floor" src=""
+                    alt="Floor" />
                 </button>
 
                 <button class="object-parquet-btn">
-                  <img class="custom__img" data-object="parquet4" data-remove="floor"
-                    src="./img/kitchen-black/Detailed/Parquet 4.jpg" alt="" />
+                  <img class="custom__img custom-parquet" data-object="parquet4" data-remove="floor" src=""
+                    alt="Floor" />
                 </button>
 
                 <button class="object-parquet-btn">
-                  <img class="custom__img" data-object="parquet5" data-remove="floor"
-                    src="./img/kitchen-black/Detailed/Parquet 5.jpg" alt="" />
+                  <img class="custom__img custom-parquet" data-object="parquet5" data-remove="floor" src=""
+                    alt="Floor" />
                 </button>
               </div>
             </div>
           </div>
 
           <!-- Chairs -->
-          <div class="custom__block">
+          <div id="chair" class="custom__block">
             <!-- Custom Item -->
             <div class="custom__item">
-              <img class="custom__item_img" src="./img/kitchen-black/Detailed/Bar Stool 1.jpg" alt="" />
+              <img class="custom__item_img custom-chairs-img" src="" alt="Chairs" />
               <span class="custom__item_title">Chairs</span>
 
               <button class="custom-item-btn" data-mask="chairs">
@@ -390,28 +567,33 @@
 
               <div class="drop-list-container">
                 <button class="object-bar-stool-btn">
-                  <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-1" data-remove="chairs"
-                    src="./img/kitchen-black/Detailed/Bar Stool 1.jpg" alt="Bar-Stool-1" />
+                  <img class="custom__img custom-chair" data-mask="chairs" data-object="BarStool1" data-remove="chairs"
+                    src="" alt="Chair" />
                 </button>
 
                 <button class="object-bar-stool-btn">
-                  <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-2" data-remove="chairs"
-                    src="./img/kitchen-black/Detailed/Bar Stool 2.jpg" alt="Bar-Stool-2" />
+                  <img class="custom__img custom-chair" data-mask="chairs" data-object="BarStool2" data-remove="chairs"
+                    src="" alt="Chair" />
                 </button>
 
                 <button class="object-bar-stool-btn">
-                  <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-3" data-remove="chairs"
-                    src="./img/kitchen-black/Detailed/Bar Stool 3.jpg" alt="Bar-Stool-3" />
+                  <img class="custom__img custom-chair" data-mask="chairs" data-object="BarStool3" data-remove="chairs"
+                    src="" alt="Chair" />
                 </button>
 
                 <button class="object-bar-stool-btn">
-                  <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-4" data-remove="chairs"
-                    src="./img/kitchen-black/Detailed/Bar Stool 4.jpg" alt="Bar-Stool-4" />
+                  <img class="custom__img custom-chair" data-mask="chairs" data-object="BarStool4" data-remove="chairs"
+                    src="" alt="Chair" />
                 </button>
 
                 <button class="object-bar-stool-btn">
-                  <img class="custom__img" data-mask="chairs" data-object="Bar-Stool-5" data-remove="chairs"
-                    src="./img/kitchen-black/Detailed/Bar Stool 5.jpg" alt="Bar-Stool-5" />
+                  <img class="custom__img custom-chair" data-mask="chairs" data-object="BarStool5" data-remove="chairs"
+                    src="" alt="Chair" />
+                </button>
+
+                <button class="object-bar-stool-btn">
+                  <img class="custom__img custom-chair" data-mask="chairs" data-object="BarStool6" data-remove="chairs"
+                    src="" alt="Chair" />
                 </button>
               </div>
             </div>
@@ -421,7 +603,7 @@
           <div class="custom__block">
             <!-- Custom Item -->
             <div class="custom__item">
-              <img class="custom__item_img" src="./img/kitchen-black/Detailed/Lamp 1.jpg" alt="" />
+              <img class="custom__item_img custom-lamps-img" src="" alt="" />
               <span class="custom__item_title">Lamps</span>
 
               <button class="custom-item-btn" data-mask="lamps">
@@ -437,28 +619,33 @@
 
               <div class="drop-list-container">
                 <button class="object-lamp-btn">
-                  <img class="custom__img" data-mask="lamps" data-object="lamp-1" data-remove="lamps"
-                    src="./img/kitchen-black/Detailed/Lamp 1.jpg" alt="Lamp 1" />
+                  <img class="custom__img custom-lamp" data-mask="lamps" data-object="Lamp1" data-remove="lamps" src=""
+                    alt="Lamp" />
                 </button>
 
                 <button class="object-lamp-btn">
-                  <img class="custom__img" data-mask="lamps" data-object="lamp-2" data-remove="lamps"
-                    src="./img/kitchen-black/Detailed/Lamp 2.jpg" alt="Lamp 2" />
+                  <img class="custom__img custom-lamp" data-mask="lamps" data-object="Lamp2" data-remove="lamps" src=""
+                    alt="Lamp" />
                 </button>
 
                 <button class="object-lamp-btn">
-                  <img class="custom__img" data-mask="lamps" data-object="lamp-3" data-remove="lamps"
-                    src="./img/kitchen-black/Detailed/Lamp 3.jpg" alt="Lamp 3" />
+                  <img class="custom__img custom-lamp" data-mask="lamps" data-object="Lamp3" data-remove="lamps" src=""
+                    alt="Lamp" />
                 </button>
 
                 <button class="object-lamp-btn">
-                  <img class="custom__img" data-mask="lamps" data-object="lamp-4" data-remove="lamps"
-                    src="./img/kitchen-black/Detailed/Lamp 4.jpg" alt="Lamp 4" />
+                  <img class="custom__img custom-lamp" data-mask="lamps" data-object="Lamp4" data-remove="lamps" src=""
+                    alt="Lamp" />
                 </button>
 
-                <button class="object-lamp-btn">
-                  <img class="custom__img" data-mask="lamps" data-object="lamp-5" data-remove="lamps"
-                    src="./img/kitchen-black/Detailed/Lamp 5.jpg" alt="Lamp 5" />
+                <button class="object-lamp-btn kitchen-white-lamp">
+                  <img class="custom__img custom-lamp" data-mask="lamps" data-object="Lamp5" data-remove="lamps" src=""
+                    alt="Lamp" />
+                </button>
+
+                <button class="object-lamp-btn kitchen-red-lamp">
+                  <img class="custom__img custom-lamp" data-mask="lamps" data-object="Lamp6" data-remove="lamps" src=""
+                    alt="Lamp" />
                 </button>
               </div>
             </div>
@@ -466,7 +653,7 @@
         </div>
       </div>
 
-      <!-- Options -->
+      <!-- Options Desktop -->
       <div class="options">
         <!-- Save -->
         <button class="options__btn options-btn-save position-relative" data-tip="save">
@@ -478,7 +665,7 @@
           </div>
         </button>
 
-        <!-- 3D View -->
+        <!-- Camera View -->
         <button class="options__btn options-btn-3d position-relative" data-tip="3d">
           <img data-tip="3d" src="./img/icons/Rotation.svg" alt="3D View" />
 
@@ -527,6 +714,76 @@
           <div data-tip="share" class="options__tip tip-share">
             <span>Share</span>
           </div>
+        </button>
+      </div>
+
+      <!-- Options Mobile -->
+      <div class="options-container">
+        <div class="options-mobile">
+          <!-- Save -->
+          <button class="options__btn options-btn-save position-relative" data-tip="save">
+            <img data-tip="save" class="options__btn-img" src="./img/icons/Heart.svg" alt="Save" />
+
+            <!-- Tip Save -->
+            <div data-tip="save" class="options__tip tip-save">
+              <span>Save</span>
+            </div>
+          </button>
+
+          <!-- Camera View -->
+          <button class="options__btn options-btn-3d position-relative" data-tip="3d">
+            <img data-tip="3d" src="./img/icons/Rotation.svg" alt="3D View" />
+
+            <!-- Tip 3D View -->
+            <div data-tip="3d" class="options__tip tip-3d">
+              <span>Camera view</span>
+            </div>
+          </button>
+
+          <!-- Download -->
+          <button class="options__btn options-btn-download position-relative" data-tip="download">
+            <img data-tip="download" src="./img/icons/Download.svg" alt="Download" />
+
+            <!-- Tip Download -->
+            <div data-tip="download" class="options__tip tip-download">
+              <span>Download</span>
+            </div>
+          </button>
+
+          <!-- Download Modal -->
+          <div class="download-blackout" data-modal="download"></div>
+          <div class="download-modal">
+            <button class="download-modal__btn download-modal-png me-auto">
+              PNG
+            </button>
+            <button class="download-modal__btn download-modal-jpg me-auto">
+              PDF
+            </button>
+          </div>
+
+          <!-- Print -->
+          <button class="options__btn options-btn-print position-relative" data-tip="print">
+            <img data-tip="print" src="./img/icons/Printer.svg" alt="Print" />
+
+            <!-- Tip Print -->
+            <div data-tip="print" class="options__tip tip-print">
+              <span>Print</span>
+            </div>
+          </button>
+
+          <!-- Share -->
+          <button class="options__btn options-btn-share position-relative" data-tip="share">
+            <img data-tip="share" src="./img/icons/Share.svg" alt="Share" />
+
+            <!-- Tip Share -->
+            <div data-tip="share" class="options__tip tip-share">
+              <span>Share</span>
+            </div>
+          </button>
+        </div>
+
+        <button class="open-options-btn">
+          <img src="./img/icons/open-options-btn.svg" alt="">
         </button>
       </div>
 

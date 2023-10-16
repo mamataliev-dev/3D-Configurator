@@ -40,25 +40,27 @@ var countItems = 0;
 var productArr = [];
 
 // Chosen product mask
-var productMaskChairs = "Bar-Stool-1";
-var productMaskLamps = "lamp-1";
+var productMaskChairs = "BarStool1";
+var productMaskLamps = "lamp1";
 
 // Options Btns
-var optionsBtnSave = document.querySelector(".options-btn-save");
+var optionsBtnSave = document.querySelectorAll(".options-btn-save");
 var optionsBtn3d = document.querySelector(".options-btn-3d");
 var optionsBtnDownload = document.querySelector(".options-btn-download");
 var optionsBtnPrint = document.querySelector(".options-btn-print");
-var optionsBtnShare = document.querySelector(".options-btn-share");
+var optionsBtnShare = document.querySelectorAll(".options-btn-share");
 var openOptionsBtn = document.querySelector(".open-options-btn");
+var optionsMobileBtn = document.querySelector(".open-options-btn");
 
 // Option Modals
 var shareModal = document.querySelector(".share-blackout");
 var savedModal = document.querySelector(".saved-modal");
 var savedModalBlackout = document.querySelector(".saved-blackout");
 var savedModalEmpty = document.querySelector(".saved-modal-empty");
-var downloadModalBlackout = document.querySelector(".download-blackout");
-var downloadModal = document.querySelector(".download-modal");
+var downloadModalBlackout = document.querySelectorAll(".download-blackout");
+var downloadModal = document.querySelectorAll(".download-modal");
 var optionsBoxMobile = document.querySelector(".options-box-mobile");
+var optionsContainer = document.querySelector(".options-container");
 
 // Option Btns Close Modals
 var btnCloseShareModal = document.querySelectorAll(".close-share-modal");
@@ -128,6 +130,12 @@ btnMoveToGallary.addEventListener("click", () => {
   window.location.href = "../gallery.html";
 });
 
+// Open Mobile Options Menu / Hide Desktop Options menu
+optionsMobileBtn.addEventListener("click", () => {
+  optionsContainer.classList.toggle("open");
+  checkOpenMenu();
+});
+
 // Open Options Modal
 optionsBtn.forEach((button) => {
   button.addEventListener("click", (e) => {
@@ -148,8 +156,13 @@ optionsBtn.forEach((button) => {
         }
         break;
       case "download":
-        downloadModalBlackout.classList.add("active");
-        downloadModal.classList.add("active");
+        downloadModalBlackout.forEach((el) => {
+          el.classList.add("active");
+        });
+
+        downloadModal.forEach((el) => {
+          el.classList.add("active");
+        });
         break;
       case "share":
         shareModal.classList.add("active");
@@ -171,8 +184,14 @@ document.addEventListener("click", (e) => {
     savedModalBlackout.classList.remove("active");
     savedModalEmpty.classList.remove("active");
     savedModal.classList.remove("active");
-    downloadModalBlackout.classList.remove("active");
-    downloadModal.classList.remove("active");
+
+    downloadModalBlackout.forEach((el) => {
+      el.classList.remove("active");
+    });
+
+    downloadModal.forEach((el) => {
+      el.classList.remove("active");
+    });
   }
 });
 
@@ -224,6 +243,8 @@ customBtn.addEventListener("click", () => {
       el.classList.remove("open");
     });
   }
+
+  checkOpenMenu();
 });
 
 // Custom Objects Chairs
@@ -364,8 +385,10 @@ function checkObjectProduct(product) {
   });
 }
 
-optionsBtnSave.addEventListener("click", () => {
-  pushProductsToSavedModal();
+optionsBtnSave.forEach((element) => {
+  element.addEventListener("click", () => {
+    pushProductsToSavedModal();
+  });
 });
 
 document.addEventListener("click", () => {
@@ -425,78 +448,18 @@ function pushProductsToSavedModal() {
 }
 
 // Show masks
-document.addEventListener("DOMContentLoaded", () => {
-  var maskBtn = document.querySelectorAll(".mask_btn");
-  var masks = document.querySelectorAll(".mask");
-  var maskWallPanels = document.querySelector(".mask-wall-panels");
-  var maskChairs = document.querySelector(".mask-chairs");
-  var maskFloor = document.querySelector(".mask-floor");
-  var maskLamps = document.querySelector(".mask-lamps");
+document.addEventListener("DOMContentLoaded", () => {});
 
-  maskBtn.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      var buttonTarget = e.target;
-      var buttonAttr = buttonTarget.getAttribute("data-mask");
-
-      switch (buttonAttr) {
-        case "wall-pattern":
-          showMasks(maskWallPanels, buttonAttr);
-          break;
-        case "chairs":
-          showMasks(maskChairs, buttonAttr);
-          break;
-        case "floor":
-          showMasks(maskFloor, buttonAttr);
-          break;
-        case "lamps":
-          showMasks(maskLamps, buttonAttr);
-          break;
-        default:
-          break;
-      }
-    });
-  });
-
-  function showMasks(mask, customMenu) {
-    // Remove Masks
-    setTimeout(() => {
-      mask.classList.remove("active");
-    }, 150);
-
-    // Check Chosen Product Mask
-    var maskAttr = mask.getAttribute("data-mask");
-    mask.classList.add("active");
-
-    if (maskAttr == "chairs") {
-      mask.src = `./img/scene-img/masks/${productMaskChairs}-mask.png`;
-    } else if (maskAttr == "lamps") {
-      mask.src = `./img/scene-img/masks/${productMaskLamps}-mask.png`;
-    }
-
-    // Open Custom Menu
-    customItemBtn.forEach((button) => {
-      var buttonAttr = button.getAttribute("data-mask");
-
-      if (buttonAttr == customMenu) {
-        button.classList.add("open");
-      } else {
-        button.classList.remove("open");
-      }
-    });
-
-    customDropList.forEach((el) => {
-      var listArtt = el.getAttribute("data-mask");
-
-      if (listArtt == customMenu) {
-        el.classList.add("open");
-      } else {
-        el.classList.remove("open");
-      }
-    });
-
-    custom.classList.add("open");
+// Close Custom Menu if Options Menu is open
+function checkOpenMenu() {
+  if (custom.classList.contains("open")) {
+    optionsContainer.classList.remove("open");
+  } else if (optionsContainer.classList.contains("open")) {
+    custom.classList.remove("open");
+  } else {
+    custom.classList.remove("open");
   }
-});
+}
 
 // Open Popup notify
 var closePopup = document.querySelector(".close-popup");
@@ -528,7 +491,7 @@ var isMobile = window.matchMedia("(max-width: 540px)").matches;
 
 var panzoomInstance = new Panzoom(container, {
   disablePan: maxScale <= 1,
-  minScale: isMobile ? 0.4 : 1,
+  minScale: isMobile ? 0.3 : 1,
   startScale: 1,
   increment: 0.1,
   contain: isMobile ? false : "outside",
@@ -542,45 +505,23 @@ if (isMobile) {
 
 // Masks
 var masks = document.querySelectorAll(".mask_btn");
+var zoomValue = 1;
 
-// Zoom count
-var slider = document.getElementById("myRange");
-var previousValue = slider.value;
-
-slider.addEventListener("input", function () {
-  if (slider.value > previousValue) {
-    panzoomInstance.zoomIn(parseFloat(slider.value));
-  } else if (slider.value < previousValue) {
-    panzoomInstance.zoomOut(parseFloat(slider.value));
-  }
-
-  previousValue = slider.value;
+zoomInButton.addEventListener("click", () => {
+  panzoomInstance.zoomIn();
+  zoomValue++;
   checkForZoom();
 });
 
-zoomInButton.addEventListener("click", () => {
-  var currentVal = parseFloat(slider.value);
-
-  if (currentVal < 4) {
-    slider.value = currentVal + 1;
-    panzoomInstance.zoomIn();
-    checkForZoom();
-  }
-});
-
 zoomOutButton.addEventListener("click", () => {
-  var currentVal = parseFloat(slider.value);
-
-  if (currentVal > 1) {
-    slider.value = currentVal - 1;
-    panzoomInstance.zoomOut();
-    checkForZoom();
-  }
+  panzoomInstance.zoomOut();
+  zoomValue--;
+  checkForZoom();
 });
 
 // if zoom started pointer-events = none
 function checkForZoom() {
-  if (slider.value == 1) {
+  if (zoomValue == 1) {
     masks.forEach((el) => {
       el.classList.remove("pointer");
     });
@@ -590,3 +531,493 @@ function checkForZoom() {
     });
   }
 }
+
+// Get Chosen Scene
+document.addEventListener("DOMContentLoaded", () => {
+  // Get scene-kitchen
+  var kitchen = localStorage.getItem("scene-bg");
+  console.log(kitchen);
+
+  // Show Camera View
+  var cameraView = document.querySelector(".camera-view");
+  var cameraViewBtn = document.querySelectorAll(".options-btn-3d");
+  var viewScene = document.querySelector(".view-scene");
+  var cameraItemView = document.querySelectorAll(".camera__item");
+  var cameraImg = document.querySelector(".camera__item_img");
+  var view1 = document.querySelector(".view1");
+  var view2 = document.querySelector(".view2");
+  var view3 = document.querySelector(".view3");
+  var foregroundBlack = document.querySelector(".foreground-black");
+  var foregroundBlackView2 = document.querySelector(".foreground-black-view2");
+  var foregroundRed = document.querySelector(".foreground-red");
+  var viewNum = "View1";
+
+  var sceneImg = document.getElementById("scene-img");
+  var wallPattern = document.getElementById("wall-pattern");
+  var chair = document.getElementById("chair");
+
+  // Scene Masks
+  var kitchenBlackMasks = document.querySelector(".kitchen-black-masks");
+  var kitchenRedMasks = document.querySelector(".kitchen-red-masks");
+  var kitchenWhiteMasks = document.querySelector(".kitchen-white-masks");
+  var maskWallPanels = document.querySelector(".mask-wall-panels");
+  var maskChairs = document.querySelector(".mask-chairs");
+  var maskFloor = document.querySelector(".mask-floor");
+  var maskLamps = document.querySelector(".mask-lamps");
+  var kitchenView1 = document.querySelector(".kitchen-view1");
+  var kitchenView2 = document.querySelector(".kitchen-view2");
+  var kitchenView3 = document.querySelector(".kitchen-view3");
+
+  // Scene Custom Items
+  var chairsCustomImg = document.querySelector(".custom-chairs-img");
+  var floorCustomImg = document.querySelector(".floor-custom-img");
+  var lampsCustomImg = document.querySelector(".custom-lamps-img");
+
+  // Scene Custom Items
+  var customFartuks = document.querySelectorAll(".custom-fartuk");
+  var customFloors = document.querySelectorAll(".custom-parquet");
+  var customChairs = document.querySelectorAll(".custom-chair");
+  var customLamps = document.querySelectorAll(".custom-lamp");
+
+  // Scene Objects
+  var objectFloor = document.querySelectorAll(".portuquet-img");
+  var objectFartuk = document.querySelectorAll(".fartuk-img");
+  var objectChair = document.querySelectorAll(".bar-stool-img");
+  var objectLamp = document.querySelectorAll(".lamp-img");
+
+  // Open / Close | Scene / Camera View
+  cameraViewBtn.forEach((element) => {
+    element.addEventListener("click", () => {
+      viewScene.classList.add("hide");
+      cameraView.classList.add("active");
+
+      view1.src = `./img/${kitchen}/View1/Jpeg/Final.jpg`;
+      view2.src = `./img/${kitchen}/View2/Jpeg/Final.jpg`;
+      view3.src = `./img/${kitchen}/View3/Jpeg/Final.jpg`;
+    });
+  });
+
+  if (kitchen == "kitchen-black") {
+    foregroundBlack.classList.add("active");
+  } else if (kitchen == "kitchen-red") {
+    foregroundRed.classList.add("active");
+  }
+
+  // Open Chosen Camera View
+  cameraItemView.forEach((view) => {
+    view.addEventListener("click", (e) => {
+      var viewTarget = e.target;
+      var viewAttr = viewTarget.getAttribute("data-view");
+
+      viewNum = viewAttr;
+      changeObjectsView(viewNum);
+      changeMasksView(viewNum);
+      changeObjectMaksView(viewNum);
+
+      viewScene.classList.remove("hide");
+      cameraView.classList.remove("active");
+
+      if (viewAttr == "View1" && kitchen == "kitchen-black") {
+        foregroundBlack.classList.add("active");
+      } else if (viewAttr == "View1" && kitchen == "kitchen-red") {
+        foregroundRed.src = "./img/kitchen-red/View1/Png/Table.png";
+        foregroundRed.classList.add("active");
+      } else if (viewAttr == "View2" && kitchen == "kitchen-red") {
+        foregroundRed.src = "./img/kitchen-red/View2/Png/Table.png";
+        foregroundRed.classList.add("active");
+      } else if (viewAttr == "View2" && kitchen == "kitchen-black") {
+        foregroundBlackView2.classList.add("active");
+        foregroundBlack.classList.remove("active");
+      } else {
+        foregroundRed.classList.remove("active");
+        foregroundBlack.classList.remove("active");
+        foregroundBlackView2.classList.remove("active");
+      }
+
+      sceneImg.src = `./img/${kitchen}/${viewAttr}/Jpeg/Background.jpg`;
+    });
+  });
+
+  var maskBtn = document.querySelectorAll(".mask_btn");
+  var masks = document.querySelectorAll(".mask");
+  var maskWallPanels = document.querySelector(".mask-wall-panels");
+  var maskChairs = document.querySelector(".mask-chairs");
+  var maskFloor = document.querySelector(".mask-floor");
+  var maskLamps = document.querySelector(".mask-lamps");
+
+  function scaleSpecificImageMap(mapId) {
+    const img = document.getElementById("scene-img");
+    if (!img) {
+      console.error('Image with id "scene-img" not found!');
+      return;
+    }
+
+    const w = img.naturalWidth;
+    const h = img.naturalHeight;
+    const percentW = img.offsetWidth / w;
+    const percentH = img.offsetHeight / h;
+
+    const areas = document.querySelectorAll(`#${mapId} area`);
+    if (areas.length === 0) {
+      console.error(`No areas found inside ${mapId}!`);
+      return;
+    }
+
+    areas.forEach(function (area) {
+      const originalCoords = area.getAttribute("data-coords");
+      if (!originalCoords) {
+        console.error("data-coords attribute missing for an area:", area);
+        return;
+      }
+
+      const coordsArray = originalCoords
+        .split(",")
+        .map((coord) => parseInt(coord));
+      const newCoords = [];
+
+      for (let i = 0; i < coordsArray.length; i++) {
+        if (i % 2 === 0) {
+          newCoords.push((coordsArray[i] * percentW).toFixed(0));
+        } else {
+          newCoords.push((coordsArray[i] * percentH).toFixed(0));
+        }
+      }
+
+      area.coords = newCoords.join(",");
+    });
+  }
+
+  function initializeImageMaps() {
+    for (let i = 1; i <= 9; i++) {
+      scaleSpecificImageMap(`image-map${i}`);
+    }
+
+    window.addEventListener("resize", function () {
+      for (let i = 1; i <= 9; i++) {
+        scaleSpecificImageMap(`image-map${i}`);
+      }
+    });
+  }
+
+  window.onload = initializeImageMaps;
+
+  maskBtn.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      var buttonTarget = e.target;
+      var buttonAttr = buttonTarget.getAttribute("data-mask");
+
+      switch (buttonAttr) {
+        case "wall-pattern":
+          showMasks(maskWallPanels, buttonAttr);
+          break;
+        case "chairs":
+          showMasks(maskChairs, buttonAttr);
+          break;
+        case "floor":
+          showMasks(maskFloor, buttonAttr);
+          break;
+        case "lamps":
+          showMasks(maskLamps, buttonAttr);
+          break;
+        default:
+          break;
+      }
+
+      checkOpenMenu();
+    });
+  });
+
+  // Show forEach Masks
+  function showMasks(mask, customMenu) {
+    // Remove Masks
+    setTimeout(() => {
+      mask.classList.remove("active");
+    }, 200);
+
+    // Check Chosen Product Mask
+    var maskAttr = mask.getAttribute("data-mask");
+    mask.classList.add("active");
+
+    if (maskAttr == "chairs") {
+      mask.src = `./img/${kitchen}/${viewNum}/Masks/Png/${productMaskChairs}.png`;
+    } else if (maskAttr == "lamps") {
+      mask.src = `./img/${kitchen}/${viewNum}/Masks/Png/${productMaskLamps}.png`;
+    } else if (maskAttr == "floor") {
+      mask.src = `./img/${kitchen}/${viewNum}/Masks/Png/Parquet.png`;
+    } else if (maskAttr == "wall-pattern") {
+      mask.src = `./img/${kitchen}/${viewNum}/Masks/Png/KitchenFartuk.png`;
+    }
+
+    // Open Custom Menu
+    customItemBtn.forEach((button) => {
+      var buttonAttr = button.getAttribute("data-mask");
+
+      if (buttonAttr == customMenu) {
+        button.classList.add("open");
+      } else {
+        button.classList.remove("open");
+      }
+    });
+
+    customDropList.forEach((el) => {
+      var listArtt = el.getAttribute("data-mask");
+
+      if (listArtt == customMenu) {
+        el.classList.add("open");
+      } else {
+        el.classList.remove("open");
+      }
+    });
+
+    custom.classList.add("open");
+  }
+
+  // Show Maks Block
+  switch (kitchen) {
+    case "kitchen-black":
+      kitchenBlackMasks.classList.add("active");
+      console.log("kitchenBlackMasks");
+      break;
+    case "kitchen-red":
+      kitchenRedMasks.classList.add("active");
+      console.log("kitchenRedMasks");
+      break;
+    case "kitchen-white":
+      kitchenWhiteMasks.classList.add("active");
+      console.log("kitchenWhiteMasks");
+      break;
+    default:
+      break;
+  }
+
+  // Show View Masks
+  function changeMasksView(view) {
+    switch (view) {
+      case "View1":
+        kitchenView1.classList.add("active");
+        break;
+      case "View2":
+        kitchenView2.classList.add("active");
+        break;
+      case "View3":
+        kitchenView3.classList.add("active");
+        break;
+      default:
+        break;
+    }
+  }
+
+  // Show View Object Masks
+  function changeObjectMaksView(view) {
+    maskWallPanels.src = `./img/${kitchen}/${view}/Masks/Png/KitchenFartuk.png`;
+    maskChairs.src = `./img/${kitchen}/${view}/Masks/Png/BarStool1.png`;
+    maskLamps.src = `./img/${kitchen}/${view}/Masks/Png/Lamp1.png`;
+    maskFloor.src = `./img/${kitchen}/${view}/Masks/Png/Parquet.png`;
+  }
+
+  // Change Chairs Custom img
+  switch (kitchen) {
+    case "kitchen-black":
+      chairsCustomImg.src = `./img/kitchen-black/Detailed/BarStool1.jpg`;
+      break;
+    case "kitchen-white":
+      chairsCustomImg.src = `../img/kitchen-white/Detailed/Chairs1.jpg`;
+      break;
+    default:
+      break;
+  }
+
+  // Change Lamps Custom img
+  switch (kitchen) {
+    case "kitchen-black":
+      lampsCustomImg.src = `./img/kitchen-black/Detailed/Lamp1.jpg`;
+      break;
+    case "kitchen-red":
+      lampsCustomImg.src = `./img/kitchen-red/Detailed/Lamp1.jpg`;
+      break;
+    case "kitchen-white":
+      lampsCustomImg.src = `./img/kitchen-white/Detailed/Lamp1.jpg`;
+      break;
+    default:
+      break;
+  }
+
+  // Wall Pattern Custom
+  customFartuks.forEach((img, index) => {
+    img.src = `./img/${kitchen}/Detailed/KitchenFartuk${index + 1}.jpg`;
+
+    img.onerror = () => {
+      console.log("Image not found.");
+    };
+  });
+
+  // Floor Custom
+  customFloors.forEach((img, index) => {
+    img.src = `./img/${kitchen}/Detailed/Parquet${index + 1}.jpg`;
+
+    img.onerror = () => {
+      console.log("Image not found.");
+    };
+  });
+
+  // Chair Custom
+  customChairs.forEach((img, index) => {
+    switch (kitchen) {
+      case "kitchen-black":
+        img.src = `./img/${kitchen}/Detailed/BarStool${index + 1}.jpg`;
+        break;
+      case "kitchen-white":
+        img.src = `./img/${kitchen}/Detailed/Chairs${index + 1}.jpg`;
+        break;
+      default:
+        break;
+    }
+
+    img.onerror = () => {
+      console.log("Image not found.");
+    };
+  });
+
+  // Lamp Custom
+  customLamps.forEach((img, index) => {
+    switch (kitchen) {
+      case "kitchen-red":
+        var kitchenRedLamp = document.querySelectorAll(".kitchen-red-lamp");
+        kitchenRedLamp.forEach((el) => {
+          el.style = "display: block";
+        });
+        img.src = `./img/${kitchen}/Detailed/Lamp${index + 1}.jpg`;
+        break;
+      case "kitchen-white":
+        var kitchenWhiteLamp = document.querySelectorAll(".kitchen-white-lamp");
+        kitchenWhiteLamp.forEach((el) => {
+          el.style = "display: none";
+        });
+        img.src = `./img/${kitchen}/Detailed/Lamp${index + 1}.jpg`;
+        break;
+      default:
+        img.src = `./img/${kitchen}/Detailed/Lamp${index + 1}.jpg`;
+        break;
+    }
+
+    img.onerror = () => {
+      console.log("Image not found.");
+    };
+  });
+
+  // Chair Objects
+  objectChair.forEach((img, index) => {
+    switch (kitchen) {
+      case "kitchen-red":
+        chair.style = "display: none";
+        break;
+      case "kitchen-black":
+        img.src = `./img/${kitchen}/${viewNum}/Png/BarStool${index + 1}.png`;
+        break;
+      case "kitchen-white":
+        img.src = `./img/${kitchen}/${viewNum}/Png/Chairs${index + 1}.png`;
+        break;
+      default:
+        break;
+    }
+
+    img.onerror = () => {
+      console.log("Image not found.");
+    };
+  });
+
+  // Lamp Objects
+  objectLamp.forEach((img, index) => {
+    if (kitchen == "kitchen-white") {
+      img.src = `./img/${kitchen}/${viewNum}/Png/Lamps${index + 1}.png`;
+    } else {
+      img.src = `./img/${kitchen}/${viewNum}/Png/Lamp${index + 1}.png`;
+
+      img.onerror = () => {
+        img.classList.remove("object-visible");
+        console.log("Image not found.");
+      };
+    }
+  });
+
+  // Floor Objects
+  objectFloor.forEach((img, index) => {
+    img.src = `./img/${kitchen}/${viewNum}/Png/Parquet${index + 1}.png`;
+
+    img.onerror = () => {
+      console.log("Image not found.");
+    };
+  });
+
+  // Wall pattern Objects
+  objectFartuk.forEach((img, index) => {
+    if (kitchen == "kitchen-white") {
+      wallPattern.style = "display: none";
+    } else {
+      img.src = `./img/${kitchen}/${viewNum}/Png/KitchenFartuk${index + 1}.png`;
+    }
+
+    img.onerror = () => {
+      console.log("Image not found.");
+    };
+  });
+
+  // Change Objects By ViewNum
+  function changeObjectsView(view) {
+    // Lamp Objects
+    objectLamp.forEach((img, index) => {
+      img.src = `./img/${kitchen}/${view}/Png/Lamp${index + 1}.png`;
+    });
+
+    // Chair Objects
+    objectChair.forEach((img, index) => {
+      switch (kitchen) {
+        case "kitchen-red":
+          chair.style = "display: none";
+          break;
+        case "kitchen-black":
+          img.src = `./img/${kitchen}/${viewNum}/Png/BarStool${index + 1}.png`;
+          break;
+        case "kitchen-white":
+          img.src = `./img/${kitchen}/${viewNum}/Png/Chairs${index + 1}.png`;
+          break;
+        default:
+          break;
+      }
+
+      img.onerror = () => {
+        console.log("Image not found.");
+      };
+    });
+
+    // Floor Objects
+    objectFloor.forEach((img, index) => {
+      img.src = `./img/${kitchen}/${view}/Png/Parquet${index + 1}.png`;
+
+      img.onerror = () => {
+        console.log("Image not found.");
+      };
+    });
+
+    // Wall pattern Objects
+    objectFartuk.forEach((img, index) => {
+      if (kitchen == "kitchen-white") {
+        wallPattern.style = "display: none";
+      } else {
+        img.src = `./img/${kitchen}/${viewNum}/Png/KitchenFartuk${
+          index + 1
+        }.png`;
+      }
+
+      img.onerror = () => {
+        console.log("Image not found.");
+      };
+    });
+  }
+
+  // Change Floor Custom img
+  floorCustomImg.src = `./img/${kitchen}/Detailed/Parquet1.jpg`;
+
+  // Main Scene Bg
+  sceneImg.src = `./img/${kitchen}/View1/Jpeg/Background.jpg`;
+});

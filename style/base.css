@@ -80,8 +80,7 @@ footer {
     background: var(--main-white);
 }
 
-@media(max-width: 768px) {
-
+@media(max-width: 1000px) {
     .swiper-button-next:after,
     .swiper-button-prev:after {
         width: 40px;
@@ -98,7 +97,7 @@ footer {
     margin-left: 50px;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 900px) {
     .swiper-button-next:after {
         margin-right: 10px !important;
     }
@@ -134,7 +133,7 @@ footer {
     .swiper-pagination {
         display: block !important;
 
-        top: 30px !important;
+        top: 70px !important;
     }
 }
 
@@ -151,6 +150,7 @@ footer {
 }
 
 .carousel__title {
+    pointer-events: none;
     position: absolute;
     bottom: 30px;
     left: 60px;
@@ -186,7 +186,13 @@ footer {
     }
 }
 
-@media(max-width: 768px) {
+@media(max-width: 1024px) {
+    .carousel__img {
+        height: 600px;
+    }
+}
+
+@media(max-width: 900px) {
     .carousel__img {
         height: 500px;
     }
@@ -194,7 +200,7 @@ footer {
 
 @media(max-width: 576px) {
     .carousel__img {
-        height: 700px !important;
+        height: 900px !important;
     }
 
     .carousel__title {
@@ -209,6 +215,11 @@ footer {
     }
 }
 
+@media(max-width: 480px) {
+    .carousel__img {
+        height: 700px !important;
+    }
+}
 /* Carousel */
 
 
@@ -286,6 +297,12 @@ footer {
     border: none;
     background: var(--search-bg);
     color: var(--main-black);
+}
+
+@media(max-width: 1024px) {
+    .mynav__input {
+        width: 400px;
+    }
 }
 
 .mynav__search-icon {
@@ -631,7 +648,7 @@ footer {
     transform: translate(-50%, -50%);
 }
 
-@media(max-width: 768px) {
+@media(max-width: 900px) {
     .open-chat-btn {
         bottom: 16px;
         right: 25px;
