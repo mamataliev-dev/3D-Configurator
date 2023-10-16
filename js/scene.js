@@ -564,9 +564,9 @@ document.addEventListener("DOMContentLoaded", () => {
   var maskChairs = document.querySelector(".mask-chairs");
   var maskFloor = document.querySelector(".mask-floor");
   var maskLamps = document.querySelector(".mask-lamps");
-  var kitchenView1 = document.querySelector(".kitchen-view1");
-  var kitchenView2 = document.querySelector(".kitchen-view2");
-  var kitchenView3 = document.querySelector(".kitchen-view3");
+  var kitchenView1 = document.querySelectorAll(".kitchen-view1");
+  var kitchenView2 = document.querySelectorAll(".kitchen-view2");
+  var kitchenView3 = document.querySelectorAll(".kitchen-view3");
 
   // Scene Custom Items
   var chairsCustomImg = document.querySelector(".custom-chairs-img");
@@ -584,6 +584,9 @@ document.addEventListener("DOMContentLoaded", () => {
   var objectFartuk = document.querySelectorAll(".fartuk-img");
   var objectChair = document.querySelectorAll(".bar-stool-img");
   var objectLamp = document.querySelectorAll(".lamp-img");
+  var chirsBox = document.querySelector(".bar-stools");
+  var portuquetsBox = document.querySelector(".portuquets");
+  var lampsBox = document.querySelector('.lamps')
 
   // Open / Close | Scene / Camera View
   cameraViewBtn.forEach((element) => {
@@ -619,6 +622,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (viewAttr == "View1" && kitchen == "kitchen-black") {
         foregroundBlack.classList.add("active");
+      } else if (viewAttr == "View2" && kitchen == "kitchen-white") {
+        chirsBox.style = "opacity: 0";
       } else if (viewAttr == "View1" && kitchen == "kitchen-red") {
         foregroundRed.src = "./img/kitchen-red/View1/Png/Table.png";
         foregroundRed.classList.add("active");
@@ -628,10 +633,17 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (viewAttr == "View2" && kitchen == "kitchen-black") {
         foregroundBlackView2.classList.add("active");
         foregroundBlack.classList.remove("active");
+      } else if (viewAttr == "View3" && kitchen == "kitchen-red") {
+        portuquetsBox.style = "opacity: 0";
+        lampsBox.style = "opacity: 0";
+        foregroundRed.classList.remove("active");
       } else {
         foregroundRed.classList.remove("active");
         foregroundBlack.classList.remove("active");
         foregroundBlackView2.classList.remove("active");
+        chirsBox.style = "opacity: 1";
+        portuquetsBox.style = "opacity: 1";
+        lampsBox.style = "opacity: 1";
       }
 
       sceneImg.src = `./img/${kitchen}/${viewAttr}/Jpeg/Background.jpg`;
@@ -644,62 +656,6 @@ document.addEventListener("DOMContentLoaded", () => {
   var maskChairs = document.querySelector(".mask-chairs");
   var maskFloor = document.querySelector(".mask-floor");
   var maskLamps = document.querySelector(".mask-lamps");
-
-  function scaleSpecificImageMap(mapId) {
-    const img = document.getElementById("scene-img");
-    if (!img) {
-      console.error('Image with id "scene-img" not found!');
-      return;
-    }
-
-    const w = img.naturalWidth;
-    const h = img.naturalHeight;
-    const percentW = img.offsetWidth / w;
-    const percentH = img.offsetHeight / h;
-
-    const areas = document.querySelectorAll(`#${mapId} area`);
-    if (areas.length === 0) {
-      console.error(`No areas found inside ${mapId}!`);
-      return;
-    }
-
-    areas.forEach(function (area) {
-      const originalCoords = area.getAttribute("data-coords");
-      if (!originalCoords) {
-        console.error("data-coords attribute missing for an area:", area);
-        return;
-      }
-
-      const coordsArray = originalCoords
-        .split(",")
-        .map((coord) => parseInt(coord));
-      const newCoords = [];
-
-      for (let i = 0; i < coordsArray.length; i++) {
-        if (i % 2 === 0) {
-          newCoords.push((coordsArray[i] * percentW).toFixed(0));
-        } else {
-          newCoords.push((coordsArray[i] * percentH).toFixed(0));
-        }
-      }
-
-      area.coords = newCoords.join(",");
-    });
-  }
-
-  function initializeImageMaps() {
-    for (let i = 1; i <= 9; i++) {
-      scaleSpecificImageMap(`image-map${i}`);
-    }
-
-    window.addEventListener("resize", function () {
-      for (let i = 1; i <= 9; i++) {
-        scaleSpecificImageMap(`image-map${i}`);
-      }
-    });
-  }
-
-  window.onload = initializeImageMaps;
 
   maskBtn.forEach((button) => {
     button.addEventListener("click", (e) => {
@@ -776,15 +732,12 @@ document.addEventListener("DOMContentLoaded", () => {
   switch (kitchen) {
     case "kitchen-black":
       kitchenBlackMasks.classList.add("active");
-      console.log("kitchenBlackMasks");
       break;
     case "kitchen-red":
       kitchenRedMasks.classList.add("active");
-      console.log("kitchenRedMasks");
       break;
     case "kitchen-white":
       kitchenWhiteMasks.classList.add("active");
-      console.log("kitchenWhiteMasks");
       break;
     default:
       break;
@@ -794,13 +747,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function changeMasksView(view) {
     switch (view) {
       case "View1":
-        kitchenView1.classList.add("active");
+        kitchenView1.forEach((el) => el.classList.add("active"));
         break;
       case "View2":
-        kitchenView2.classList.add("active");
+        kitchenView2.forEach((el) => el.classList.add("active"));
+        kitchenView1.forEach((el) => el.classList.remove("active"));
         break;
       case "View3":
-        kitchenView3.classList.add("active");
+        kitchenView3.forEach((el) => el.classList.add("active"));
+        kitchenView1.forEach((el) => el.classList.remove("active"));
         break;
       default:
         break;
@@ -821,7 +776,7 @@ document.addEventListener("DOMContentLoaded", () => {
       chairsCustomImg.src = `./img/kitchen-black/Detailed/BarStool1.jpg`;
       break;
     case "kitchen-white":
-      chairsCustomImg.src = `../img/kitchen-white/Detailed/Chairs1.jpg`;
+      chairsCustomImg.src = `../img/kitchen-white/Detailed/BarStool1.jpg`;
       break;
     default:
       break;
@@ -846,36 +801,22 @@ document.addEventListener("DOMContentLoaded", () => {
   customFartuks.forEach((img, index) => {
     img.src = `./img/${kitchen}/Detailed/KitchenFartuk${index + 1}.jpg`;
 
-    img.onerror = () => {
-      console.log("Image not found.");
-    };
+    img.onerror = () => {};
   });
 
   // Floor Custom
   customFloors.forEach((img, index) => {
     img.src = `./img/${kitchen}/Detailed/Parquet${index + 1}.jpg`;
-
-    img.onerror = () => {
-      console.log("Image not found.");
-    };
   });
 
   // Chair Custom
   customChairs.forEach((img, index) => {
-    switch (kitchen) {
-      case "kitchen-black":
-        img.src = `./img/${kitchen}/Detailed/BarStool${index + 1}.jpg`;
-        break;
-      case "kitchen-white":
-        img.src = `./img/${kitchen}/Detailed/Chairs${index + 1}.jpg`;
-        break;
-      default:
-        break;
+    if (kitchen == "kitchen-white") {
+      var kitchenWhiteChair = document.querySelector(".kitchen-white-chair");
+      kitchenWhiteChair.style = "display: none";
     }
 
-    img.onerror = () => {
-      console.log("Image not found.");
-    };
+    img.src = `./img/${kitchen}/Detailed/BarStool${index + 1}.jpg`;
   });
 
   // Lamp Custom
@@ -907,37 +848,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Chair Objects
   objectChair.forEach((img, index) => {
-    switch (kitchen) {
-      case "kitchen-red":
-        chair.style = "display: none";
-        break;
-      case "kitchen-black":
-        img.src = `./img/${kitchen}/${viewNum}/Png/BarStool${index + 1}.png`;
-        break;
-      case "kitchen-white":
-        img.src = `./img/${kitchen}/${viewNum}/Png/Chairs${index + 1}.png`;
-        break;
-      default:
-        break;
+    if (kitchen == "kitchen-red") {
+      chair.style = "display: none";
+    } else {
+      img.src = `./img/${kitchen}/${viewNum}/Png/BarStool${index + 1}.png`;
     }
-
-    img.onerror = () => {
-      console.log("Image not found.");
-    };
   });
 
   // Lamp Objects
   objectLamp.forEach((img, index) => {
-    if (kitchen == "kitchen-white") {
-      img.src = `./img/${kitchen}/${viewNum}/Png/Lamps${index + 1}.png`;
-    } else {
-      img.src = `./img/${kitchen}/${viewNum}/Png/Lamp${index + 1}.png`;
+    img.src = `./img/${kitchen}/${viewNum}/Png/Lamp${index + 1}.png`;
 
-      img.onerror = () => {
-        img.classList.remove("object-visible");
-        console.log("Image not found.");
-      };
-    }
+    img.onerror = () => {
+      img.classList.remove("object-visible");
+      console.log("Image not found.");
+    };
   });
 
   // Floor Objects
@@ -971,18 +896,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Chair Objects
     objectChair.forEach((img, index) => {
-      switch (kitchen) {
-        case "kitchen-red":
-          chair.style = "display: none";
-          break;
-        case "kitchen-black":
-          img.src = `./img/${kitchen}/${viewNum}/Png/BarStool${index + 1}.png`;
-          break;
-        case "kitchen-white":
-          img.src = `./img/${kitchen}/${viewNum}/Png/Chairs${index + 1}.png`;
-          break;
-        default:
-          break;
+      if (kitchen == "kitchen-red") {
+        chair.style = "display: none";
+      } else {
+        img.src = `./img/${kitchen}/${viewNum}/Png/BarStool${index + 1}.png`;
       }
 
       img.onerror = () => {
