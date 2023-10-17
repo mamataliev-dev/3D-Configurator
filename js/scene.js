@@ -1,10 +1,20 @@
 // Loading
 document.addEventListener("DOMContentLoaded", function () {
-  const loadingModal = document.getElementById("loadingModal");
+  var loadingModal = document.getElementById("loadingModal");
+  var images = document.querySelectorAll(".loading-jpg");
 
   function hideModal() {
     loadingModal.style.display = "none";
   }
+
+  images.forEach((jpg) => {
+    if (jpg.complete) {
+      console.log("Loading");
+      loadingModal.style.display = "none";
+    } else {
+      console.log("Loaded");
+    }
+  });
 
   if (
     document.readyState === "complete" ||
