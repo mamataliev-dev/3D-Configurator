@@ -1,37 +1,22 @@
-// Drop Down List
-var mynavDropDown = document.querySelector('.mynav-drop-down')
-var blackout = document.querySelector('.blackout')
-var secondBlackout = document.querySelector('.second-blackout')
-var secondNavBtn = document.querySelector('.second-nav-btn')
-var secondDropDown = document.querySelector('.second-nav-drop-down')
-var singInBtn = document.querySelector('.sign-in-btn')
+// Drop Dwon List
+var secondNavBtn = document.querySelector(".second-nav-btn");
+var secondDropDown = document.querySelector(".second-nav-drop-down");
+var secondBlackout = document.querySelector(".second-blackout");
 
-singInBtn.addEventListener('click', () => {
-    window.location.href = '../index.html';
-})
+secondNavBtn.addEventListener("click", () => {
+  secondDropDown.classList.add("open");
+  secondBlackout.classList.add("active");
+});
 
-secondNavBtn.addEventListener('click', () => {
-    secondDropDown.classList.add('open')
-    secondBlackout.classList.add('active')
-})
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("second-blackout")) {
+    secondDropDown.classList.remove("open");
+    secondBlackout.classList.remove("active");
+  } else {
+    console.log();
+  }
+});
 
-document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('blackout')) {
-        blackout.classList.remove('active')
-        mynavDropDown.classList.remove('open')
-    } else {
-        console.log();
-    }
-})
-
-document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('second-blackout')) {
-        secondDropDown.classList.remove('open')
-        secondBlackout.classList.remove('active')
-    } else {
-        console.log();
-    }
-})
 
 // Sign Up 
 var signUpInput = document.querySelector('.signup__input')

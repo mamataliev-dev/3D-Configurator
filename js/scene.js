@@ -1,32 +1,38 @@
-// Drop Down List
-var mynavDropDown = document.querySelector(".mynav-drop-down");
-var userBtn = document.querySelector(".user-btn");
-var blackout = document.querySelector(".blackout");
-var secondBlackout = document.querySelector(".second-blackout");
+// Loading
+document.addEventListener("DOMContentLoaded", function () {
+  const loadingModal = document.getElementById("loadingModal");
+
+  function hideModal() {
+    loadingModal.style.display = "none";
+  }
+
+  if (
+    document.readyState === "complete" ||
+    document.readyState === "loaded" ||
+    document.readyState === "interactive"
+  ) {
+    hideModal();
+  } else {
+    window.addEventListener("load", hideModal);
+  }
+});
+
+// Drop Dwon List
 var secondNavBtn = document.querySelector(".second-nav-btn");
 var secondDropDown = document.querySelector(".second-nav-drop-down");
+var secondBlackout = document.querySelector(".second-blackout");
 
 secondNavBtn.addEventListener("click", () => {
   secondDropDown.classList.add("open");
   secondBlackout.classList.add("active");
 });
 
-userBtn.addEventListener("click", () => {
-  mynavDropDown.classList.add("open");
-  blackout.classList.add("active");
-});
-
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("blackout")) {
-    blackout.classList.remove("active");
-    mynavDropDown.classList.remove("open");
-  }
-});
-
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("second-blackout")) {
     secondDropDown.classList.remove("open");
     secondBlackout.classList.remove("active");
+  } else {
+    console.log();
   }
 });
 
@@ -447,9 +453,6 @@ function pushProductsToSavedModal() {
   });
 }
 
-// Show masks
-document.addEventListener("DOMContentLoaded", () => {});
-
 // Close Custom Menu if Options Menu is open
 function checkOpenMenu() {
   if (custom.classList.contains("open")) {
@@ -505,32 +508,10 @@ if (isMobile) {
 
 // Masks
 var masks = document.querySelectorAll(".mask_btn");
-var zoomValue = 1;
 
-zoomInButton.addEventListener("click", () => {
-  panzoomInstance.zoomIn();
-  zoomValue++;
-  checkForZoom();
-});
+zoomInButton.addEventListener("click", () => panzoomInstance.zoomIn());
 
-zoomOutButton.addEventListener("click", () => {
-  panzoomInstance.zoomOut();
-  zoomValue--;
-  checkForZoom();
-});
-
-// if zoom started pointer-events = none
-function checkForZoom() {
-  if (zoomValue == 1) {
-    masks.forEach((el) => {
-      el.classList.remove("pointer");
-    });
-  } else {
-    masks.forEach((el) => {
-      el.classList.add("pointer");
-    });
-  }
-}
+zoomOutButton.addEventListener("click", () => panzoomInstance.zoomOut());
 
 // Get Chosen Scene
 document.addEventListener("DOMContentLoaded", () => {
@@ -586,7 +567,7 @@ document.addEventListener("DOMContentLoaded", () => {
   var objectLamp = document.querySelectorAll(".lamp-img");
   var chirsBox = document.querySelector(".bar-stools");
   var portuquetsBox = document.querySelector(".portuquets");
-  var lampsBox = document.querySelector('.lamps')
+  var lampsBox = document.querySelector(".lamps");
 
   // Open / Close | Scene / Camera View
   cameraViewBtn.forEach((element) => {
@@ -634,18 +615,18 @@ document.addEventListener("DOMContentLoaded", () => {
         foregroundBlackView2.classList.add("active");
         foregroundBlack.classList.remove("active");
       } else if (viewAttr == "View3" && kitchen == "kitchen-red") {
-        portuquetsBox.style = "opacity: 0";
         lampsBox.style = "opacity: 0";
         foregroundRed.classList.remove("active");
+      } else if (viewAttr == "View3" && kitchen == "kitchen-black") {
+        foregroundBlackView2.classList.remove("active");
+        foregroundBlack.classList.remove("active");
       } else {
         foregroundRed.classList.remove("active");
         foregroundBlack.classList.remove("active");
         foregroundBlackView2.classList.remove("active");
         chirsBox.style = "opacity: 1";
-        portuquetsBox.style = "opacity: 1";
         lampsBox.style = "opacity: 1";
       }
-
       sceneImg.src = `./img/${kitchen}/${viewAttr}/Jpeg/Background.jpg`;
     });
   });

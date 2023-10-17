@@ -23,36 +23,22 @@
   <header class="header">
     <!-- Navbar -->
     <nav class="mynav navbar navbar-expand-lg navbar-light bg-none">
-      <div class="container-xxl">
+      <div class="container-fluid">
         <h3 class="h3">
           <a class="mynav__brand navbar-brand" href="./index.html">Site</a>
         </h3>
-
-        <ul class="mynav__list navbar-nav d-flex align-items-center flex-row ms-auto">
-          <li class="nav-item">
-            <a class="mynav__link nav-link" href="./about.html">About us</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="mynav__link nav-link" href="./contact.html">Contact Us</a>
-          </li>
-
-          <li class="nav-item">
-            <button class="mynav__link user-btn">User name</button>
-          </li>
-        </ul>
       </div>
     </nav>
 
     <!-- Second Navbar -->
     <div class="second-nav">
-      <div class="container-xxl second-nav-container">
+      <div class="container-fluid second-nav-container">
         <div class="d-flex align-items-center">
           <a href="./user.html">
             <img class="second-nav__icon" src="./img/icons/go-back.svg" alt="" />
           </a>
 
-          <a class="second-nav__logo ms-3" href="./user.html">Logo</a>
+          <a class="second-nav__logo" href="./user.html">Logo</a>
         </div>
 
         <ul class="second-nav__list">
@@ -71,6 +57,11 @@
       </div>
     </div>
   </header>
+
+  <!-- Loading Modal -->
+  <div id="loadingModal" class="loading-modal">
+    <div class="loader"></div> <!-- Здесь ваша анимация загрузки -->
+  </div>
 
   <!-- Main -->
   <main class="main scene-main">
@@ -102,7 +93,7 @@
 
     <!-- Second Nav Drop Down List -->
     <div class="second-blackout second-nav-drop-down-blackout">
-      <div class="container-xxl">
+      <div class="container-fluid">
         <div class="second-nav-drop-down">
           <ul class="navbar-nav">
             <li class="nav-item">
@@ -176,19 +167,15 @@
                 <!-- Floor -->
                 <div class="portuquets">
                   <img class="portuquet-img" src="" data-object="parquet1" data-product="Parquet 1" data-price="100"
-                    data-remove="floor" alt="Floor" />
-
+                    data-remove="floor" alt="" />
                   <img class="portuquet-img" src="" data-object="parquet2" data-product="Parquet 2" data-price="200"
-                    data-remove="floor" alt="Floor" />
-
+                    data-remove="floor" alt="" />
                   <img class="portuquet-img" src="" data-object="parquet3" data-product="Parquet 3" data-price="300"
-                    data-remove="floor" alt="Floor" />
-
+                    data-remove="floor" alt="" />
                   <img class="portuquet-img" src="" data-object="parquet4" data-product="Parquet 4" data-price="400"
-                    data-remove="floor" alt="Floor" />
-
+                    data-remove="floor" alt="" />
                   <img class="portuquet-img" src="" data-object="parquet5" data-product="Parquet 5" data-price="500"
-                    data-remove="floor" alt="Floor" />
+                    data-remove="floor" alt="" />
                 </div>
 
                 <!-- Wall Patterns -->
@@ -323,31 +310,32 @@
                 <img class="mask mask-lamps" data-mask="lamps" src="" alt="floor" />
               </div>
             </div>
+
+            <!-- Order Menu -->
+            <div class="order__container">
+              <div class="order__menu">
+                <button class="move-up">
+                  <img src="./img/icons/move-up.svg" alt="move-up" />
+                </button>
+
+                <span class="order__count ms-2">0 item</span>
+
+                <button class="order__btn ms-3">Order</button>
+              </div>
+
+              <div class="order__list">
+                <span class="order__list-empty">No products yet</span>
+              </div>
+            </div>
+
+            <!-- Zoom in / Zoom out -->
+            <div class="slidecontainer">
+              <button class="zoom-btn" id="zoomOutButton">-</button>
+              <button class="zoom-btn" id="zoomInButton">+</button>
+            </div>
           </div>
         </div>
 
-        <!-- Order Menu -->
-        <div class="order__container">
-          <div class="order__menu">
-            <button class="move-up">
-              <img src="./img/icons/move-up.svg" alt="move-up" />
-            </button>
-
-            <span class="order__count ms-2">0 item</span>
-
-            <button class="order__btn ms-3">Order</button>
-          </div>
-
-          <div class="order__list">
-            <span class="order__list-empty">No products yet</span>
-          </div>
-        </div>
-
-        <!-- Zoom in / Zoom out -->
-        <div class="slidecontainer">
-          <button class="zoom-btn" id="zoomOutButton">-</button>
-          <button class="zoom-btn" id="zoomInButton">+</button>
-        </div>
       </div>
 
       <!-- Custom Menu -->

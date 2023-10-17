@@ -109,7 +109,7 @@ carouselBtnStart.forEach((element) => {
   });
 });
 
-// Get chosen Scene Background
+// Push Scene Background LocalStorage
 var kitchenScene = document.querySelectorAll(".kitchen-scene");
 
 kitchenScene.forEach((scene) => {

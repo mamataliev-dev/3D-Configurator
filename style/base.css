@@ -56,6 +56,26 @@ footer {
 }
 
 /** Swiper */
+.main-cont {
+    width: 100vw;
+    position: relative;
+}
+
+.main-cont::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+}
+
+.carousel__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .swiper-button-next {
     bottom: 50% !important;
     transform: translate(-50%, 0%) !important;
@@ -81,6 +101,7 @@ footer {
 }
 
 @media(max-width: 1000px) {
+
     .swiper-button-next:after,
     .swiper-button-prev:after {
         width: 40px;
@@ -144,11 +165,6 @@ footer {
     margin: 11px 0px;
 }
 
-.carousel__img {
-    width: 1920px;
-    height: 1080px;
-}
-
 .carousel__title {
     pointer-events: none;
     position: absolute;
@@ -157,6 +173,17 @@ footer {
     z-index: 2;
 
     font-weight: 500;
+}
+
+.carousel__title-mobile {
+    display: none;
+}
+
+@media (max-width: 540px) {
+    .carousel__title-mobile {
+        display: block;
+        font-size: 24px !important;
+    }
 }
 
 .carousel__btn-start {
@@ -179,30 +206,7 @@ footer {
     transform: translate(-50%, 0%);
 }
 
-@media(max-width: 1280px) {
-    .carousel__img {
-        width: 100%;
-        height: 700px;
-    }
-}
-
-@media(max-width: 1024px) {
-    .carousel__img {
-        height: 600px;
-    }
-}
-
-@media(max-width: 900px) {
-    .carousel__img {
-        height: 500px;
-    }
-}
-
 @media(max-width: 576px) {
-    .carousel__img {
-        height: 900px !important;
-    }
-
     .carousel__title {
         top: 30px;
         left: 50%;
@@ -215,11 +219,6 @@ footer {
     }
 }
 
-@media(max-width: 480px) {
-    .carousel__img {
-        height: 700px !important;
-    }
-}
 /* Carousel */
 
 
@@ -390,7 +389,7 @@ footer {
 
 /** Second Nav */
 .second-nav {
-    height: 50px;
+    height: 40px;
     display: flex;
     align-items: center;
     box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.05);
@@ -410,9 +409,10 @@ footer {
 }
 
 .second-nav__logo {
-    color: var(--main-blue);
-    font-weight: 700;
-    font-size: 20px;
+    color: var(--signin-blue) !important;
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 5px;
 }
 
 .second-nav__link {
@@ -421,22 +421,18 @@ footer {
     font-size: 16px;
 }
 
-@media(max-width: 480px) {
-    .second-nav {
-        height: 38px;
-    }
+.second-nav__icon {
+    width: 16px;
+    height: 16px;
+}
 
+@media(max-width: 480px) {
     .second-nav__link {
         font-size: 12px;
     }
 
     .second-nav__logo {
-        font-size: 14px;
-    }
-
-    .second-nav__icon {
-        width: 16px;
-        height: 16px;
+        font-size: 12px;
     }
 }
 
