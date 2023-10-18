@@ -9,10 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   images.forEach((jpg) => {
     if (jpg.complete) {
-      console.log("Loading");
       loadingModal.style.display = "none";
     } else {
-      console.log("Loaded");
     }
   });
 
@@ -40,13 +38,14 @@ let imageInterval = setInterval(() => {
     if (images.complete) {
       clearInterval(imageInterval);
       loadingModal.style.display = "none";
-      console.log("loaded");
     } else {
-      console.log("loading");
       loadingModal.style.display = "block";
     }
   });
-}, 50);
+
+  window.addEventListener("load", (loadingModal.style.display = "none"));
+  console.log("loging");
+}, 10);
 
 // Drop Dwon List
 var secondNavBtn = document.querySelector(".second-nav-btn");
