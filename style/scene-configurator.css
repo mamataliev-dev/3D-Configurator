@@ -90,7 +90,7 @@
 
 .my-cont {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     overflow-y: scroll;
 }
 
@@ -414,11 +414,22 @@
     bottom: 20px;
     left: 0;
 
+    width: 230px;
     border-radius: 500px;
     background: var(--main-white);
     padding: 6px 10px 6px 22px;
     box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.05);
-    z-index: 30;
+    z-index: 100;
+}
+
+.order__btn {
+    margin-left: 12%;
+}
+
+@media(max-width: 851px) {
+    .order__btn {
+        margin-left: 18%;
+    }
 }
 
 .order__list.open {
@@ -461,9 +472,11 @@
 
 @media(max-width: 540px) {
     .order__menu {
-        width: 225px;
-        left: 50%;
-        transform: translate(-50%, 0%);
+        width: 240px;
+    }
+
+    .order__btn {
+        margin-left: 20%;
     }
 
     .order__list {

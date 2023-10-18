@@ -1,4 +1,4 @@
-// Loading
+// Loading Window
 document.addEventListener("DOMContentLoaded", function () {
   var loadingModal = document.getElementById("loadingModal");
   var images = document.querySelectorAll(".loading-jpg");
@@ -26,6 +26,27 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("load", hideModal);
   }
 });
+
+var loadingJpg = document.querySelectorAll(".loading-jpg");
+var loadingModal = document.getElementById("loadingModal");
+
+let imageInterval = setInterval(() => {
+  loadingJpg.forEach((images) => {
+    images.addEventListener("load", () => {
+      loadingModal.style.display = "none";
+      console.log("Loaded");
+    });
+
+    if (images.complete) {
+      clearInterval(imageInterval);
+      loadingModal.style.display = "none";
+      console.log("loaded");
+    } else {
+      console.log("loading");
+      loadingModal.style.display = "block";
+    }
+  });
+}, 50);
 
 // Drop Dwon List
 var secondNavBtn = document.querySelector(".second-nav-btn");
@@ -845,7 +866,6 @@ document.addEventListener("DOMContentLoaded", () => {
       img.src = `./img/${kitchen}/${viewNum}/Png/BarStool${index + 1}.png`;
     }
   });
-
   // Lamp Objects
   objectLamp.forEach((img, index) => {
     img.src = `./img/${kitchen}/${viewNum}/Png/Lamp${index + 1}.png`;
